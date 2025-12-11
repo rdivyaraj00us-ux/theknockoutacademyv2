@@ -53,6 +53,9 @@ export const Footer = () => {
               <Link to="/refund-policy" className="text-sm text-secondary-foreground/70 hover:text-secondary-foreground transition-colors">
                 Refund Policy
               </Link>
+              <Link to="/earnings-disclaimer" className="text-sm text-secondary-foreground/70 hover:text-secondary-foreground transition-colors">
+                Earnings Disclaimer
+              </Link>
             </nav>
           </div>
         </div>
