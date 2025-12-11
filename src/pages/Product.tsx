@@ -14,7 +14,8 @@ import {
 } from "@/components/ui/breadcrumb";
 import { fetchProductByHandle, ShopifyProduct } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
-import { Loader2, Minus, Plus, ShoppingCart, Shield, RefreshCw, Zap, Home } from "lucide-react";
+import { getBundleContent } from "@/data/bundleContents";
+import { Loader2, Minus, Plus, ShoppingCart, Shield, RefreshCw, Zap, Home, CheckCircle2, BookOpen, Users, Target } from "lucide-react";
 import { toast } from "sonner";
 
 const Product = () => {
@@ -96,6 +97,7 @@ const Product = () => {
   const variant = product.node.variants.edges[selectedVariantIndex]?.node;
   const price = variant?.price || product.node.priceRange.minVariantPrice;
   const image = product.node.images?.edges?.[0]?.node;
+  const bundleContent = handle ? getBundleContent(handle) : null;
 
   // Schema markup for product
   const productSchema = {
@@ -261,10 +263,69 @@ const Product = () => {
                   <div className="text-center">
                     <Shield className="h-5 w-5 mx-auto mb-1 text-accent" />
                     <span className="text-xs text-muted-foreground">Secure Checkout</span>
-                  </div>
                 </div>
               </div>
             </div>
+
+            {/* What's Inside Section */}
+            {bundleContent && (
+              <div className="mt-16">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {/* What's Inside */}
+                  <div className="bg-card border border-border rounded-xl p-6">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="p-2 rounded-lg bg-primary/10">
+                        <BookOpen className="w-5 h-5 text-primary" />
+                      </div>
+                      <h2 className="text-xl font-bold text-foreground">What's Inside</h2>
+                    </div>
+                    <ul className="space-y-3">
+                      {bundleContent.products.map((item, index) => (
+                        <li key={index} className="flex items-start gap-3">
+                          <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
+                          <span className="text-muted-foreground">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Who This Is For */}
+                  <div className="bg-card border border-border rounded-xl p-6">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="p-2 rounded-lg bg-primary/10">
+                        <Users className="w-5 h-5 text-primary" />
+                      </div>
+                      <h2 className="text-xl font-bold text-foreground">Who This Is For</h2>
+                    </div>
+                    <p className="text-muted-foreground mb-4">{bundleContent.whoIsItFor}</p>
+                    <div className="bg-accent/10 border border-accent/20 rounded-lg p-4">
+                      <p className="text-sm text-accent font-medium">
+                        Perfect for beginners — no prior experience needed!
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* What You'll Learn */}
+                  <div className="bg-card border border-border rounded-xl p-6">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="p-2 rounded-lg bg-primary/10">
+                        <Target className="w-5 h-5 text-primary" />
+                      </div>
+                      <h2 className="text-xl font-bold text-foreground">What You'll Learn</h2>
+                    </div>
+                    <ul className="space-y-3">
+                      {bundleContent.outcomes.map((outcome, index) => (
+                        <li key={index} className="flex items-start gap-3">
+                          <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
+                          <span className="text-muted-foreground">{outcome}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
           </div>
         </main>
 
