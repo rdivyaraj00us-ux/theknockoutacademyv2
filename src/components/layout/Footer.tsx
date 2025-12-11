@@ -44,13 +44,13 @@ export const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Legal</h4>
             <nav className="flex flex-col gap-2">
-              <Link to="/privacy" className="text-sm text-secondary-foreground/70 hover:text-secondary-foreground transition-colors">
+              <Link to="/privacy-policy" className="text-sm text-secondary-foreground/70 hover:text-secondary-foreground transition-colors">
                 Privacy Policy
               </Link>
-              <Link to="/terms" className="text-sm text-secondary-foreground/70 hover:text-secondary-foreground transition-colors">
+              <Link to="/terms-of-service" className="text-sm text-secondary-foreground/70 hover:text-secondary-foreground transition-colors">
                 Terms of Service
               </Link>
-              <Link to="/refund" className="text-sm text-secondary-foreground/70 hover:text-secondary-foreground transition-colors">
+              <Link to="/refund-policy" className="text-sm text-secondary-foreground/70 hover:text-secondary-foreground transition-colors">
                 Refund Policy
               </Link>
             </nav>
