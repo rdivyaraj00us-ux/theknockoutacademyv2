@@ -3,6 +3,12 @@ import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { 
   CheckCircle2, 
   Zap, 
@@ -22,13 +28,79 @@ import { useCartStore } from "@/stores/cartStore";
 import { fetchProducts, ShopifyProduct } from "@/lib/shopify";
 import { toast } from "sonner";
 
-const bundleContents = [
-  { icon: Bot, title: "AI Mastery Essentials", items: "10+ eBooks & Guides on AI tools" },
-  { icon: ShoppingCart, title: "E-Commerce & Dropshipping", items: "8+ eBooks on online selling" },
-  { icon: Video, title: "Content Creator Accelerator", items: "7+ guides on content growth" },
-  { icon: TrendingUp, title: "Digital Marketing & Sales", items: "8+ eBooks on marketing mastery" },
-  { icon: Brain, title: "Productivity & Development", items: "5+ guides on optimization" },
-  { icon: Coins, title: "Finance & Investing", items: "6+ eBooks on financial literacy" },
+const bundleContentsDisplay = [
+  { 
+    icon: Bot, 
+    title: "AI Mastery Essentials", 
+    products: [
+      "Claude AI for Business and Content",
+      "AI Research & Workflow Automation with Perplexity",
+      "The Ultimate Guide to ChatGPT Sora",
+      "Smart Digital Creation with AI",
+      "AI-Powered Content Marketing Prompts",
+      "The Goldilocks Prompt Formula",
+      "Prompt Engineering for Content Marketers"
+    ]
+  },
+  { 
+    icon: ShoppingCart, 
+    title: "E-Commerce & Dropshipping", 
+    products: [
+      "The Advertising Funnel Blueprint Strategies",
+      "Google Performance Max Campaigns Unleashed",
+      "Keep Them Coming Back (Customer Retention)",
+      "How to Find Niche and Stand Out",
+      "Headline Construction Framework",
+      "21 Psychological Triggers That Help You Monetize"
+    ]
+  },
+  { 
+    icon: Video, 
+    title: "Content Creator Accelerator", 
+    products: [
+      "The 6-Day YouTube Accelerator",
+      "8-Day Content Marketing Revolution",
+      "Mastering CapCut Tutorials",
+      "Content Marketing Growthstack",
+      "Content Marketing on Steroids",
+      "7 Content Creation Moves to Reclaim Your Time With AI"
+    ]
+  },
+  { 
+    icon: TrendingUp, 
+    title: "Digital Marketing & Sales", 
+    products: [
+      "GetResponse Growth: Automate, Convert, Scale",
+      "The Micro-Offer Method",
+      "Interview Success Blueprint",
+      "Your Business Plan Playbook",
+      "The Strategic Delegation Framework"
+    ]
+  },
+  { 
+    icon: Brain, 
+    title: "Productivity & Development", 
+    products: [
+      "The Perfect Process (Mini-Course)",
+      "The Eisenhower Matrix Blueprint",
+      "Master Your Time and Priorities",
+      "Productivity with ADHD",
+      "The Calm Beyond Anxiety",
+      "Strategic Time Management Prompts"
+    ]
+  },
+  { 
+    icon: Coins, 
+    title: "Finance & Investing", 
+    products: [
+      "The Multi-Bucket Savings System",
+      "Blockchain Basics",
+      "How Digital Currencies Really Work",
+      "Making Your First Cryptocurrency Purchase",
+      "Cryptocurrency Platform Due Diligence",
+      "The Smart Homebuyer's Playbook"
+    ]
+  },
 ];
 
 const comparisonData = [
@@ -210,21 +282,37 @@ const MasterBundle = () => {
               Each bundle is carefully curated with practical, actionable resources designed for beginners and professionals alike.
             </p>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {bundleContents.map((bundle) => (
-                <div key={bundle.title} className="bg-card border border-border rounded-xl p-6 hover:shadow-lg transition-shadow">
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-lg bg-primary/10">
-                      <bundle.icon className="w-6 h-6 text-primary" />
+            <Accordion type="multiple" className="grid md:grid-cols-2 gap-6">
+              {bundleContentsDisplay.map((bundle, index) => (
+                <AccordionItem 
+                  key={bundle.title} 
+                  value={`bundle-${index}`}
+                  className="bg-card border border-border rounded-xl px-6 hover:shadow-lg transition-shadow"
+                >
+                  <AccordionTrigger className="hover:no-underline py-6">
+                    <div className="flex items-center gap-4 text-left">
+                      <div className="p-3 rounded-lg bg-primary/10">
+                        <bundle.icon className="w-6 h-6 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-foreground">{bundle.title}</h3>
+                        <p className="text-sm text-muted-foreground">{bundle.products.length} resources included</p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="font-semibold text-foreground mb-1">{bundle.title}</h3>
-                      <p className="text-sm text-muted-foreground">{bundle.items}</p>
-                    </div>
-                  </div>
-                </div>
+                  </AccordionTrigger>
+                  <AccordionContent className="pb-6">
+                    <ul className="space-y-2 pl-16">
+                      {bundle.products.map((product, pIndex) => (
+                        <li key={pIndex} className="flex items-start gap-2">
+                          <CheckCircle2 className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
+                          <span className="text-sm text-muted-foreground">{product}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
               ))}
-            </div>
+            </Accordion>
 
             <div className="mt-8 bg-accent/10 border border-accent/20 rounded-xl p-6 text-center">
               <h3 className="text-xl font-bold text-foreground mb-2">
