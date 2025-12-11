@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { ProblemSolution } from "@/components/sections/ProblemSolution";
+import { MasterBundleShowcase } from "@/components/sections/MasterBundleShowcase";
+import { SocialProof } from "@/components/sections/SocialProof";
+import { FinalCTA } from "@/components/sections/FinalCTA";
 import { ProductCard } from "@/components/products/ProductCard";
 import { fetchProducts, ShopifyProduct } from "@/lib/shopify";
-import { Loader2, BookOpen, Zap, Users, Target, RefreshCw, Shield, Package, Sparkles } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { Loader2, BookOpen, Zap, Users, Target, Package, Sparkles } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -55,110 +57,129 @@ const Index = () => {
     loadProducts();
   }, []);
 
+  // Filter out master bundle from individual products grid
+  const individualProducts = products.filter(
+    p => !p.node.title.toLowerCase().includes("master") && !p.node.handle.toLowerCase().includes("master")
+  );
+
   return (
-    <div className="min-h-screen flex flex-col">
-      <Header />
-      <main className="flex-1">
-        <HeroSection />
-        <ProblemSolution />
+    <>
+      <Helmet>
+        <title>The Knockout Academy | Master Skills That Actually Make Money Online</title>
+        <meta name="description" content="40+ Premium eBooks, Guides & 8,000+ AI Automation Templates. From complete beginner to confident professional. Instant digital delivery, 30-day money-back guarantee." />
+        <meta name="keywords" content="digital marketing, AI automation, eBooks, online business, side hustle, n8n templates" />
+        <link rel="canonical" href="https://knockoutacademy.com" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "The Knockout Academy",
+            "description": "Digital education brand for aspiring entrepreneurs",
+            "url": "https://knockoutacademy.com"
+          })}
+        </script>
+      </Helmet>
 
-        {/* Products Section */}
-        <section id="products" className="py-20">
-          <div className="container">
-            <div className="text-center max-w-2xl mx-auto mb-12">
-              <h2 className="text-3xl font-bold text-foreground md:text-4xl">Our Premium Bundles</h2>
-              <p className="mt-4 text-lg text-muted-foreground">Choose your path to success. Each bundle is packed with actionable resources.</p>
+      <div className="min-h-screen flex flex-col">
+        <Header />
+        <main className="flex-1">
+          {/* Section 1: Hero */}
+          <HeroSection />
+          
+          {/* Section 2: Problem/Solution */}
+          <ProblemSolution />
+
+          {/* Section 3: Master Bundle Showcase */}
+          <MasterBundleShowcase />
+
+          {/* Section 4: Individual Bundles Grid */}
+          <section id="products" className="py-20 bg-muted/30">
+            <div className="container">
+              <div className="text-center max-w-2xl mx-auto mb-12">
+                <h2 className="text-3xl font-bold text-foreground md:text-4xl">Individual Bundles - $29 Each</h2>
+                <p className="mt-4 text-lg text-muted-foreground">Choose your path to success. Each bundle is packed with actionable resources.</p>
+              </div>
+
+              {loading ? (
+                <div className="flex justify-center py-20">
+                  <Loader2 className="h-8 w-8 animate-spin text-primary" />
+                </div>
+              ) : individualProducts.length === 0 ? (
+                <div className="text-center py-20 bg-card rounded-xl border border-border">
+                  <Package className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
+                  <h3 className="text-xl font-semibold mb-2">No products found</h3>
+                  <p className="text-muted-foreground">Tell us what products you'd like to add!</p>
+                </div>
+              ) : (
+                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                  {individualProducts.map((product) => (
+                    <ProductCard key={product.node.id} product={product} />
+                  ))}
+                </div>
+              )}
             </div>
+          </section>
 
-            {loading ? (
-              <div className="flex justify-center py-20">
-                <Loader2 className="h-8 w-8 animate-spin text-primary" />
-              </div>
-            ) : products.length === 0 ? (
-              <div className="text-center py-20 bg-muted rounded-xl">
-                <Package className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
-                <h3 className="text-xl font-semibold mb-2">No products found</h3>
-                <p className="text-muted-foreground">Tell us what products you'd like to add!</p>
-              </div>
-            ) : (
-              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                {products.map((product) => (
-                  <ProductCard key={product.node.id} product={product} />
+          {/* Section 5: What Makes Us Different */}
+          <section className="py-20">
+            <div className="container">
+              <h2 className="text-3xl font-bold text-center mb-12">What Makes Us Different</h2>
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                {features.map((feature, i) => (
+                  <div key={i} className="p-6 bg-card rounded-xl border border-border text-center hover:shadow-lg transition-shadow">
+                    <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
+                      <feature.icon className="h-6 w-6 text-primary" />
+                    </div>
+                    <h3 className="font-semibold mb-2">{feature.title}</h3>
+                    <p className="text-sm text-muted-foreground">{feature.description}</p>
+                  </div>
                 ))}
               </div>
-            )}
-          </div>
-        </section>
+            </div>
+          </section>
 
-        {/* Features Section */}
-        <section className="py-20 bg-muted">
-          <div className="container">
-            <h2 className="text-3xl font-bold text-center mb-12">What Makes Us Different</h2>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {features.map((feature, i) => (
-                <div key={i} className="p-6 bg-card rounded-xl border border-border text-center">
-                  <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
-                    <feature.icon className="h-6 w-6 text-primary" />
+          {/* Section 6: Who This Is For */}
+          <section className="py-20 bg-secondary">
+            <div className="container">
+              <h2 className="text-3xl font-bold text-center text-secondary-foreground mb-12">Who This Is For</h2>
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                {audiences.map((audience, i) => (
+                  <div key={i} className="p-6 bg-secondary-foreground/5 rounded-xl text-center border border-secondary-foreground/10">
+                    <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center">
+                      <audience.icon className="h-6 w-6 text-primary" />
+                    </div>
+                    <h3 className="font-semibold text-secondary-foreground mb-2">{audience.title}</h3>
+                    <p className="text-sm text-secondary-foreground/70">{audience.description}</p>
                   </div>
-                  <h3 className="font-semibold mb-2">{feature.title}</h3>
-                  <p className="text-sm text-muted-foreground">{feature.description}</p>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        {/* Audience Section */}
-        <section className="py-20">
-          <div className="container">
-            <h2 className="text-3xl font-bold text-center mb-12">Who This Is For</h2>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {audiences.map((audience, i) => (
-                <div key={i} className="p-6 bg-secondary rounded-xl text-center">
-                  <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center">
-                    <audience.icon className="h-6 w-6 text-primary" />
-                  </div>
-                  <h3 className="font-semibold text-secondary-foreground mb-2">{audience.title}</h3>
-                  <p className="text-sm text-secondary-foreground/70">{audience.description}</p>
-                </div>
-              ))}
+          {/* Section 7: Social Proof */}
+          <SocialProof />
+
+          {/* Section 8: FAQ */}
+          <section id="faq" className="py-20">
+            <div className="container max-w-3xl">
+              <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+              <Accordion type="single" collapsible className="space-y-4">
+                {faqs.map((faq, i) => (
+                  <AccordionItem key={i} value={`faq-${i}`} className="bg-card rounded-xl border border-border px-6">
+                    <AccordionTrigger className="text-left font-semibold hover:no-underline">{faq.q}</AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground">{faq.a}</AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
             </div>
-          </div>
-        </section>
+          </section>
 
-        {/* FAQ Section */}
-        <section className="py-20 bg-muted">
-          <div className="container max-w-3xl">
-            <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
-            <Accordion type="single" collapsible className="space-y-4">
-              {faqs.map((faq, i) => (
-                <AccordionItem key={i} value={`faq-${i}`} className="bg-card rounded-xl border border-border px-6">
-                  <AccordionTrigger className="text-left font-semibold hover:no-underline">{faq.q}</AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground">{faq.a}</AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
-        </section>
-
-        {/* Final CTA */}
-        <section className="py-20 bg-secondary">
-          <div className="container text-center">
-            <h2 className="text-3xl font-bold text-secondary-foreground md:text-4xl mb-4">Ready to Level Up Your Skills?</h2>
-            <p className="text-lg text-secondary-foreground/70 mb-8 max-w-xl mx-auto">Join thousands of learners building real skills for real opportunities.</p>
-            <div className="flex flex-wrap justify-center gap-4 mb-8">
-              <div className="flex items-center gap-2 text-secondary-foreground/70"><Zap className="h-5 w-5 text-accent" /><span>Instant Delivery</span></div>
-              <div className="flex items-center gap-2 text-secondary-foreground/70"><RefreshCw className="h-5 w-5 text-accent" /><span>30-Day Guarantee</span></div>
-              <div className="flex items-center gap-2 text-secondary-foreground/70"><Shield className="h-5 w-5 text-accent" /><span>Secure Checkout</span></div>
-            </div>
-            <Button variant="accent" size="xl" asChild>
-              <Link to="/#products">Get Started Now</Link>
-            </Button>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </div>
+          {/* Section 9: Final CTA */}
+          <FinalCTA />
+        </main>
+        <Footer />
+      </div>
+    </>
   );
 };
 
