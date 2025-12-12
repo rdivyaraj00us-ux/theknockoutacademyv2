@@ -168,6 +168,7 @@ const MasterBundle = () => {
       <Helmet>
         <title>The Knockout Master Bundle - All 6 Bundles + 8,000+ Templates | The Knockout Academy</title>
         <meta name="description" content="Get everything: 40+ eBooks, guides & 8,000+ AI automation templates. $470+ value for just $69. 30-day money-back guarantee." />
+        <link rel="canonical" href="https://knockoutacademy.com/master-bundle" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -180,6 +181,26 @@ const MasterBundle = () => {
               "priceCurrency": currency,
               "availability": "https://schema.org/InStock"
             }
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://knockoutacademy.com"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Master Bundle",
+                "item": "https://knockoutacademy.com/master-bundle"
+              }
+            ]
           })}
         </script>
       </Helmet>

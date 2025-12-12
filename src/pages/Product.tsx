@@ -12,10 +12,11 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { ProductDetailSkeleton } from "@/components/ui/product-skeleton";
 import { fetchProductByHandle, ShopifyProduct } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
 import { getBundleContent } from "@/data/bundleContents";
-import { Loader2, Minus, Plus, ShoppingCart, Shield, RefreshCw, Zap, Home, CheckCircle2, BookOpen, Users, Target } from "lucide-react";
+import { Minus, Plus, ShoppingCart, Shield, RefreshCw, Zap, Home, CheckCircle2, BookOpen, Users, Target } from "lucide-react";
 import { toast } from "sonner";
 
 const Product = () => {
@@ -69,8 +70,19 @@ const Product = () => {
     return (
       <div className="min-h-screen flex flex-col">
         <Header />
-        <main className="flex-1 flex items-center justify-center">
-          <Loader2 className="h-8 w-8 animate-spin text-primary" />
+        <main className="flex-1 py-8 md:py-12">
+          <div className="container">
+            <div className="mb-8">
+              <div className="flex items-center gap-2 text-muted-foreground text-sm">
+                <span>Home</span>
+                <span>/</span>
+                <span>Products</span>
+                <span>/</span>
+                <span className="bg-muted animate-pulse rounded w-32 h-4" />
+              </div>
+            </div>
+            <ProductDetailSkeleton />
+          </div>
         </main>
         <Footer />
       </div>
@@ -119,6 +131,32 @@ const Product = () => {
     }
   };
 
+  // BreadcrumbList schema
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://knockoutacademy.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Products",
+        "item": "https://knockoutacademy.com/#products"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": product.node.title,
+        "item": `https://knockoutacademy.com/product/${handle}`
+      }
+    ]
+  };
+
   return (
     <>
       <Helmet>
@@ -127,6 +165,9 @@ const Product = () => {
         <link rel="canonical" href={`https://knockoutacademy.com/product/${handle}`} />
         <script type="application/ld+json">
           {JSON.stringify(productSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
         </script>
       </Helmet>
 
