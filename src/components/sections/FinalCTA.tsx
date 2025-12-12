@@ -5,7 +5,7 @@ import { ScrollAnimation } from "@/hooks/useScrollAnimation";
 
 export const FinalCTA = () => {
   return (
-    <section className="relative py-24 md:py-32 bg-secondary overflow-hidden">
+    <section className="relative min-h-[60vh] flex items-center justify-center py-24 md:py-32 bg-secondary overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-radial-navy" />
       <div className="absolute inset-0 bg-gradient-mesh" />
@@ -18,7 +18,7 @@ export const FinalCTA = () => {
         <div className="max-w-3xl mx-auto text-center">
           <ScrollAnimation animation="fade-up">
             {/* Headline */}
-            <h2 className="text-section-title font-display text-3xl md:text-5xl text-secondary-foreground mb-6">
+            <h2 className="font-display font-bold text-3xl md:text-5xl text-secondary-foreground mb-6 leading-tight">
               Ready to Build Skills That Actually Matter?
             </h2>
             
@@ -30,9 +30,9 @@ export const FinalCTA = () => {
 
           <ScrollAnimation animation="scale-in" delay={200}>
             {/* CTA Button */}
-            <Button variant="accent" size="xl" asChild className="text-lg px-12 group mb-8">
+            <Button variant="accent" size="xl" asChild className="text-lg px-12 group mb-8 uppercase tracking-wide font-heading font-semibold">
               <Link to="/master-bundle">
-                Get The Master Bundle — $69
+                GET THE MASTER BUNDLE — $69
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
