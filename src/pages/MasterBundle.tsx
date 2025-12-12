@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import {
   Accordion,
   AccordionContent,
@@ -187,28 +188,34 @@ const MasterBundle = () => {
       
       <main className="min-h-screen bg-background">
         {/* Hero Section */}
-        <section className="bg-secondary py-16 md:py-24">
-          <div className="container">
+        <section className="bg-secondary py-20 md:py-28 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-radial-navy" />
+          <div className="absolute inset-0 bg-gradient-mesh" />
+          <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-10 right-10 w-80 h-80 bg-accent/10 rounded-full blur-3xl" />
+
+          <div className="container relative">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <div className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-4 py-1.5 text-sm text-accent mb-6">
-                  <Package className="h-4 w-4" />
-                  Complete Collection
-                </div>
+                <Badge className="bg-gold text-gold-foreground font-heading font-semibold px-4 py-1.5 text-sm rounded-full mb-6 shadow-glow-gold">
+                  BEST VALUE
+                </Badge>
                 
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-secondary-foreground mb-6">
+                <h1 className="text-hero font-display text-4xl md:text-5xl lg:text-6xl text-secondary-foreground mb-6">
                   The Knockout{" "}
                   <span className="text-primary">Master Bundle</span>
                 </h1>
                 
-                <p className="text-lg text-secondary-foreground/80 mb-6">
+                <p className="text-xl text-secondary-foreground/70 font-body leading-relaxed mb-8">
                   Everything you need to master AI, e-commerce, content creation, marketing, productivity, and finance — all in one comprehensive package.
                 </p>
 
-                <div className="flex items-baseline gap-4 mb-6">
-                  <span className="text-5xl font-extrabold text-primary">${parseFloat(price).toFixed(0)}</span>
+                <div className="flex items-baseline gap-4 mb-8">
+                  <span className="text-6xl font-heading font-bold text-accent">${parseFloat(price).toFixed(0)}</span>
                   <span className="text-xl text-secondary-foreground/50 line-through">$470+</span>
-                  <span className="text-accent font-semibold">Save 85%</span>
+                  <Badge className="bg-accent/20 text-accent border-accent/30 font-heading font-semibold">
+                    Save 85%
+                  </Badge>
                 </div>
 
                 <Button 
@@ -216,54 +223,59 @@ const MasterBundle = () => {
                   size="xl" 
                   onClick={handleAddToCart}
                   disabled={loading || !masterBundle}
-                  className="mb-6"
+                  className="mb-8 group"
                 >
                   Get The Master Bundle Now
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Button>
 
-                <div className="flex flex-wrap gap-4">
+                <div className="flex flex-wrap gap-6">
                   <div className="flex items-center gap-2 text-secondary-foreground/70">
                     <Zap className="h-5 w-5 text-accent" />
-                    <span className="text-sm">Instant Access</span>
+                    <span className="text-sm font-body">Instant Access</span>
                   </div>
                   <div className="flex items-center gap-2 text-secondary-foreground/70">
                     <RefreshCw className="h-5 w-5 text-accent" />
-                    <span className="text-sm">30-Day Guarantee</span>
+                    <span className="text-sm font-body">30-Day Guarantee</span>
                   </div>
                   <div className="flex items-center gap-2 text-secondary-foreground/70">
                     <Shield className="h-5 w-5 text-accent" />
-                    <span className="text-sm">Secure Checkout</span>
+                    <span className="text-sm font-body">Secure Checkout</span>
                   </div>
                 </div>
               </div>
 
-              <div className="relative">
-                <div className="bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl p-8 border border-primary/20">
-                  <div className="text-center mb-6">
-                    <BookOpen className="w-16 h-16 text-primary mx-auto mb-4" />
-                    <h3 className="text-2xl font-bold text-secondary-foreground">What's Inside</h3>
+              <div className="relative hidden lg:block">
+                <div className="relative bg-secondary-foreground/5 rounded-3xl p-8 border border-primary/30 backdrop-blur-sm shadow-glow-royal">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-transparent to-accent/20 rounded-3xl blur-xl opacity-50" />
+                  
+                  <div className="relative text-center mb-6">
+                    <div className="w-20 h-20 mx-auto rounded-full bg-primary/20 flex items-center justify-center mb-4">
+                      <BookOpen className="w-10 h-10 text-primary" />
+                    </div>
+                    <h3 className="text-2xl font-heading font-bold text-secondary-foreground">What's Inside</h3>
                   </div>
-                  <ul className="space-y-3">
+                  
+                  <ul className="space-y-4 relative">
                     <li className="flex items-center gap-3 text-secondary-foreground/90">
                       <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0" />
-                      <span>40+ Premium eBooks & Guides</span>
+                      <span className="font-body">40+ Premium eBooks & Guides</span>
                     </li>
                     <li className="flex items-center gap-3 text-secondary-foreground/90">
                       <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0" />
-                      <span>8,000+ n8n Automation Templates</span>
+                      <span className="font-body">8,000+ n8n Automation Templates</span>
                     </li>
                     <li className="flex items-center gap-3 text-secondary-foreground/90">
                       <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0" />
-                      <span>6 Complete Skill Bundles</span>
+                      <span className="font-body">6 Complete Skill Bundles</span>
                     </li>
                     <li className="flex items-center gap-3 text-secondary-foreground/90">
                       <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0" />
-                      <span>Beginner-to-Expert Pathway</span>
+                      <span className="font-body">Beginner-to-Expert Pathway</span>
                     </li>
                     <li className="flex items-center gap-3 text-secondary-foreground/90">
                       <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0" />
-                      <span>Lifetime Access</span>
+                      <span className="font-body">Lifetime Access</span>
                     </li>
                   </ul>
                 </div>
@@ -273,30 +285,30 @@ const MasterBundle = () => {
         </section>
 
         {/* Bundle Contents */}
-        <section className="py-16 md:py-24">
+        <section className="py-20 md:py-28">
           <div className="container">
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-4">
+            <h2 className="text-section-title font-display text-3xl md:text-4xl text-center text-foreground mb-4">
               6 Complete Bundles Included
             </h2>
-            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+            <p className="text-center text-muted-foreground font-body mb-12 max-w-2xl mx-auto">
               Each bundle is carefully curated with practical, actionable resources designed for beginners and professionals alike.
             </p>
 
-            <Accordion type="multiple" className="grid md:grid-cols-2 gap-6">
+            <Accordion type="multiple" className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
               {bundleContentsDisplay.map((bundle, index) => (
                 <AccordionItem 
                   key={bundle.title} 
                   value={`bundle-${index}`}
-                  className="bg-card border border-border rounded-xl px-6 hover:shadow-lg transition-shadow"
+                  className="bg-card border border-border rounded-xl px-6 transition-all hover:shadow-lg hover:border-primary/30"
                 >
                   <AccordionTrigger className="hover:no-underline py-6">
                     <div className="flex items-center gap-4 text-left">
-                      <div className="p-3 rounded-lg bg-primary/10">
+                      <div className="p-3 rounded-xl bg-primary/10">
                         <bundle.icon className="w-6 h-6 text-primary" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-foreground">{bundle.title}</h3>
-                        <p className="text-sm text-muted-foreground">{bundle.products.length} resources included</p>
+                        <h3 className="font-heading font-semibold text-foreground">{bundle.title}</h3>
+                        <p className="text-sm text-muted-foreground font-body">{bundle.products.length} resources included</p>
                       </div>
                     </div>
                   </AccordionTrigger>
@@ -305,7 +317,7 @@ const MasterBundle = () => {
                       {bundle.products.map((product, pIndex) => (
                         <li key={pIndex} className="flex items-start gap-2">
                           <CheckCircle2 className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
-                          <span className="text-sm text-muted-foreground">{product}</span>
+                          <span className="text-sm text-muted-foreground font-body">{product}</span>
                         </li>
                       ))}
                     </ul>
@@ -314,11 +326,14 @@ const MasterBundle = () => {
               ))}
             </Accordion>
 
-            <div className="mt-8 bg-accent/10 border border-accent/20 rounded-xl p-6 text-center">
-              <h3 className="text-xl font-bold text-foreground mb-2">
-                PLUS: 8,000+ n8n Automation Templates
-              </h3>
-              <p className="text-muted-foreground">
+            <div className="mt-12 max-w-3xl mx-auto bg-accent/10 border border-accent/30 rounded-2xl p-8 text-center">
+              <div className="flex items-center justify-center gap-3 mb-3">
+                <Bot className="h-8 w-8 text-accent" />
+                <h3 className="text-2xl font-heading font-bold text-foreground">
+                  +8,000 n8n Automation Templates
+                </h3>
+              </div>
+              <p className="text-muted-foreground font-body text-lg">
                 Plug-and-play AI automation workflows worth $297+ alone. Save hundreds of hours with ready-to-use automations.
               </p>
             </div>
@@ -326,53 +341,57 @@ const MasterBundle = () => {
         </section>
 
         {/* Comparison Table */}
-        <section className="py-16 md:py-24 bg-muted/30">
+        <section className="py-20 md:py-28 bg-soft-gray">
           <div className="container">
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-4">
+            <h2 className="text-section-title font-display text-3xl md:text-4xl text-center text-foreground mb-4">
               Master Bundle vs. Buying Separately
             </h2>
-            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+            <p className="text-center text-muted-foreground font-body mb-12 max-w-2xl mx-auto">
               See how much you save with the Master Bundle compared to purchasing each item individually.
             </p>
 
-            <div className="max-w-3xl mx-auto bg-card border border-border rounded-xl overflow-hidden">
-              <div className="grid grid-cols-3 bg-secondary text-secondary-foreground font-semibold">
-                <div className="p-4">Item</div>
-                <div className="p-4 text-center">Individual Price</div>
-                <div className="p-4 text-center bg-primary/10">Master Bundle</div>
+            <div className="max-w-3xl mx-auto bg-card border border-border rounded-2xl overflow-hidden shadow-premium">
+              <div className="grid grid-cols-3 bg-secondary text-secondary-foreground font-heading font-semibold">
+                <div className="p-5">Item</div>
+                <div className="p-5 text-center">Individual Price</div>
+                <div className="p-5 text-center bg-primary/10">Master Bundle</div>
               </div>
               {comparisonData.map((row, index) => (
                 <div key={index} className="grid grid-cols-3 border-t border-border">
-                  <div className="p-4 text-foreground text-sm">{row.item}</div>
-                  <div className="p-4 text-center text-muted-foreground">{row.individual}</div>
-                  <div className="p-4 text-center bg-primary/5 text-accent font-medium">{row.master}</div>
+                  <div className="p-4 text-foreground text-sm font-body">{row.item}</div>
+                  <div className="p-4 text-center text-muted-foreground font-body">{row.individual}</div>
+                  <div className="p-4 text-center bg-primary/5 text-accent font-heading font-medium">{row.master}</div>
                 </div>
               ))}
               <div className="grid grid-cols-3 border-t-2 border-primary bg-secondary">
-                <div className="p-4 font-bold text-foreground">Total Value</div>
-                <div className="p-4 text-center font-bold text-muted-foreground">$470+</div>
-                <div className="p-4 text-center font-bold text-primary bg-primary/10">Just $69</div>
+                <div className="p-5 font-heading font-bold text-secondary-foreground">Total Value</div>
+                <div className="p-5 text-center font-heading font-bold text-secondary-foreground/70">$470+</div>
+                <div className="p-5 text-center font-heading font-bold text-primary bg-primary/10 text-xl">Just $69</div>
               </div>
             </div>
           </div>
         </section>
 
         {/* Final CTA */}
-        <section className="py-16 md:py-24 bg-secondary">
-          <div className="container">
+        <section className="py-24 md:py-32 bg-secondary relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-radial-navy" />
+          <div className="absolute top-1/3 left-1/4 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/3 right-1/4 w-64 h-64 bg-accent/10 rounded-full blur-3xl" />
+
+          <div className="container relative">
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-secondary-foreground mb-6">
+              <h2 className="text-section-title font-display text-3xl md:text-5xl text-secondary-foreground mb-6">
                 Ready to Get Everything?
               </h2>
-              <p className="text-lg text-secondary-foreground/80 mb-8">
+              <p className="text-xl text-secondary-foreground/70 font-body mb-10">
                 Join thousands of learners who have transformed their skills with The Knockout Master Bundle. Risk-free with our 30-day money-back guarantee.
               </p>
               
-              <div className="flex items-center justify-center gap-4 mb-8">
-                <span className="text-5xl font-extrabold text-primary">${parseFloat(price).toFixed(0)}</span>
+              <div className="flex items-center justify-center gap-4 mb-10">
+                <span className="text-6xl font-heading font-bold text-accent">${parseFloat(price).toFixed(0)}</span>
                 <div className="text-left">
                   <span className="text-xl text-secondary-foreground/50 line-through block">$470+ value</span>
-                  <span className="text-accent font-semibold">Save over 85%</span>
+                  <span className="text-accent font-heading font-semibold">Save over 85%</span>
                 </div>
               </div>
 
@@ -381,12 +400,13 @@ const MasterBundle = () => {
                 size="xl" 
                 onClick={handleAddToCart}
                 disabled={loading || !masterBundle}
+                className="text-lg px-12 group"
               >
                 Get The Master Bundle Now
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
 
-              <p className="mt-6 text-sm text-secondary-foreground/60">
+              <p className="mt-8 text-sm text-secondary-foreground/50 font-body">
                 Instant digital delivery • 30-day money-back guarantee • Secure checkout
               </p>
             </div>

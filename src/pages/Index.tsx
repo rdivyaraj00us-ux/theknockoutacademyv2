@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { StickyMobileCTA } from "@/components/layout/StickyMobileCTA";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { ProblemAgitation } from "@/components/sections/ProblemAgitation";
 import { SolutionIntro } from "@/components/sections/SolutionIntro";
@@ -140,6 +141,7 @@ const Index = () => {
 
           <FinalCTA />
         </main>
+        <StickyMobileCTA />
         <Footer />
       </div>
     </>

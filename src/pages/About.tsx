@@ -1,7 +1,9 @@
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { Target, Heart, BookOpen, Shield } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Target, Heart, BookOpen, Shield, ArrowRight } from "lucide-react";
 
 const values = [
   {
@@ -38,13 +40,17 @@ const About = () => {
       
       <main className="min-h-screen bg-background">
         {/* Hero Section */}
-        <section className="bg-secondary py-16 md:py-24">
-          <div className="container">
+        <section className="bg-secondary py-20 md:py-28 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-radial-navy opacity-50" />
+          <div className="absolute top-20 left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-10 right-10 w-80 h-80 bg-accent/10 rounded-full blur-3xl" />
+          
+          <div className="container relative">
             <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-extrabold text-secondary-foreground mb-6">
+              <h1 className="text-hero font-display text-4xl md:text-6xl text-secondary-foreground mb-6">
                 Where Dreams Meet <span className="text-primary">Discipline</span>
               </h1>
-              <p className="text-lg text-secondary-foreground/80">
+              <p className="text-xl text-secondary-foreground/70 font-body leading-relaxed">
                 We're not here to sell you dreams. We're here to give you the tools, knowledge, and practical resources to build real skills that create real opportunities.
               </p>
             </div>
@@ -52,11 +58,11 @@ const About = () => {
         </section>
 
         {/* Brand Story */}
-        <section className="py-16 md:py-24">
+        <section className="py-20 md:py-28">
           <div className="container">
             <div className="max-w-3xl mx-auto">
-              <h2 className="text-3xl font-bold text-foreground mb-6">Our Story</h2>
-              <div className="space-y-4 text-muted-foreground">
+              <h2 className="text-section-title font-display text-3xl md:text-4xl text-foreground mb-8">Our Story</h2>
+              <div className="space-y-6 text-lg text-muted-foreground font-body leading-relaxed">
                 <p>
                   The Knockout Academy was born from frustration. Frustration with overpriced courses that promise the world and deliver nothing. Frustration with "gurus" selling get-rich-quick schemes. Frustration with scattered information that leaves beginners more confused than when they started.
                 </p>
@@ -75,14 +81,14 @@ const About = () => {
         </section>
 
         {/* Mission */}
-        <section className="py-16 md:py-24 bg-muted/30">
+        <section className="py-20 md:py-28 bg-soft-gray">
           <div className="container">
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl font-bold text-foreground mb-6">Our Mission</h2>
-              <p className="text-xl text-muted-foreground">
+              <h2 className="text-section-title font-display text-3xl md:text-4xl text-foreground mb-6">Our Mission</h2>
+              <p className="text-2xl md:text-3xl font-display italic text-foreground mb-6">
                 "Helping people build real skills for real opportunities."
               </p>
-              <p className="mt-4 text-muted-foreground">
+              <p className="text-lg text-muted-foreground font-body leading-relaxed">
                 We believe everyone deserves access to quality education without the premium price tag or the manipulative marketing tactics. That's why we price our bundles fairly and never promise overnight success.
               </p>
             </div>
@@ -90,28 +96,49 @@ const About = () => {
         </section>
 
         {/* Values */}
-        <section className="py-16 md:py-24">
+        <section className="py-20 md:py-28">
           <div className="container">
-            <h2 className="text-3xl font-bold text-foreground text-center mb-12">What We Stand For</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <h2 className="text-section-title font-display text-3xl md:text-4xl text-center text-foreground mb-12">What We Stand For</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
               {values.map((value) => (
-                <div key={value.title} className="text-center">
+                <div key={value.title} className="text-center p-6 bg-card rounded-xl border border-border transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-primary/30">
                   <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
                     <value.icon className="w-8 h-8 text-primary" />
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground mb-2">{value.title}</h3>
-                  <p className="text-sm text-muted-foreground">{value.description}</p>
+                  <h3 className="font-heading font-bold text-lg text-foreground mb-2">{value.title}</h3>
+                  <p className="text-sm text-muted-foreground font-body leading-relaxed">{value.description}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
+        {/* CTA Section */}
+        <section className="py-20 md:py-28 bg-secondary relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-radial-navy opacity-50" />
+          <div className="container relative">
+            <div className="max-w-2xl mx-auto text-center">
+              <h2 className="text-section-title font-display text-3xl md:text-4xl text-secondary-foreground mb-6">
+                Ready to Start Learning?
+              </h2>
+              <p className="text-lg text-secondary-foreground/70 font-body mb-8">
+                Explore our bundles and find the perfect starting point for your journey.
+              </p>
+              <Button variant="accent" size="xl" asChild className="group">
+                <Link to="/#products">
+                  Browse Our Bundles
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+
         {/* Disclaimer */}
-        <section className="py-12 bg-secondary">
+        <section className="py-8 bg-navy-dark">
           <div className="container">
             <div className="max-w-3xl mx-auto text-center">
-              <p className="text-sm text-secondary-foreground/70">
+              <p className="text-xs text-secondary-foreground/50 font-body">
                 <strong>Important:</strong> The Knockout Academy provides educational resources only. Results are not guaranteed and depend entirely on individual effort, implementation, and market conditions. We do not make any income claims or promises of specific outcomes.
               </p>
             </div>
