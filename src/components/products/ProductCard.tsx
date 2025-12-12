@@ -44,15 +44,15 @@ export const ProductCard = ({ product, featured = false }: ProductCardProps) => 
 
   return (
     <div 
-      className={`group relative flex flex-col rounded-xl border bg-card overflow-hidden transition-all duration-300 hover:shadow-premium-hover hover:-translate-y-2 ${
+      className={`group relative flex flex-col rounded-xl border bg-card overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-3 ${
         featured || isMasterBundle 
-          ? 'border-primary/40 shadow-glow-royal' 
-          : 'border-border shadow-premium'
+          ? 'border-primary/40 shadow-glow-royal hover:shadow-glow-royal' 
+          : 'border-border shadow-premium hover:border-primary/30'
       }`}
     >
       {/* Featured Badge */}
       {(featured || isMasterBundle) && (
-        <Badge className="absolute top-3 right-3 z-10 bg-gold text-gold-foreground font-heading font-semibold shadow-glow-gold">
+        <Badge className="absolute top-3 right-3 z-10 bg-gold text-gold-foreground font-heading font-semibold shadow-glow-gold animate-pulse-gold">
           Most Popular
         </Badge>
       )}
