@@ -11,8 +11,9 @@ import { WhoThisIsFor } from "@/components/sections/WhoThisIsFor";
 import { SocialProof } from "@/components/sections/SocialProof";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { ProductCard } from "@/components/products/ProductCard";
+import { ProductGridSkeleton } from "@/components/ui/product-skeleton";
 import { fetchProducts, ShopifyProduct } from "@/lib/shopify";
-import { Loader2, Package, Zap, BookOpen, Sparkles } from "lucide-react";
+import { Package, Zap, BookOpen, Sparkles } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -127,9 +128,7 @@ const Index = () => {
               </div>
 
               {loading ? (
-                <div className="flex justify-center py-20">
-                  <Loader2 className="h-8 w-8 animate-spin text-primary" />
-                </div>
+                <ProductGridSkeleton count={6} />
               ) : individualProducts.length === 0 ? (
                 <div className="text-center py-20 bg-card rounded-xl border border-border">
                   <Package className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
