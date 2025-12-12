@@ -2,76 +2,91 @@ import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return (
-    <footer className="border-t border-border bg-secondary text-secondary-foreground">
-      <div className="container py-12">
-        <div className="grid gap-8 md:grid-cols-4">
-          {/* Brand */}
-          <div className="md:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
-                <span className="text-lg font-bold text-primary-foreground">K</span>
+    <footer className="bg-navy-dark text-secondary-foreground">
+      <div className="container py-16">
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+          {/* Column 1: Brand */}
+          <div className="lg:col-span-1">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary">
+                <span className="text-xl font-display font-bold text-primary-foreground">K</span>
               </div>
-              <span className="font-bold text-lg">The Knockout Academy</span>
+              <span className="font-heading font-bold text-lg">The Knockout Academy</span>
             </div>
-            <p className="text-sm text-secondary-foreground/70 max-w-sm mb-4">
+            <p className="text-sm text-secondary-foreground/60 mb-4 font-body leading-relaxed">
               Where Dreams Meet Discipline. Premium digital education resources for aspiring entrepreneurs and side hustlers.
-            </p>
-            <p className="text-xs text-secondary-foreground/50">
-              Results not guaranteed. Educational products only. Success depends on individual effort and implementation.
             </p>
           </div>
 
-          {/* Quick Links */}
+          {/* Column 2: Products */}
           <div>
-            <h4 className="font-semibold mb-4">Quick Links</h4>
+            <h4 className="font-heading font-semibold mb-4 text-secondary-foreground">Products</h4>
             <nav className="flex flex-col gap-2">
-              <Link to="/" className="text-sm text-secondary-foreground/70 hover:text-secondary-foreground transition-colors">
-                Home
+              <Link to="/master-bundle" className="text-sm text-secondary-foreground/60 hover:text-secondary-foreground transition-colors font-body">
+                Master Bundle
               </Link>
-              <Link to="/#products" className="text-sm text-secondary-foreground/70 hover:text-secondary-foreground transition-colors">
-                Products
+              <Link to="/#products" className="text-sm text-secondary-foreground/60 hover:text-secondary-foreground transition-colors font-body">
+                AI Mastery
               </Link>
-              <Link to="/about" className="text-sm text-secondary-foreground/70 hover:text-secondary-foreground transition-colors">
-                About
+              <Link to="/#products" className="text-sm text-secondary-foreground/60 hover:text-secondary-foreground transition-colors font-body">
+                E-Commerce
               </Link>
-              <Link to="/contact" className="text-sm text-secondary-foreground/70 hover:text-secondary-foreground transition-colors">
-                Contact
+              <Link to="/#products" className="text-sm text-secondary-foreground/60 hover:text-secondary-foreground transition-colors font-body">
+                Content Creator
+              </Link>
+              <Link to="/#products" className="text-sm text-secondary-foreground/60 hover:text-secondary-foreground transition-colors font-body">
+                Digital Marketing
+              </Link>
+              <Link to="/#products" className="text-sm text-secondary-foreground/60 hover:text-secondary-foreground transition-colors font-body">
+                Productivity
+              </Link>
+              <Link to="/#products" className="text-sm text-secondary-foreground/60 hover:text-secondary-foreground transition-colors font-body">
+                Finance
               </Link>
             </nav>
           </div>
 
-          {/* Legal */}
+          {/* Column 3: Support */}
           <div>
-            <h4 className="font-semibold mb-4">Legal</h4>
+            <h4 className="font-heading font-semibold mb-4 text-secondary-foreground">Support</h4>
             <nav className="flex flex-col gap-2">
-              <Link to="/privacy-policy" className="text-sm text-secondary-foreground/70 hover:text-secondary-foreground transition-colors">
-                Privacy Policy
+              <Link to="/contact" className="text-sm text-secondary-foreground/60 hover:text-secondary-foreground transition-colors font-body">
+                Contact Us
               </Link>
-              <Link to="/terms-of-service" className="text-sm text-secondary-foreground/70 hover:text-secondary-foreground transition-colors">
-                Terms of Service
+              <Link to="/#faq" className="text-sm text-secondary-foreground/60 hover:text-secondary-foreground transition-colors font-body">
+                FAQ
               </Link>
-              <Link to="/refund-policy" className="text-sm text-secondary-foreground/70 hover:text-secondary-foreground transition-colors">
+              <Link to="/refund-policy" className="text-sm text-secondary-foreground/60 hover:text-secondary-foreground transition-colors font-body">
                 Refund Policy
               </Link>
-              <Link to="/earnings-disclaimer" className="text-sm text-secondary-foreground/70 hover:text-secondary-foreground transition-colors">
+            </nav>
+          </div>
+
+          {/* Column 4: Legal */}
+          <div>
+            <h4 className="font-heading font-semibold mb-4 text-secondary-foreground">Legal</h4>
+            <nav className="flex flex-col gap-2">
+              <Link to="/privacy-policy" className="text-sm text-secondary-foreground/60 hover:text-secondary-foreground transition-colors font-body">
+                Privacy Policy
+              </Link>
+              <Link to="/terms-of-service" className="text-sm text-secondary-foreground/60 hover:text-secondary-foreground transition-colors font-body">
+                Terms of Service
+              </Link>
+              <Link to="/earnings-disclaimer" className="text-sm text-secondary-foreground/60 hover:text-secondary-foreground transition-colors font-body">
                 Earnings Disclaimer
               </Link>
             </nav>
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-secondary-foreground/10 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-secondary-foreground/50">
+        {/* Bottom Bar */}
+        <div className="mt-12 pt-8 border-t border-secondary-foreground/10 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="text-xs text-secondary-foreground/40 font-body">
             © 2025 The Knockout Academy. All rights reserved.
           </p>
-          <div className="flex items-center gap-4">
-            <span className="text-xs text-secondary-foreground/50">Secure payments by</span>
-            <div className="flex items-center gap-2 text-secondary-foreground/70">
-              <svg className="h-6 w-auto" viewBox="0 0 50 20" fill="currentColor">
-                <text x="0" y="15" fontSize="12" fontWeight="bold">Shopify</text>
-              </svg>
-            </div>
-          </div>
+          <p className="text-xs text-secondary-foreground/40 font-body text-center sm:text-right">
+            Results not guaranteed. Educational products only.
+          </p>
         </div>
       </div>
     </footer>

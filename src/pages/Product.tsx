@@ -83,7 +83,7 @@ const Product = () => {
         <Header />
         <main className="flex-1 flex items-center justify-center">
           <div className="text-center">
-            <h1 className="text-2xl font-bold mb-4">Product not found</h1>
+            <h1 className="text-2xl font-heading font-bold mb-4">Product not found</h1>
             <Button asChild>
               <Link to="/">Back to Home</Link>
             </Button>
@@ -132,14 +132,14 @@ const Product = () => {
 
       <div className="min-h-screen flex flex-col">
         <Header />
-        <main className="flex-1 py-8">
+        <main className="flex-1 py-8 md:py-12 pb-24 md:pb-12">
           <div className="container">
             {/* Breadcrumb Navigation */}
             <Breadcrumb className="mb-8">
               <BreadcrumbList>
                 <BreadcrumbItem>
                   <BreadcrumbLink asChild>
-                    <Link to="/" className="flex items-center gap-1">
+                    <Link to="/" className="flex items-center gap-1 font-body">
                       <Home className="h-4 w-4" />
                       Home
                     </Link>
@@ -148,19 +148,19 @@ const Product = () => {
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
                   <BreadcrumbLink asChild>
-                    <Link to="/#products">Products</Link>
+                    <Link to="/#products" className="font-body">Products</Link>
                   </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
-                  <BreadcrumbPage>{product.node.title}</BreadcrumbPage>
+                  <BreadcrumbPage className="font-body">{product.node.title}</BreadcrumbPage>
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
 
             <div className="grid md:grid-cols-2 gap-12">
               {/* Product Image */}
-              <div className="aspect-square bg-muted rounded-2xl overflow-hidden">
+              <div className="aspect-square bg-muted rounded-2xl overflow-hidden shadow-premium">
                 {image ? (
                   <img
                     src={image.url}
@@ -168,23 +168,23 @@ const Product = () => {
                     className="w-full h-full object-cover"
                   />
                 ) : (
-                  <div className="w-full h-full flex items-center justify-center">
-                    <ShoppingCart className="h-16 w-16 text-muted-foreground" />
+                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-secondary to-secondary/80">
+                    <span className="text-7xl font-display font-bold text-secondary-foreground/20">K</span>
                   </div>
                 )}
               </div>
 
               {/* Product Details */}
               <div className="flex flex-col">
-                <h1 className="text-3xl font-bold text-foreground mb-4">
+                <h1 className="text-hero font-display text-3xl md:text-4xl text-foreground mb-4">
                   {product.node.title}
                 </h1>
 
-                <p className="text-3xl font-bold text-primary mb-6">
+                <p className="text-4xl font-heading font-bold text-primary mb-6">
                   {price.currencyCode} {parseFloat(price.amount).toFixed(2)}
                 </p>
 
-                <p className="text-muted-foreground mb-8 leading-relaxed">
+                <p className="text-muted-foreground font-body mb-8 leading-relaxed text-lg">
                   {product.node.description}
                 </p>
 
@@ -193,7 +193,7 @@ const Product = () => {
                   <div className="mb-6">
                     {product.node.options.map((option, optionIndex) => (
                       <div key={optionIndex} className="mb-4">
-                        <label className="block text-sm font-medium mb-2">
+                        <label className="block text-sm font-heading font-medium mb-2">
                           {option.name}
                         </label>
                         <div className="flex flex-wrap gap-2">
@@ -201,7 +201,7 @@ const Product = () => {
                             <button
                               key={valueIndex}
                               onClick={() => setSelectedVariantIndex(valueIndex)}
-                              className={`px-4 py-2 rounded-lg border transition-colors ${
+                              className={`px-4 py-2 rounded-xl border-2 font-heading font-medium transition-all ${
                                 selectedVariantIndex === valueIndex
                                   ? "border-primary bg-primary/10 text-primary"
                                   : "border-border hover:border-primary/50"
@@ -218,22 +218,24 @@ const Product = () => {
 
                 {/* Quantity */}
                 <div className="mb-8">
-                  <label className="block text-sm font-medium mb-2">Quantity</label>
+                  <label className="block text-sm font-heading font-medium mb-2">Quantity</label>
                   <div className="flex items-center gap-4">
                     <Button
                       variant="outline"
                       size="icon"
                       onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                      className="rounded-xl"
                     >
                       <Minus className="h-4 w-4" />
                     </Button>
-                    <span className="text-lg font-medium w-12 text-center">
+                    <span className="text-lg font-heading font-medium w-12 text-center">
                       {quantity}
                     </span>
                     <Button
                       variant="outline"
                       size="icon"
                       onClick={() => setQuantity(quantity + 1)}
+                      className="rounded-xl"
                     >
                       <Plus className="h-4 w-4" />
                     </Button>
@@ -242,8 +244,8 @@ const Product = () => {
 
                 {/* Add to Cart */}
                 <Button
-                  size="lg"
-                  className="w-full mb-6"
+                  size="xl"
+                  className="w-full mb-6 group"
                   onClick={handleAddToCart}
                 >
                   <ShoppingCart className="h-5 w-5 mr-2" />
@@ -254,15 +256,16 @@ const Product = () => {
                 <div className="grid grid-cols-3 gap-4 pt-6 border-t border-border">
                   <div className="text-center">
                     <Zap className="h-5 w-5 mx-auto mb-1 text-accent" />
-                    <span className="text-xs text-muted-foreground">Instant Delivery</span>
+                    <span className="text-xs text-muted-foreground font-body">Instant Delivery</span>
                   </div>
                   <div className="text-center">
                     <RefreshCw className="h-5 w-5 mx-auto mb-1 text-accent" />
-                    <span className="text-xs text-muted-foreground">30-Day Guarantee</span>
+                    <span className="text-xs text-muted-foreground font-body">30-Day Guarantee</span>
                   </div>
                   <div className="text-center">
                     <Shield className="h-5 w-5 mx-auto mb-1 text-accent" />
-                    <span className="text-xs text-muted-foreground">Secure Checkout</span>
+                    <span className="text-xs text-muted-foreground font-body">Secure Checkout</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -272,52 +275,52 @@ const Product = () => {
               <div className="mt-16">
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {/* What's Inside */}
-                  <div className="bg-card border border-border rounded-xl p-6">
+                  <div className="bg-card border border-border rounded-2xl p-6 shadow-premium transition-all hover:-translate-y-1 hover:shadow-premium-hover">
                     <div className="flex items-center gap-3 mb-6">
-                      <div className="p-2 rounded-lg bg-primary/10">
+                      <div className="p-3 rounded-xl bg-primary/10">
                         <BookOpen className="w-5 h-5 text-primary" />
                       </div>
-                      <h2 className="text-xl font-bold text-foreground">What's Inside</h2>
+                      <h2 className="text-xl font-heading font-bold text-foreground">What's Inside</h2>
                     </div>
                     <ul className="space-y-3">
                       {bundleContent.products.map((item, index) => (
                         <li key={index} className="flex items-start gap-3">
                           <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                          <span className="text-muted-foreground">{item}</span>
+                          <span className="text-muted-foreground font-body">{item}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
                   {/* Who This Is For */}
-                  <div className="bg-card border border-border rounded-xl p-6">
+                  <div className="bg-card border border-border rounded-2xl p-6 shadow-premium transition-all hover:-translate-y-1 hover:shadow-premium-hover">
                     <div className="flex items-center gap-3 mb-6">
-                      <div className="p-2 rounded-lg bg-primary/10">
+                      <div className="p-3 rounded-xl bg-primary/10">
                         <Users className="w-5 h-5 text-primary" />
                       </div>
-                      <h2 className="text-xl font-bold text-foreground">Who This Is For</h2>
+                      <h2 className="text-xl font-heading font-bold text-foreground">Who This Is For</h2>
                     </div>
-                    <p className="text-muted-foreground mb-4">{bundleContent.whoIsItFor}</p>
-                    <div className="bg-accent/10 border border-accent/20 rounded-lg p-4">
-                      <p className="text-sm text-accent font-medium">
+                    <p className="text-muted-foreground font-body mb-4 leading-relaxed">{bundleContent.whoIsItFor}</p>
+                    <div className="bg-accent/10 border border-accent/20 rounded-xl p-4">
+                      <p className="text-sm text-accent font-heading font-medium">
                         Perfect for beginners — no prior experience needed!
                       </p>
                     </div>
                   </div>
 
                   {/* What You'll Learn */}
-                  <div className="bg-card border border-border rounded-xl p-6">
+                  <div className="bg-card border border-border rounded-2xl p-6 shadow-premium transition-all hover:-translate-y-1 hover:shadow-premium-hover">
                     <div className="flex items-center gap-3 mb-6">
-                      <div className="p-2 rounded-lg bg-primary/10">
+                      <div className="p-3 rounded-xl bg-primary/10">
                         <Target className="w-5 h-5 text-primary" />
                       </div>
-                      <h2 className="text-xl font-bold text-foreground">What You'll Learn</h2>
+                      <h2 className="text-xl font-heading font-bold text-foreground">What You'll Learn</h2>
                     </div>
                     <ul className="space-y-3">
                       {bundleContent.outcomes.map((outcome, index) => (
                         <li key={index} className="flex items-start gap-3">
                           <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                          <span className="text-muted-foreground">{outcome}</span>
+                          <span className="text-muted-foreground font-body">{outcome}</span>
                         </li>
                       ))}
                     </ul>
@@ -326,14 +329,13 @@ const Product = () => {
               </div>
             )}
           </div>
-          </div>
         </main>
 
         {/* Sticky Mobile Add to Cart */}
-        <div className="fixed bottom-0 left-0 right-0 bg-background border-t border-border p-4 md:hidden z-40">
+        <div className="fixed bottom-0 left-0 right-0 bg-background/95 backdrop-blur-sm border-t border-border p-4 md:hidden z-40 shadow-lg">
           <div className="flex items-center justify-between gap-4">
             <div>
-              <p className="font-bold text-lg text-primary">
+              <p className="font-heading font-bold text-xl text-primary">
                 {price.currencyCode} {parseFloat(price.amount).toFixed(2)}
               </p>
             </div>
