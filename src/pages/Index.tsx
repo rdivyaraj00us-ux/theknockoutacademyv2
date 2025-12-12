@@ -57,10 +57,10 @@ const Index = () => {
     loadProducts();
   }, []);
 
-  // Filter out master bundle from individual products grid
-  const individualProducts = products.filter(
-    p => !p.node.title.toLowerCase().includes("master") && !p.node.handle.toLowerCase().includes("master")
-  );
+  // Filter out master bundle from individual products grid and sort alphabetically
+  const individualProducts = products
+    .filter(p => !p.node.title.toLowerCase().includes("master") && !p.node.handle.toLowerCase().includes("master"))
+    .sort((a, b) => a.node.title.localeCompare(b.node.title));
 
   return (
     <>
