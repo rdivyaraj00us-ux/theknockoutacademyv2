@@ -55,6 +55,17 @@ const Index = () => {
     loadProducts();
   }, []);
 
+  // Handle hash link scrolling from other pages
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const element = document.querySelector(hash);
+      if (element) {
+        setTimeout(() => element.scrollIntoView({ behavior: 'smooth' }), 100);
+      }
+    }
+  }, []);
+
   const individualProducts = products
     .filter(p => !p.node.title.toLowerCase().includes("master") && !p.node.handle.toLowerCase().includes("master"))
     .sort((a, b) => a.node.title.localeCompare(b.node.title));
@@ -65,6 +76,38 @@ const Index = () => {
         <title>The Knockout Academy | Master Skills That Actually Make Money Online</title>
         <meta name="description" content="40+ Premium eBooks, Guides & 8,000+ AI Automation Templates. From complete beginner to confident professional. Instant digital delivery, 30-day money-back guarantee." />
         <link rel="canonical" href="https://knockoutacademy.com" />
+        {/* Organization Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "The Knockout Academy",
+            "description": "Premium digital education platform offering practical skills training for entrepreneurs, freelancers, and career changers.",
+            "url": "https://knockoutacademy.com",
+            "logo": "https://knockoutacademy.com/logo.png",
+            "sameAs": [],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "email": "support@theknockoutacademy.com",
+              "contactType": "customer service"
+            }
+          })}
+        </script>
+        {/* FAQ Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": faqs.map(faq => ({
+              "@type": "Question",
+              "name": faq.q,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.a
+              }
+            }))
+          })}
+        </script>
       </Helmet>
 
       <div className="min-h-screen flex flex-col">
