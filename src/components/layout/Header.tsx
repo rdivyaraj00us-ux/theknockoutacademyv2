@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { ShoppingCart, Menu, X, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useCartStore } from "@/stores/cartStore";
@@ -8,6 +8,12 @@ import { CartDrawer } from "@/components/cart/CartDrawer";
 export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const totalItems = useCartStore((state) => state.getTotalItems());
+  const location = useLocation();
+
+  const isActive = (path: string) => {
+    if (path === "/") return location.pathname === "/";
+    return location.pathname.startsWith(path);
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
@@ -28,10 +34,11 @@ export const Header = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-8 md:flex" aria-label="Main navigation">
           <Link 
             to="/" 
-            className="text-sm font-heading font-medium text-muted-foreground transition-colors hover:text-foreground"
+            className={`text-sm font-heading font-medium transition-colors hover:text-foreground ${isActive("/") && location.pathname === "/" ? "text-foreground" : "text-muted-foreground"}`}
+            aria-current={location.pathname === "/" ? "page" : undefined}
           >
             Home
           </Link>
@@ -43,13 +50,15 @@ export const Header = () => {
           </Link>
           <Link 
             to="/about" 
-            className="text-sm font-heading font-medium text-muted-foreground transition-colors hover:text-foreground"
+            className={`text-sm font-heading font-medium transition-colors hover:text-foreground ${isActive("/about") ? "text-foreground" : "text-muted-foreground"}`}
+            aria-current={isActive("/about") ? "page" : undefined}
           >
             About
           </Link>
           <Link 
             to="/contact" 
-            className="text-sm font-heading font-medium text-muted-foreground transition-colors hover:text-foreground"
+            className={`text-sm font-heading font-medium transition-colors hover:text-foreground ${isActive("/contact") ? "text-foreground" : "text-muted-foreground"}`}
+            aria-current={isActive("/contact") ? "page" : undefined}
           >
             Contact
           </Link>
@@ -74,6 +83,9 @@ export const Header = () => {
             size="icon"
             className="md:hidden"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-menu"
+            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           >
             {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </Button>
@@ -82,12 +94,13 @@ export const Header = () => {
 
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
-        <div className="border-t border-border bg-background md:hidden animate-fade-in">
-          <nav className="container flex flex-col gap-1 py-4">
+        <div id="mobile-menu" className="border-t border-border bg-background md:hidden animate-fade-in">
+          <nav className="container flex flex-col gap-1 py-4" aria-label="Mobile navigation">
             <Link 
               to="/" 
-              className="px-4 py-3 text-base font-heading font-medium text-foreground hover:bg-muted rounded-lg transition-colors"
+              className={`px-4 py-3 text-base font-heading font-medium rounded-lg transition-colors ${location.pathname === "/" ? "bg-muted text-foreground" : "text-foreground hover:bg-muted"}`}
               onClick={() => setMobileMenuOpen(false)}
+              aria-current={location.pathname === "/" ? "page" : undefined}
             >
               Home
             </Link>
@@ -100,15 +113,17 @@ export const Header = () => {
             </Link>
             <Link 
               to="/about" 
-              className="px-4 py-3 text-base font-heading font-medium text-foreground hover:bg-muted rounded-lg transition-colors"
+              className={`px-4 py-3 text-base font-heading font-medium rounded-lg transition-colors ${isActive("/about") ? "bg-muted text-foreground" : "text-foreground hover:bg-muted"}`}
               onClick={() => setMobileMenuOpen(false)}
+              aria-current={isActive("/about") ? "page" : undefined}
             >
               About
             </Link>
             <Link 
               to="/contact" 
-              className="px-4 py-3 text-base font-heading font-medium text-foreground hover:bg-muted rounded-lg transition-colors"
+              className={`px-4 py-3 text-base font-heading font-medium rounded-lg transition-colors ${isActive("/contact") ? "bg-muted text-foreground" : "text-foreground hover:bg-muted"}`}
               onClick={() => setMobileMenuOpen(false)}
+              aria-current={isActive("/contact") ? "page" : undefined}
             >
               Contact
             </Link>
