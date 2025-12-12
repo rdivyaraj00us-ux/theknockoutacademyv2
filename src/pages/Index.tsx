@@ -68,7 +68,7 @@ const Index = () => {
   }, []);
 
   const individualProducts = products
-    .filter(p => !p.node.title.toLowerCase().includes("master") && !p.node.handle.toLowerCase().includes("master"))
+    .filter(p => !p.node.title.toLowerCase().includes("master bundle") && !p.node.handle.toLowerCase().includes("master-bundle"))
     .sort((a, b) => a.node.title.localeCompare(b.node.title));
 
   return (
