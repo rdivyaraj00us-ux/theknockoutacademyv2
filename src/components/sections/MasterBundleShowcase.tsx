@@ -3,6 +3,7 @@ import { ArrowRight, CheckCircle2, Bot, Brain, ShoppingCart, Video, Mail, Clock,
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ScrollAnimation } from "@/hooks/useScrollAnimation";
+import { SavingsCalculator } from "./SavingsCalculator";
 
 const includedBundles = [
   { icon: Brain, title: "AI Mastery Essentials" },
@@ -50,7 +51,7 @@ export const MasterBundleShowcase = () => {
 
         {/* Main Product Card */}
         <ScrollAnimation animation="scale-in" delay={100}>
-          <div className="max-w-4xl mx-auto mb-16">
+          <div className="max-w-4xl mx-auto mb-12">
             <div className="relative bg-secondary-foreground/5 rounded-3xl border border-primary/30 p-8 md:p-12 backdrop-blur-sm shadow-glow-royal animate-pulse-glow">
               {/* Glow effect */}
               <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-transparent to-accent/20 rounded-3xl blur-xl opacity-50" />
@@ -110,9 +111,12 @@ export const MasterBundleShowcase = () => {
           </div>
         </div>
 
+        {/* Savings Calculator */}
+        <SavingsCalculator />
+
         {/* Bonus Box */}
         <ScrollAnimation animation="scale-in" delay={400}>
-          <div className="max-w-2xl mx-auto mb-12">
+          <div className="max-w-2xl mx-auto my-12">
             <div className="bg-accent/10 border border-accent/30 rounded-2xl p-6 text-center hover:shadow-glow-emerald transition-shadow duration-300">
               <div className="flex items-center justify-center gap-3 mb-2">
                 <Bot className="h-6 w-6 text-accent" />

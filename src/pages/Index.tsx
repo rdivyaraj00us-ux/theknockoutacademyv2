@@ -6,12 +6,18 @@ import { StickyMobileCTA } from "@/components/layout/StickyMobileCTA";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { ProblemAgitation } from "@/components/sections/ProblemAgitation";
 import { SolutionIntro } from "@/components/sections/SolutionIntro";
+import { HowItWorks } from "@/components/sections/HowItWorks";
 import { MasterBundleShowcase } from "@/components/sections/MasterBundleShowcase";
 import { WhoThisIsFor } from "@/components/sections/WhoThisIsFor";
 import { SocialProof } from "@/components/sections/SocialProof";
+import { LearningPathway } from "@/components/sections/LearningPathway";
+import { WhatsInsideSection } from "@/components/sections/WhatsInsideSection";
+import { WhyThisPrice } from "@/components/sections/WhyThisPrice";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { ProductCard } from "@/components/products/ProductCard";
 import { ProductGridSkeleton } from "@/components/ui/product-skeleton";
+import { ScrollProgress } from "@/components/ui/ScrollProgress";
+import { FloatingBestValue } from "@/components/ui/FloatingBestValue";
 import { fetchProducts, ShopifyProduct } from "@/lib/shopify";
 import { Package, Zap, BookOpen, Sparkles } from "lucide-react";
 import {
@@ -32,6 +38,12 @@ const faqs = [
   { q: "Is this a get-rich-quick scheme?", a: "Absolutely not. The Knockout Academy provides educational resources to help you build real, marketable skills. Results depend entirely on your effort, dedication, and how you apply what you learn. We make no income promises — just quality education." },
   { q: "I'm a complete beginner — will I understand this?", a: "Yes! Every bundle is designed with beginners in mind. We start from the fundamentals and guide you step-by-step. No prior experience or technical knowledge required." },
   { q: "How do I access my purchase?", a: "Instantly! As soon as your payment is confirmed, you'll receive download links via email. You can start learning within minutes of your purchase." },
+  { q: "What format are the products in?", a: "You'll receive a mix of formats designed for different learning styles: PDF eBooks and guides for reading, MP4 video tutorials for visual learning, checklists and templates for implementation, and JSON files for the n8n automation templates. Everything is downloadable and works on any device." },
+  { q: "How long do I have access?", a: "Forever. This is a one-time purchase with lifetime access. Download the files and they're yours to keep. No subscriptions, no recurring charges, no access expiration." },
+  { q: "Can I use these for my business or clients?", a: "Absolutely. You can use everything you learn and all templates for personal and commercial purposes. The only restriction is you cannot resell the actual products or give them away as-is." },
+  { q: "What if I already know some of this stuff?", a: "With 40+ resources across 6 skill areas plus 8,000 templates, you'll definitely find valuable content you haven't seen before. And with our 30-day guarantee, you can always get a refund if it's truly not for you." },
+  { q: "Is this just ChatGPT-generated content?", a: "No. These are professionally developed educational products that took months to create. They're written by experts, not AI-generated fluff. We use AI as a tool, but the substance comes from real expertise." },
+  { q: "Why should I trust you?", a: "We've helped 40,000+ customers. We offer a no-questions-asked 30-day refund policy. We don't make income promises or use fake scarcity. And our products speak for themselves — that's why 98% of buyers don't request refunds." },
   { q: "What's included in the 8,000+ AI templates?", a: "The Master Bundle includes plug-and-play automation workflows for n8n — a powerful automation tool. These templates cover everything from social media automation to data processing, ready to use with minimal setup." },
   { q: "What if I'm not satisfied?", a: "We offer a 30-day money-back guarantee. If you're not happy with your purchase for any reason, contact us within 30 days for a full refund. No questions asked." },
   { q: "Do you offer updates or new content?", a: "What you see is what you get. We focus on quality over quantity and don't make empty promises about future updates. The current content is complete and ready to use." },
@@ -56,7 +68,6 @@ const Index = () => {
     loadProducts();
   }, []);
 
-  // Handle hash link scrolling from other pages
   useEffect(() => {
     const hash = window.location.hash;
     if (hash) {
@@ -77,7 +88,6 @@ const Index = () => {
         <title>The Knockout Academy | Master Skills That Actually Make Money Online</title>
         <meta name="description" content="40+ Premium eBooks, Guides & 8,000+ AI Automation Templates. From complete beginner to confident professional. Instant digital delivery, 30-day money-back guarantee." />
         <link rel="canonical" href="https://knockoutacademy.com" />
-        {/* Organization Schema */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -86,15 +96,15 @@ const Index = () => {
             "description": "Premium digital education platform offering practical skills training for entrepreneurs, freelancers, and career changers.",
             "url": "https://knockoutacademy.com",
             "logo": "https://knockoutacademy.com/logo.png",
-            "sameAs": [],
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "email": "support@theknockoutacademy.com",
-              "contactType": "customer service"
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "40000",
+              "bestRating": "5",
+              "worstRating": "1"
             }
           })}
         </script>
-        {/* FAQ Schema */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -102,14 +112,14 @@ const Index = () => {
             "mainEntity": faqs.map(faq => ({
               "@type": "Question",
               "name": faq.q,
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": faq.a
-              }
+              "acceptedAnswer": { "@type": "Answer", "text": faq.a }
             }))
           })}
         </script>
       </Helmet>
+
+      <ScrollProgress />
+      <FloatingBestValue />
 
       <div className="min-h-screen flex flex-col">
         <Header />
@@ -117,6 +127,7 @@ const Index = () => {
           <HeroSection />
           <ProblemAgitation />
           <SolutionIntro />
+          <HowItWorks />
           <MasterBundleShowcase />
 
           {/* Individual Bundles Grid */}
@@ -145,8 +156,10 @@ const Index = () => {
             </div>
           </section>
 
+          <LearningPathway />
+
           {/* What Makes Us Different */}
-          <section className="py-20 md:py-28 bg-soft-gray">
+          <section className="py-20 md:py-28 bg-background">
             <div className="container">
               <h2 className="text-section-title font-display text-3xl md:text-4xl text-center text-foreground mb-12">What Makes Us Different</h2>
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 max-w-5xl mx-auto">
@@ -165,9 +178,10 @@ const Index = () => {
 
           <WhoThisIsFor />
           <SocialProof />
+          <WhatsInsideSection />
 
           {/* FAQ */}
-          <section id="faq" className="py-20 md:py-28 bg-soft-gray">
+          <section id="faq" className="py-20 md:py-28 bg-background">
             <div className="container max-w-3xl">
               <h2 className="text-section-title font-display text-3xl md:text-4xl text-center text-foreground mb-12">Frequently Asked Questions</h2>
               <Accordion type="single" collapsible className="space-y-4">
@@ -181,6 +195,7 @@ const Index = () => {
             </div>
           </section>
 
+          <WhyThisPrice />
           <FinalCTA />
         </main>
         <StickyMobileCTA />
