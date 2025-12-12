@@ -18,7 +18,8 @@ export const ProductCard = ({ product, featured = false }: ProductCardProps) => 
   const price = parseFloat(node.priceRange.minVariantPrice.amount);
   const imageUrl = node.images?.edges?.[0]?.node?.url;
   const variant = node.variants?.edges?.[0]?.node;
-  const isMasterBundle = node.title.toLowerCase().includes('master');
+  const isMasterBundle = node.title.toLowerCase().includes('master bundle') || 
+    node.handle.toLowerCase() === 'the-knockout-master-bundle';
 
   const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault();
