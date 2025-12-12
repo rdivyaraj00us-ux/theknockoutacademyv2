@@ -3,13 +3,15 @@ import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { ProblemSolution } from "@/components/sections/ProblemSolution";
+import { ProblemAgitation } from "@/components/sections/ProblemAgitation";
+import { SolutionIntro } from "@/components/sections/SolutionIntro";
 import { MasterBundleShowcase } from "@/components/sections/MasterBundleShowcase";
+import { WhoThisIsFor } from "@/components/sections/WhoThisIsFor";
 import { SocialProof } from "@/components/sections/SocialProof";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { ProductCard } from "@/components/products/ProductCard";
 import { fetchProducts, ShopifyProduct } from "@/lib/shopify";
-import { Loader2, BookOpen, Zap, Users, Target, Package, Sparkles } from "lucide-react";
+import { Loader2, Package, Zap, BookOpen, Sparkles } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -24,19 +26,14 @@ const features = [
   { icon: Sparkles, title: "Real Templates", description: "8,000+ n8n automation workflows included" },
 ];
 
-const audiences = [
-  { icon: Target, title: "Side Hustlers", description: "Seeking additional income streams" },
-  { icon: Users, title: "Career Changers", description: "Learning valuable new skills" },
-  { icon: Zap, title: "Entrepreneurs", description: "Starting online businesses" },
-  { icon: BookOpen, title: "Freelancers", description: "Expanding their services" },
-];
-
 const faqs = [
-  { q: "Is this a get-rich-quick scheme?", a: "Absolutely not. These are educational resources to help you build real skills. Results depend entirely on your effort and implementation." },
-  { q: "I'm a complete beginner. Will I understand this?", a: "Yes! Everything is designed for beginners. We start from the basics and guide you step-by-step." },
-  { q: "How do I access my purchase?", a: "Instantly! You'll receive download links immediately after checkout, plus a backup email with all your files." },
-  { q: "What if I'm not satisfied?", a: "We offer a 30-day money-back guarantee. No questions asked." },
-  { q: "Do you offer updates or new content?", a: "What you see is what you get. We focus on quality over quantity — no empty promises of future updates." },
+  { q: "Is this a get-rich-quick scheme?", a: "Absolutely not. The Knockout Academy provides educational resources to help you build real, marketable skills. Results depend entirely on your effort, dedication, and how you apply what you learn. We make no income promises — just quality education." },
+  { q: "I'm a complete beginner — will I understand this?", a: "Yes! Every bundle is designed with beginners in mind. We start from the fundamentals and guide you step-by-step. No prior experience or technical knowledge required." },
+  { q: "How do I access my purchase?", a: "Instantly! As soon as your payment is confirmed, you'll receive download links via email. You can start learning within minutes of your purchase." },
+  { q: "What's included in the 8,000+ AI templates?", a: "The Master Bundle includes plug-and-play automation workflows for n8n — a powerful automation tool. These templates cover everything from social media automation to data processing, ready to use with minimal setup." },
+  { q: "What if I'm not satisfied?", a: "We offer a 30-day money-back guarantee. If you're not happy with your purchase for any reason, contact us within 30 days for a full refund. No questions asked." },
+  { q: "Do you offer updates or new content?", a: "What you see is what you get. We focus on quality over quantity and don't make empty promises about future updates. The current content is complete and ready to use." },
+  { q: "Can I buy individual bundles and upgrade later?", a: "Yes! You can purchase any individual bundle for $29. If you later decide you want the Master Bundle, contact support and we'll apply your previous purchase as credit." },
 ];
 
 const Index = () => {
@@ -57,7 +54,6 @@ const Index = () => {
     loadProducts();
   }, []);
 
-  // Filter out master bundle from individual products grid and sort alphabetically
   const individualProducts = products
     .filter(p => !p.node.title.toLowerCase().includes("master") && !p.node.handle.toLowerCase().includes("master"))
     .sort((a, b) => a.node.title.localeCompare(b.node.title));
@@ -67,37 +63,23 @@ const Index = () => {
       <Helmet>
         <title>The Knockout Academy | Master Skills That Actually Make Money Online</title>
         <meta name="description" content="40+ Premium eBooks, Guides & 8,000+ AI Automation Templates. From complete beginner to confident professional. Instant digital delivery, 30-day money-back guarantee." />
-        <meta name="keywords" content="digital marketing, AI automation, eBooks, online business, side hustle, n8n templates" />
         <link rel="canonical" href="https://knockoutacademy.com" />
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "The Knockout Academy",
-            "description": "Digital education brand for aspiring entrepreneurs",
-            "url": "https://knockoutacademy.com"
-          })}
-        </script>
       </Helmet>
 
       <div className="min-h-screen flex flex-col">
         <Header />
         <main className="flex-1">
-          {/* Section 1: Hero */}
           <HeroSection />
-          
-          {/* Section 2: Problem/Solution */}
-          <ProblemSolution />
-
-          {/* Section 3: Master Bundle Showcase */}
+          <ProblemAgitation />
+          <SolutionIntro />
           <MasterBundleShowcase />
 
-          {/* Section 4: Individual Bundles Grid */}
-          <section id="products" className="py-20 bg-muted/30">
+          {/* Individual Bundles Grid */}
+          <section id="products" className="py-20 md:py-28 bg-background">
             <div className="container">
               <div className="text-center max-w-2xl mx-auto mb-12">
-                <h2 className="text-3xl font-bold text-foreground md:text-4xl">Individual Bundles - $29 Each</h2>
-                <p className="mt-4 text-lg text-muted-foreground">Choose your path to success. Each bundle is packed with actionable resources.</p>
+                <h2 className="text-section-title font-display text-3xl md:text-4xl text-foreground mb-4">Choose Your Focus Area</h2>
+                <p className="text-lg text-muted-foreground">Each bundle is designed to take you from beginner to confident in weeks</p>
               </div>
 
               {loading ? (
@@ -107,7 +89,7 @@ const Index = () => {
               ) : individualProducts.length === 0 ? (
                 <div className="text-center py-20 bg-card rounded-xl border border-border">
                   <Package className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
-                  <h3 className="text-xl font-semibold mb-2">No products found</h3>
+                  <h3 className="text-xl font-heading font-semibold mb-2">No products found</h3>
                   <p className="text-muted-foreground">Tell us what products you'd like to add!</p>
                 </div>
               ) : (
@@ -120,17 +102,17 @@ const Index = () => {
             </div>
           </section>
 
-          {/* Section 5: What Makes Us Different */}
-          <section className="py-20">
+          {/* What Makes Us Different */}
+          <section className="py-20 md:py-28 bg-soft-gray">
             <div className="container">
-              <h2 className="text-3xl font-bold text-center mb-12">What Makes Us Different</h2>
-              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              <h2 className="text-section-title font-display text-3xl md:text-4xl text-center text-foreground mb-12">What Makes Us Different</h2>
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 max-w-5xl mx-auto">
                 {features.map((feature, i) => (
-                  <div key={i} className="p-6 bg-card rounded-xl border border-border text-center hover:shadow-lg transition-shadow">
-                    <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
-                      <feature.icon className="h-6 w-6 text-primary" />
+                  <div key={i} className="p-6 bg-card rounded-xl border border-border text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-primary/30">
+                    <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
+                      <feature.icon className="h-7 w-7 text-primary" />
                     </div>
-                    <h3 className="font-semibold mb-2">{feature.title}</h3>
+                    <h3 className="font-heading font-bold mb-2 text-foreground">{feature.title}</h3>
                     <p className="text-sm text-muted-foreground">{feature.description}</p>
                   </div>
                 ))}
@@ -138,43 +120,24 @@ const Index = () => {
             </div>
           </section>
 
-          {/* Section 6: Who This Is For */}
-          <section className="py-20 bg-secondary">
-            <div className="container">
-              <h2 className="text-3xl font-bold text-center text-secondary-foreground mb-12">Who This Is For</h2>
-              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                {audiences.map((audience, i) => (
-                  <div key={i} className="p-6 bg-secondary-foreground/5 rounded-xl text-center border border-secondary-foreground/10">
-                    <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center">
-                      <audience.icon className="h-6 w-6 text-primary" />
-                    </div>
-                    <h3 className="font-semibold text-secondary-foreground mb-2">{audience.title}</h3>
-                    <p className="text-sm text-secondary-foreground/70">{audience.description}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          {/* Section 7: Social Proof */}
+          <WhoThisIsFor />
           <SocialProof />
 
-          {/* Section 8: FAQ */}
-          <section id="faq" className="py-20">
+          {/* FAQ */}
+          <section id="faq" className="py-20 md:py-28 bg-soft-gray">
             <div className="container max-w-3xl">
-              <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+              <h2 className="text-section-title font-display text-3xl md:text-4xl text-center text-foreground mb-12">Frequently Asked Questions</h2>
               <Accordion type="single" collapsible className="space-y-4">
                 {faqs.map((faq, i) => (
                   <AccordionItem key={i} value={`faq-${i}`} className="bg-card rounded-xl border border-border px-6">
-                    <AccordionTrigger className="text-left font-semibold hover:no-underline">{faq.q}</AccordionTrigger>
-                    <AccordionContent className="text-muted-foreground">{faq.a}</AccordionContent>
+                    <AccordionTrigger className="text-left font-heading font-semibold hover:no-underline py-5">{faq.q}</AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground pb-5 leading-relaxed">{faq.a}</AccordionContent>
                   </AccordionItem>
                 ))}
               </Accordion>
             </div>
           </section>
 
-          {/* Section 9: Final CTA */}
           <FinalCTA />
         </main>
         <Footer />

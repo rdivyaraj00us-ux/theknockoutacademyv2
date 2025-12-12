@@ -1,35 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    /* The Knockout Academy Design System */
-    /* Primary: Deep Navy */
-    --background: 0 0% 100%;
-    --foreground: 215 25% 27%;
+    /* The Knockout Academy Premium Design System */
+    /* Based on $10M brand specifications */
+    
+    /* Deep Navy Primary */
+    --background: 210 40% 98%;
+    --foreground: 215 25% 21%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 25% 27%;
+    --card-foreground: 215 25% 21%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 27%;
+    --popover-foreground: 215 25% 21%;
 
-    /* Electric Blue - Primary Action */
-    --primary: 217 91% 60%;
+    /* Royal Blue - Primary Action */
+    --primary: 221 83% 53%;
     --primary-foreground: 0 0% 100%;
 
     /* Deep Navy - Secondary */
     --secondary: 222 47% 11%;
     --secondary-foreground: 0 0% 100%;
 
-    /* Muted: Light backgrounds */
-    --muted: 210 20% 96%;
+    /* Soft Gray - Muted backgrounds */
+    --muted: 210 40% 98%;
     --muted-foreground: 215 16% 47%;
 
-    /* Emerald Accent - Success/CTA */
+    /* Emerald - Success/CTA */
     --accent: 160 84% 39%;
     --accent-foreground: 0 0% 100%;
 
@@ -38,33 +38,45 @@
 
     --border: 214 32% 91%;
     --input: 214 32% 91%;
-    --ring: 217 91% 60%;
+    --ring: 221 83% 53%;
 
-    --radius: 0.625rem;
+    --radius: 0.75rem;
 
-    /* Custom tokens for The Knockout Academy */
+    /* Custom Knockout Academy tokens */
     --navy: 222 47% 11%;
+    --navy-dark: 222 47% 5%;
     --navy-foreground: 0 0% 100%;
-    --electric: 217 91% 60%;
-    --electric-glow: 217 91% 70%;
+    --royal: 221 83% 53%;
+    --royal-glow: 221 83% 63%;
     --emerald: 160 84% 39%;
     --emerald-glow: 160 84% 49%;
+    --gold: 38 92% 50%;
+    --gold-foreground: 0 0% 100%;
     --slate: 215 25% 27%;
     --slate-light: 215 16% 47%;
+    --soft-gray: 210 40% 98%;
+    
+    /* Coral/Warning for pain points */
+    --coral: 0 74% 60%;
+    --coral-light: 0 74% 95%;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(222 47% 11%) 0%, hsl(222 47% 18%) 100%);
-    --gradient-cta: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(217 91% 50%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(222 47% 11%) 0%, hsl(222 47% 18%) 50%, hsl(222 47% 14%) 100%);
+    --gradient-mesh: radial-gradient(ellipse at 30% 20%, hsl(221 83% 53% / 0.15) 0%, transparent 50%), 
+                     radial-gradient(ellipse at 70% 80%, hsl(160 84% 39% / 0.1) 0%, transparent 50%);
+    --gradient-cta: linear-gradient(135deg, hsl(221 83% 53%) 0%, hsl(221 83% 48%) 100%);
     --gradient-success: linear-gradient(135deg, hsl(160 84% 39%) 0%, hsl(160 84% 34%) 100%);
-    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 20% 98%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 40% 98%) 100%);
+    --gradient-radial-navy: radial-gradient(ellipse at center, hsl(222 47% 15%) 0%, hsl(222 47% 11%) 100%);
 
-    /* Shadows */
+    /* Premium Shadows */
     --shadow-sm: 0 1px 2px 0 hsl(222 47% 11% / 0.05);
-    --shadow-md: 0 4px 6px -1px hsl(222 47% 11% / 0.1), 0 2px 4px -2px hsl(222 47% 11% / 0.1);
-    --shadow-lg: 0 10px 15px -3px hsl(222 47% 11% / 0.1), 0 4px 6px -4px hsl(222 47% 11% / 0.1);
-    --shadow-xl: 0 20px 25px -5px hsl(222 47% 11% / 0.1), 0 8px 10px -6px hsl(222 47% 11% / 0.1);
-    --shadow-glow-electric: 0 0 40px hsl(217 91% 60% / 0.3);
+    --shadow-md: 0 4px 20px hsl(222 47% 11% / 0.06);
+    --shadow-lg: 0 8px 30px hsl(222 47% 11% / 0.1);
+    --shadow-xl: 0 20px 40px hsl(222 47% 11% / 0.12);
+    --shadow-glow-royal: 0 0 40px hsl(221 83% 53% / 0.3);
     --shadow-glow-emerald: 0 0 40px hsl(160 84% 39% / 0.3);
+    --shadow-glow-gold: 0 0 30px hsl(38 92% 50% / 0.3);
 
     /* Sidebar */
     --sidebar-background: 0 0% 98%;
@@ -74,24 +86,24 @@
     --sidebar-accent: 240 4.8% 95.9%;
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217 91% 60%;
+    --sidebar-ring: 221 83% 53%;
   }
 
   .dark {
-    --background: 222 47% 7%;
-    --foreground: 210 20% 96%;
+    --background: 222 47% 5%;
+    --foreground: 210 40% 98%;
 
     --card: 222 47% 11%;
-    --card-foreground: 210 20% 96%;
+    --card-foreground: 210 40% 98%;
 
     --popover: 222 47% 11%;
-    --popover-foreground: 210 20% 96%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 217 91% 60%;
+    --primary: 221 83% 53%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 217 32% 20%;
-    --secondary-foreground: 210 20% 96%;
+    --secondary-foreground: 210 40% 98%;
 
     --muted: 217 32% 17%;
     --muted-foreground: 215 20% 65%;
@@ -100,20 +112,20 @@
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 63% 31%;
-    --destructive-foreground: 210 20% 96%;
+    --destructive-foreground: 210 40% 98%;
 
     --border: 217 32% 20%;
     --input: 217 32% 20%;
-    --ring: 217 91% 60%;
+    --ring: 221 83% 53%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary: 221 83% 53%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 240 3.7% 15.9%;
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217 91% 60%;
+    --sidebar-ring: 221 83% 53%;
   }
 }
 
@@ -127,11 +139,45 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Source Sans 3', system-ui, sans-serif;
   }
 }
 
 @layer utilities {
+  /* Typography Classes */
+  .font-display {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  .font-heading {
+    font-family: 'Montserrat', system-ui, sans-serif;
+  }
+
+  .font-body {
+    font-family: 'Source Sans 3', system-ui, sans-serif;
+  }
+
+  /* Premium Text Styles */
+  .text-hero {
+    @apply font-display font-bold tracking-tight leading-[1.1];
+    letter-spacing: -0.02em;
+  }
+
+  .text-section-title {
+    @apply font-heading font-bold;
+  }
+
+  .text-subheading {
+    @apply font-heading font-semibold;
+  }
+
+  /* Button Text */
+  .text-button {
+    @apply font-heading font-semibold uppercase tracking-wide text-base;
+  }
+
+  /* Gradient Utilities */
   .text-gradient-primary {
     @apply bg-clip-text text-transparent;
     background-image: var(--gradient-cta);
@@ -139,6 +185,14 @@
 
   .bg-gradient-hero {
     background: var(--gradient-hero);
+  }
+
+  .bg-gradient-mesh {
+    background: var(--gradient-mesh);
+  }
+
+  .bg-gradient-radial-navy {
+    background: var(--gradient-radial-navy);
   }
 
   .bg-gradient-cta {
@@ -153,14 +207,38 @@
     background: var(--gradient-subtle);
   }
 
-  .shadow-glow-electric {
-    box-shadow: var(--shadow-glow-electric);
+  /* Premium Shadow Utilities */
+  .shadow-premium {
+    box-shadow: var(--shadow-md);
+  }
+
+  .shadow-premium-hover {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .shadow-glow-royal {
+    box-shadow: var(--shadow-glow-royal);
   }
 
   .shadow-glow-emerald {
     box-shadow: var(--shadow-glow-emerald);
   }
 
+  .shadow-glow-gold {
+    box-shadow: var(--shadow-glow-gold);
+  }
+
+  /* Card Hover Effect */
+  .card-hover {
+    @apply transition-all duration-300;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  /* Animation Classes */
   .animate-fade-in {
     animation: fadeIn 0.5s ease-out forwards;
   }
@@ -176,8 +254,21 @@
   .animate-slide-in-right {
     animation: slideInRight 0.5s ease-out forwards;
   }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+
+  .animate-bounce-subtle {
+    animation: bounceSubtle 2s ease-in-out infinite;
+  }
 }
 
+/* Keyframe Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -220,7 +311,50 @@
   }
 }
 
-/* Custom scrollbar */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(221 83% 53% / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(221 83% 53% / 0.5);
+  }
+}
+
+@keyframes bounceSubtle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Scroll Indicator Animation */
+@keyframes scrollBounce {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(8px);
+    opacity: 0.5;
+  }
+}
+
+.animate-scroll-bounce {
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -237,4 +371,10 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--slate));
+}
+
+/* Selection Color */
+::selection {
+  background: hsl(var(--primary) / 0.2);
+  color: hsl(var(--foreground));
 }
