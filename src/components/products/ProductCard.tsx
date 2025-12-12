@@ -1,10 +1,61 @@
 import { Link } from "react-router-dom";
-import { ShoppingCart, ArrowRight } from "lucide-react";
+import { ShoppingCart, ArrowRight, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ShopifyProduct, CartItem } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
 import { toast } from "sonner";
+
+// Bundle highlights mapping
+const bundleHighlights: Record<string, string[]> = {
+  "ai-mastery": [
+    "Master ChatGPT, Claude & Perplexity",
+    "Prompt engineering frameworks",
+    "AI workflow automation guides"
+  ],
+  "e-commerce": [
+    "Complete store setup guides",
+    "Ad funnel & PMax strategies",
+    "Customer retention systems"
+  ],
+  "content-creator": [
+    "YouTube growth accelerator",
+    "CapCut editing mastery",
+    "AI content workflows"
+  ],
+  "digital-marketing": [
+    "Email marketing automation",
+    "Micro-offer strategies",
+    "Business planning frameworks"
+  ],
+  "productivity": [
+    "Time management systems",
+    "Focus & goal-setting guides",
+    "ADHD productivity hacks"
+  ],
+  "finance": [
+    "Multi-bucket savings system",
+    "Crypto & blockchain basics",
+    "Smart money management"
+  ],
+  "master": [
+    "All 6 bundles included",
+    "8,000+ n8n templates",
+    "Beginner-to-expert pathway"
+  ]
+};
+
+const getHighlights = (handle: string): string[] => {
+  const lowerHandle = handle.toLowerCase();
+  if (lowerHandle.includes("master")) return bundleHighlights["master"];
+  if (lowerHandle.includes("ai-mastery")) return bundleHighlights["ai-mastery"];
+  if (lowerHandle.includes("e-commerce") || lowerHandle.includes("ecommerce")) return bundleHighlights["e-commerce"];
+  if (lowerHandle.includes("content-creator")) return bundleHighlights["content-creator"];
+  if (lowerHandle.includes("digital-marketing") || lowerHandle.includes("marketing")) return bundleHighlights["digital-marketing"];
+  if (lowerHandle.includes("productivity")) return bundleHighlights["productivity"];
+  if (lowerHandle.includes("finance")) return bundleHighlights["finance"];
+  return ["Premium digital resources", "Instant download access", "Beginner-friendly guides"];
+};
 
 interface ProductCardProps {
   product: ShopifyProduct;
@@ -20,6 +71,7 @@ export const ProductCard = ({ product, featured = false }: ProductCardProps) => 
   const variant = node.variants?.edges?.[0]?.node;
   const isMasterBundle = node.title.toLowerCase().includes('master bundle') || 
     node.handle.toLowerCase() === 'the-knockout-master-bundle';
+  const highlights = getHighlights(node.handle);
 
   const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -82,9 +134,15 @@ export const ProductCard = ({ product, featured = false }: ProductCardProps) => 
           </h3>
         </Link>
         
-        <p className="mt-2 text-sm text-muted-foreground line-clamp-2 flex-1 leading-relaxed">
-          {node.description || "Premium digital resources for your success journey."}
-        </p>
+        {/* 3 Bullet Highlights */}
+        <ul className="mt-3 space-y-1.5 flex-1">
+          {highlights.map((highlight, index) => (
+            <li key={index} className="flex items-start gap-2 text-sm text-muted-foreground">
+              <CheckCircle2 className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
+              <span>{highlight}</span>
+            </li>
+          ))}
+        </ul>
 
         <div className="mt-4 flex items-center justify-between">
           <div>

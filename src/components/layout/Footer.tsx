@@ -25,22 +25,22 @@ export const Footer = () => {
               <Link to="/master-bundle" className="text-sm text-secondary-foreground/60 hover:text-secondary-foreground transition-colors font-body">
                 Master Bundle
               </Link>
-              <Link to="/#products" className="text-sm text-secondary-foreground/60 hover:text-secondary-foreground transition-colors font-body">
+              <Link to="/product/ai-mastery-essentials-bundle" className="text-sm text-secondary-foreground/60 hover:text-secondary-foreground transition-colors font-body">
                 AI Mastery
               </Link>
-              <Link to="/#products" className="text-sm text-secondary-foreground/60 hover:text-secondary-foreground transition-colors font-body">
+              <Link to="/product/e-commerce-dropshipping-foundations-bundle" className="text-sm text-secondary-foreground/60 hover:text-secondary-foreground transition-colors font-body">
                 E-Commerce
               </Link>
-              <Link to="/#products" className="text-sm text-secondary-foreground/60 hover:text-secondary-foreground transition-colors font-body">
+              <Link to="/product/content-creator-accelerator-bundle" className="text-sm text-secondary-foreground/60 hover:text-secondary-foreground transition-colors font-body">
                 Content Creator
               </Link>
-              <Link to="/#products" className="text-sm text-secondary-foreground/60 hover:text-secondary-foreground transition-colors font-body">
+              <Link to="/product/digital-marketing-sales-mastery-bundle" className="text-sm text-secondary-foreground/60 hover:text-secondary-foreground transition-colors font-body">
                 Digital Marketing
               </Link>
-              <Link to="/#products" className="text-sm text-secondary-foreground/60 hover:text-secondary-foreground transition-colors font-body">
+              <Link to="/product/productivity-personal-development-bundle" className="text-sm text-secondary-foreground/60 hover:text-secondary-foreground transition-colors font-body">
                 Productivity
               </Link>
-              <Link to="/#products" className="text-sm text-secondary-foreground/60 hover:text-secondary-foreground transition-colors font-body">
+              <Link to="/product/finance-investing-fundamentals-bundle" className="text-sm text-secondary-foreground/60 hover:text-secondary-foreground transition-colors font-body">
                 Finance
               </Link>
             </nav>
