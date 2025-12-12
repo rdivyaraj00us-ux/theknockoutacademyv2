@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ShoppingCart, Menu, X, Shield } from "lucide-react";
+import { Menu, X, Shield, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useCartStore } from "@/stores/cartStore";
 import { CartDrawer } from "@/components/cart/CartDrawer";
@@ -18,20 +18,30 @@ export const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <div className="container flex h-16 items-center justify-between">
-        {/* Logo */}
-        <Link to="/" className="flex items-center gap-3 group">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-secondary transition-transform group-hover:scale-105">
-            <span className="text-xl font-display font-bold text-secondary-foreground">K</span>
-          </div>
-          <div className="hidden sm:block">
-            <span className="font-heading font-bold text-foreground block leading-tight">
-              The Knockout Academy
+        {/* Logo + Customer Badge */}
+        <div className="flex items-center gap-4">
+          <Link to="/" className="flex items-center gap-3 group">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-secondary transition-transform group-hover:scale-105">
+              <span className="text-xl font-display font-bold text-secondary-foreground">K</span>
+            </div>
+            <div className="hidden sm:block">
+              <span className="font-heading font-bold text-foreground block leading-tight">
+                The Knockout Academy
+              </span>
+              <span className="text-xs text-muted-foreground font-body">
+                Where Dreams Meet Discipline
+              </span>
+            </div>
+          </Link>
+
+          {/* Customer Counter Badge */}
+          <div className="hidden lg:flex items-center gap-1.5 bg-accent/10 border border-accent/20 rounded-full px-3 py-1 animate-fade-in">
+            <CheckCircle2 className="h-3.5 w-3.5 text-accent" />
+            <span className="text-xs font-heading font-medium text-accent">
+              Trusted by 40,000+ Learners
             </span>
-            <span className="text-xs text-muted-foreground font-body">
-              Where Dreams Meet Discipline
-            </span>
           </div>
-        </Link>
+        </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-8 md:flex" aria-label="Main navigation">
@@ -66,7 +76,7 @@ export const Header = () => {
 
         {/* Trust Badges + Cart */}
         <div className="flex items-center gap-4">
-          <div className="hidden items-center gap-3 text-xs text-muted-foreground lg:flex">
+          <div className="hidden items-center gap-3 text-xs text-muted-foreground xl:flex">
             <span className="flex items-center gap-1.5">
               <Shield className="h-3.5 w-3.5 text-accent" />
               Secure

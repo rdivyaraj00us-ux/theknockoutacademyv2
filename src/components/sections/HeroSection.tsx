@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, ChevronDown, Shield, Zap, RefreshCw } from "lucide-react";
+import { ArrowRight, ChevronDown, Shield, Zap, RefreshCw, CheckCircle2, Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const HeroSection = () => {
@@ -9,13 +9,18 @@ export const HeroSection = () => {
 
   return (
     <section className="relative min-h-[90vh] flex flex-col bg-secondary overflow-hidden">
-      {/* Trust Bar */}
+      {/* Enhanced Trust Bar */}
       <div className="relative z-10 border-b border-secondary-foreground/10 bg-secondary-foreground/5">
         <div className="container py-2.5">
-          <div className="flex flex-wrap justify-center gap-4 md:gap-8 text-xs md:text-sm text-secondary-foreground/70">
+          <div className="flex flex-wrap justify-center gap-3 md:gap-6 text-xs md:text-sm text-secondary-foreground/70">
+            <span className="flex items-center gap-1.5">
+              <CheckCircle2 className="h-3.5 w-3.5 text-accent" />
+              40,000+ Happy Customers
+            </span>
+            <span className="hidden sm:block text-secondary-foreground/30">|</span>
             <span className="flex items-center gap-1.5">
               <Zap className="h-3.5 w-3.5 text-accent" />
-              Instant Digital Delivery
+              Instant Download
             </span>
             <span className="hidden sm:block text-secondary-foreground/30">|</span>
             <span className="flex items-center gap-1.5">
@@ -24,7 +29,7 @@ export const HeroSection = () => {
             </span>
             <span className="hidden sm:block text-secondary-foreground/30">|</span>
             <span className="flex items-center gap-1.5">
-              <Shield className="h-3.5 w-3.5 text-accent" />
+              <Lock className="h-3.5 w-3.5 text-accent" />
               Secure Checkout
             </span>
           </div>
@@ -40,8 +45,8 @@ export const HeroSection = () => {
       <div className="absolute bottom-20 right-10 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '-3s' }} />
 
       {/* Main Content */}
-      <div className="container relative flex-1 flex items-center py-12 md:py-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
+      <div className="container relative flex-1 flex items-center py-8 md:py-16">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center w-full">
           {/* Left: Text Content */}
           <div className="max-w-2xl">
             {/* Pre-headline */}
@@ -86,39 +91,50 @@ export const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right: Visual (Product Mockup) */}
-          <div className="relative hidden lg:flex items-center justify-center">
-            <div className="relative animate-float">
-              {/* Main bundle visual */}
-              <div className="relative w-80 h-80">
-                {/* Glow effect behind */}
-                <div className="absolute inset-0 bg-primary/20 rounded-3xl blur-3xl" />
+          {/* Right: Value Stack Card */}
+          <div className="relative flex items-center justify-center animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
+            <div className="relative w-full max-w-md animate-float">
+              {/* Glow effect behind */}
+              <div className="absolute inset-0 bg-primary/20 rounded-3xl blur-3xl" />
+              
+              {/* Value Stack Card */}
+              <div className="relative bg-secondary-foreground/10 backdrop-blur-md rounded-2xl border border-secondary-foreground/20 p-6 md:p-8 shadow-2xl">
+                <h3 className="font-heading font-bold text-secondary-foreground text-lg mb-4">
+                  WHAT YOU GET:
+                </h3>
                 
-                {/* Stacked books/cards effect */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="relative">
-                    {/* Back cards */}
-                    <div className="absolute -left-8 -top-4 w-48 h-64 bg-gradient-to-br from-emerald/20 to-emerald/10 rounded-2xl transform -rotate-12 border border-emerald/30" />
-                    <div className="absolute -right-8 -top-4 w-48 h-64 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl transform rotate-12 border border-primary/30" />
-                    
-                    {/* Main card */}
-                    <div className="relative w-56 h-72 bg-gradient-to-br from-secondary-foreground/10 to-secondary-foreground/5 rounded-2xl border border-secondary-foreground/20 backdrop-blur-sm flex flex-col items-center justify-center p-6 shadow-2xl">
-                      <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mb-4">
-                        <span className="text-3xl font-display font-bold text-primary">K</span>
-                      </div>
-                      <h3 className="font-heading font-bold text-secondary-foreground text-center text-lg mb-2">
-                        Master Bundle
-                      </h3>
-                      <p className="text-xs text-secondary-foreground/60 text-center mb-4">
-                        The Complete Collection
-                      </p>
-                      <div className="flex items-baseline gap-2">
-                        <span className="text-3xl font-bold text-accent">$69</span>
-                        <span className="text-sm text-secondary-foreground/40 line-through">$470+</span>
-                      </div>
-                    </div>
+                <ul className="space-y-3 mb-6">
+                  {[
+                    "40+ Premium eBooks & Guides",
+                    "8,000+ AI Automation Templates",
+                    "6 Complete Skill Bundles",
+                    "Step-by-Step Learning Pathways",
+                    "Lifetime Access (No Subscriptions)",
+                  ].map((item, index) => (
+                    <li key={index} className="flex items-center gap-3 text-secondary-foreground/80">
+                      <CheckCircle2 className="h-5 w-5 text-accent flex-shrink-0" />
+                      <span className="text-sm md:text-base">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="border-t border-secondary-foreground/20 pt-4 mb-6">
+                  <div className="flex items-baseline gap-3 mb-1">
+                    <span className="text-sm text-secondary-foreground/60">Total Value:</span>
+                    <span className="text-xl text-gold line-through font-heading font-semibold">$470+</span>
+                  </div>
+                  <div className="flex items-baseline gap-3">
+                    <span className="text-sm text-secondary-foreground/60">YOUR PRICE:</span>
+                    <span className="text-4xl font-display font-bold text-accent">$69</span>
                   </div>
                 </div>
+
+                <Button variant="accent" size="lg" asChild className="w-full group animate-pulse-emerald">
+                  <Link to="/master-bundle">
+                    GET INSTANT ACCESS
+                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </Button>
               </div>
             </div>
           </div>

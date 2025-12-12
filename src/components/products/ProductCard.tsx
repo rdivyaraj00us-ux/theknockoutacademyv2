@@ -6,37 +6,37 @@ import { ShopifyProduct, CartItem } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
 import { toast } from "sonner";
 
-// Bundle highlights mapping
+// Bundle highlights mapping - "What You'll Learn"
 const bundleHighlights: Record<string, string[]> = {
   "ai-mastery": [
-    "Master ChatGPT, Claude & Perplexity",
-    "Prompt engineering frameworks",
-    "AI workflow automation guides"
+    "Master ChatGPT, Claude & Perplexity AI",
+    "Create AI-powered content workflows",
+    "Automate repetitive tasks in minutes"
   ],
   "e-commerce": [
-    "Complete store setup guides",
-    "Ad funnel & PMax strategies",
-    "Customer retention systems"
+    "Build profitable ad funnels from scratch",
+    "Master Google Performance Max campaigns",
+    "Retain customers & increase lifetime value"
   ],
   "content-creator": [
-    "YouTube growth accelerator",
-    "CapCut editing mastery",
-    "AI content workflows"
+    "Launch your YouTube channel in 6 days",
+    "Master CapCut video editing",
+    "Create content 10x faster with AI"
   ],
   "digital-marketing": [
-    "Email marketing automation",
-    "Micro-offer strategies",
-    "Business planning frameworks"
+    "Build email automations that convert",
+    "Create irresistible micro-offers",
+    "Master psychological selling triggers"
   ],
   "productivity": [
-    "Time management systems",
-    "Focus & goal-setting guides",
-    "ADHD productivity hacks"
+    "Implement the Eisenhower Matrix system",
+    "Overcome ADHD productivity challenges",
+    "Delegate effectively & reclaim your time"
   ],
   "finance": [
-    "Multi-bucket savings system",
-    "Crypto & blockchain basics",
-    "Smart money management"
+    "Set up the Multi-Bucket savings system",
+    "Understand cryptocurrency fundamentals",
+    "Navigate home buying like a pro"
   ],
   "master": [
     "All 6 bundles included",
@@ -44,6 +44,20 @@ const bundleHighlights: Record<string, string[]> = {
     "Beginner-to-expert pathway"
   ]
 };
+
+// Target audience mapping
+const targetAudience: Record<string, string> = {
+  "ai-mastery": "Beginners & Professionals",
+  "e-commerce": "Aspiring Store Owners",
+  "content-creator": "YouTubers & Creators",
+  "digital-marketing": "Marketers & Sales Pros",
+  "productivity": "Busy Professionals",
+  "finance": "Financial Beginners",
+  "master": "Everyone",
+};
+
+// Format tags
+const formatTags = "📖 eBooks • 📹 Video Guides • 📋 Checklists • 🎯 Templates";
 
 const getHighlights = (handle: string): string[] => {
   const lowerHandle = handle.toLowerCase();
@@ -55,6 +69,18 @@ const getHighlights = (handle: string): string[] => {
   if (lowerHandle.includes("productivity")) return bundleHighlights["productivity"];
   if (lowerHandle.includes("finance")) return bundleHighlights["finance"];
   return ["Premium digital resources", "Instant download access", "Beginner-friendly guides"];
+};
+
+const getAudience = (handle: string): string => {
+  const lowerHandle = handle.toLowerCase();
+  if (lowerHandle.includes("master")) return targetAudience["master"];
+  if (lowerHandle.includes("ai-mastery")) return targetAudience["ai-mastery"];
+  if (lowerHandle.includes("e-commerce") || lowerHandle.includes("ecommerce")) return targetAudience["e-commerce"];
+  if (lowerHandle.includes("content-creator")) return targetAudience["content-creator"];
+  if (lowerHandle.includes("digital-marketing") || lowerHandle.includes("marketing")) return targetAudience["digital-marketing"];
+  if (lowerHandle.includes("productivity")) return targetAudience["productivity"];
+  if (lowerHandle.includes("finance")) return targetAudience["finance"];
+  return "Everyone";
 };
 
 interface ProductCardProps {
@@ -72,6 +98,7 @@ export const ProductCard = ({ product, featured = false }: ProductCardProps) => 
   const isMasterBundle = node.title.toLowerCase().includes('master bundle') || 
     node.handle.toLowerCase() === 'the-knockout-master-bundle';
   const highlights = getHighlights(node.handle);
+  const audience = getAudience(node.handle);
 
   const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -127,46 +154,63 @@ export const ProductCard = ({ product, featured = false }: ProductCardProps) => 
       </Link>
 
       {/* Content */}
-      <div className="flex flex-1 flex-col p-6">
+      <div className="flex flex-1 flex-col p-5">
+        {/* Perfect For Badge */}
+        <Badge variant="outline" className="self-start text-xs font-normal mb-2 border-primary/30 text-primary">
+          Perfect for: {audience}
+        </Badge>
+
         <Link to={`/product/${node.handle}`}>
-          <h3 className="font-heading font-bold text-lg text-foreground line-clamp-2 group-hover:text-primary transition-colors">
+          <h3 className="font-heading font-bold text-lg text-foreground line-clamp-2 group-hover:text-primary transition-colors mb-2">
             {node.title}
           </h3>
         </Link>
-        
-        {/* 3 Bullet Highlights */}
-        <ul className="mt-3 space-y-1.5 flex-1">
-          {highlights.map((highlight, index) => (
-            <li key={index} className="flex items-start gap-2 text-sm text-muted-foreground">
-              <CheckCircle2 className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-              <span>{highlight}</span>
-            </li>
-          ))}
-        </ul>
 
-        <div className="mt-4 flex items-center justify-between">
-          <div>
-            <span className="text-2xl font-heading font-bold text-primary">${price.toFixed(0)}</span>
-            {isMasterBundle && (
-              <span className="ml-2 text-sm text-muted-foreground line-through">$470</span>
-            )}
-          </div>
+        {/* Format Tags */}
+        <p className="text-xs text-muted-foreground mb-3">
+          {formatTags}
+        </p>
+        
+        {/* What You'll Learn - 3 Bullet Highlights */}
+        <div className="mb-4">
+          <p className="text-xs font-heading font-semibold text-muted-foreground uppercase tracking-wide mb-2">
+            What You'll Learn:
+          </p>
+          <ul className="space-y-1.5 flex-1">
+            {highlights.map((highlight, index) => (
+              <li key={index} className="flex items-start gap-2 text-sm text-foreground">
+                <CheckCircle2 className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
+                <span>{highlight}</span>
+              </li>
+            ))}
+          </ul>
         </div>
 
-        <div className="mt-4 flex gap-2">
-          <Button 
-            variant={isMasterBundle ? "accent" : "default"}
-            className="flex-1"
-            onClick={handleAddToCart}
-          >
-            <ShoppingCart className="h-4 w-4 mr-2" />
-            Add to Cart
-          </Button>
-          <Button variant="outline" size="icon" asChild>
-            <Link to={`/product/${node.handle}`}>
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </Button>
+        <div className="mt-auto">
+          <div className="flex items-center justify-between mb-4">
+            <div>
+              <span className="text-2xl font-heading font-bold text-primary">${price.toFixed(0)}</span>
+              {isMasterBundle && (
+                <span className="ml-2 text-sm text-muted-foreground line-through">$470</span>
+              )}
+            </div>
+          </div>
+
+          <div className="flex gap-2">
+            <Button 
+              variant={isMasterBundle ? "accent" : "default"}
+              className="flex-1"
+              onClick={handleAddToCart}
+            >
+              <ShoppingCart className="h-4 w-4 mr-2" />
+              Add to Cart
+            </Button>
+            <Button variant="outline" size="icon" asChild>
+              <Link to={`/product/${node.handle}`}>
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
         </div>
       </div>
     </div>
