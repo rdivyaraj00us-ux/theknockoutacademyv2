@@ -44,13 +44,15 @@ export const ProductCard = ({ product, featured = false }: ProductCardProps) => 
 
   return (
     <div 
-      className={`group relative flex flex-col rounded-xl border border-border bg-card overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${
-        featured || isMasterBundle ? 'ring-2 ring-accent shadow-lg' : ''
+      className={`group relative flex flex-col rounded-xl border bg-card overflow-hidden transition-all duration-300 hover:shadow-premium-hover hover:-translate-y-2 ${
+        featured || isMasterBundle 
+          ? 'border-primary/40 shadow-glow-royal' 
+          : 'border-border shadow-premium'
       }`}
     >
       {/* Featured Badge */}
       {(featured || isMasterBundle) && (
-        <Badge className="absolute top-3 right-3 z-10 bg-accent text-accent-foreground shadow-md">
+        <Badge className="absolute top-3 right-3 z-10 bg-gold text-gold-foreground font-heading font-semibold shadow-glow-gold">
           Most Popular
         </Badge>
       )}
@@ -65,27 +67,27 @@ export const ProductCard = ({ product, featured = false }: ProductCardProps) => 
           />
         ) : (
           <div className="h-full w-full flex items-center justify-center bg-gradient-to-br from-secondary to-secondary/80">
-            <span className="text-5xl font-bold text-secondary-foreground/20">K</span>
+            <span className="text-6xl font-display font-bold text-secondary-foreground/20">K</span>
           </div>
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-secondary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </Link>
 
       {/* Content */}
-      <div className="flex flex-1 flex-col p-5">
+      <div className="flex flex-1 flex-col p-6">
         <Link to={`/product/${node.handle}`}>
-          <h3 className="font-semibold text-lg text-foreground line-clamp-2 group-hover:text-primary transition-colors">
+          <h3 className="font-heading font-bold text-lg text-foreground line-clamp-2 group-hover:text-primary transition-colors">
             {node.title}
           </h3>
         </Link>
         
-        <p className="mt-2 text-sm text-muted-foreground line-clamp-2 flex-1">
+        <p className="mt-2 text-sm text-muted-foreground line-clamp-2 flex-1 leading-relaxed">
           {node.description || "Premium digital resources for your success journey."}
         </p>
 
         <div className="mt-4 flex items-center justify-between">
           <div>
-            <span className="text-2xl font-bold text-primary">${price.toFixed(0)}</span>
+            <span className="text-2xl font-heading font-bold text-primary">${price.toFixed(0)}</span>
             {isMasterBundle && (
               <span className="ml-2 text-sm text-muted-foreground line-through">$470</span>
             )}

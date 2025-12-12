@@ -4,41 +4,43 @@ import { Button } from "@/components/ui/button";
 
 export const FinalCTA = () => {
   return (
-    <section className="py-16 md:py-24 bg-secondary">
-      <div className="container">
+    <section className="relative py-24 md:py-32 bg-secondary overflow-hidden">
+      {/* Background Effects */}
+      <div className="absolute inset-0 bg-gradient-radial-navy" />
+      <div className="absolute inset-0">
+        <div className="absolute top-1/3 left-1/4 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/3 right-1/4 w-64 h-64 bg-accent/10 rounded-full blur-3xl" />
+      </div>
+
+      <div className="container relative">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-secondary-foreground mb-4">
-            Ready to Level Up Your Skills?
+          {/* Headline */}
+          <h2 className="text-section-title font-display text-3xl md:text-5xl text-secondary-foreground mb-6">
+            Ready to Build Skills That Actually Matter?
           </h2>
-          <p className="text-lg text-secondary-foreground/80 mb-8">
-            Get instant access to 40+ premium resources and 8,000+ automation templates. Start building real skills today.
+          
+          {/* Subheadline */}
+          <p className="text-xl text-secondary-foreground/70 mb-10">
+            Join thousands who chose action over excuses.
           </p>
 
-          <div className="bg-secondary-foreground/5 rounded-2xl p-8 border border-secondary-foreground/10 mb-8">
-            <div className="flex items-center justify-center gap-4 mb-4">
-              <span className="text-5xl font-extrabold text-primary">$69</span>
-              <div className="text-left">
-                <span className="text-xl text-secondary-foreground/50 line-through block">$470+ value</span>
-                <span className="text-accent font-semibold">Save over 85%</span>
-              </div>
-            </div>
-            
-            <Button variant="accent" size="xl" asChild className="w-full sm:w-auto">
-              <Link to="/master-bundle">
-                Get The Master Bundle
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-          </div>
+          {/* CTA Button */}
+          <Button variant="accent" size="xl" asChild className="text-lg px-12 group mb-8">
+            <Link to="/master-bundle">
+              Get The Master Bundle — $69
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </Button>
 
-          <div className="flex flex-wrap justify-center gap-6">
-            <div className="flex items-center gap-2 text-secondary-foreground/70">
-              <Zap className="h-5 w-5 text-accent" />
-              <span className="text-sm">Instant Digital Delivery</span>
-            </div>
+          {/* Trust Line */}
+          <div className="flex flex-wrap justify-center gap-6 mb-8">
             <div className="flex items-center gap-2 text-secondary-foreground/70">
               <RefreshCw className="h-5 w-5 text-accent" />
-              <span className="text-sm">30-Day Money-Back Guarantee</span>
+              <span className="text-sm">30-Day Guarantee</span>
+            </div>
+            <div className="flex items-center gap-2 text-secondary-foreground/70">
+              <Zap className="h-5 w-5 text-accent" />
+              <span className="text-sm">Instant Access</span>
             </div>
             <div className="flex items-center gap-2 text-secondary-foreground/70">
               <Shield className="h-5 w-5 text-accent" />
@@ -46,9 +48,15 @@ export const FinalCTA = () => {
             </div>
           </div>
 
-          <p className="mt-8 text-xs text-secondary-foreground/50">
-            Results not guaranteed. Educational products only. Your success depends on your effort and implementation.
-          </p>
+          {/* Payment Icons */}
+          <div className="flex items-center justify-center gap-4">
+            <span className="text-xs text-secondary-foreground/40">Secure payments:</span>
+            <div className="flex items-center gap-3 text-secondary-foreground/30">
+              <svg className="h-6 w-auto" viewBox="0 0 38 24" fill="currentColor"><path d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.3 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.3-3-3-3Zm-2 12h-4v-2h4v2Zm-18.6 6H12l2.4-12h2.4l-2.4 12Zm4.8 0h-2.4l1.2-3.6L21 18h-.8Zm8.4-6c0 3.3-2.7 6-6 6h-1.2l.6-3h.6c1.7 0 3-1.3 3-3s-1.3-3-3-3h-.6l.6-3h1.2c3.3 0 6 2.7 6 6Z"/></svg>
+              <svg className="h-6 w-auto" viewBox="0 0 38 24" fill="currentColor"><path d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.3 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.3-3-3-3ZM19 20c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8Z"/></svg>
+              <svg className="h-6 w-auto" viewBox="0 0 38 24" fill="currentColor"><path d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.3 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.3-3-3-3ZM15 18H9l3-12h6l-3 12Zm12-6c0 3.3-2.7 6-6 6h-2l1-4h1c1.1 0 2-.9 2-2s-.9-2-2-2h-1l1-4h2c3.3 0 6 2.7 6 6Z"/></svg>
+            </div>
+          </div>
         </div>
       </div>
     </section>

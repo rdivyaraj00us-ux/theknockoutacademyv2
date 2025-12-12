@@ -7,14 +7,26 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "1.5rem",
+      padding: {
+        DEFAULT: "1.5rem",
+        md: "3rem",
+      },
       screens: {
         "2xl": "1280px",
       },
     },
     extend: {
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
+        display: ["Playfair Display", "Georgia", "serif"],
+        heading: ["Montserrat", "system-ui", "sans-serif"],
+        body: ["Source Sans 3", "system-ui", "sans-serif"],
+        sans: ["Source Sans 3", "system-ui", "sans-serif"],
+      },
+      fontSize: {
+        "hero-mobile": ["2.25rem", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
+        "hero-desktop": ["4.5rem", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
+        "section-mobile": ["1.75rem", { lineHeight: "1.2" }],
+        "section-desktop": ["3rem", { lineHeight: "1.2" }],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -60,36 +72,56 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // Custom Knockout Academy colors
+        // Premium Knockout Academy colors
         navy: {
           DEFAULT: "hsl(var(--navy))",
+          dark: "hsl(var(--navy-dark))",
           foreground: "hsl(var(--navy-foreground))",
         },
-        electric: {
-          DEFAULT: "hsl(var(--electric))",
-          glow: "hsl(var(--electric-glow))",
+        royal: {
+          DEFAULT: "hsl(var(--royal))",
+          glow: "hsl(var(--royal-glow))",
         },
         emerald: {
           DEFAULT: "hsl(var(--emerald))",
           glow: "hsl(var(--emerald-glow))",
         },
+        gold: {
+          DEFAULT: "hsl(var(--gold))",
+          foreground: "hsl(var(--gold-foreground))",
+        },
         slate: {
           DEFAULT: "hsl(var(--slate))",
           light: "hsl(var(--slate-light))",
         },
+        coral: {
+          DEFAULT: "hsl(var(--coral))",
+          light: "hsl(var(--coral-light))",
+        },
+        "soft-gray": "hsl(var(--soft-gray))",
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        xl: "1rem",
+        "2xl": "1.5rem",
       },
       boxShadow: {
         sm: "var(--shadow-sm)",
         md: "var(--shadow-md)",
         lg: "var(--shadow-lg)",
         xl: "var(--shadow-xl)",
-        "glow-electric": "var(--shadow-glow-electric)",
+        "glow-royal": "var(--shadow-glow-royal)",
         "glow-emerald": "var(--shadow-glow-emerald)",
+        "glow-gold": "var(--shadow-glow-gold)",
+        premium: "0 4px 20px rgba(0,0,0,0.06)",
+        "premium-hover": "0 8px 30px rgba(0,0,0,0.12)",
+      },
+      spacing: {
+        18: "4.5rem",
+        22: "5.5rem",
+        30: "7.5rem",
       },
       keyframes: {
         "accordion-down": {
@@ -112,9 +144,17 @@ export default {
           from: { opacity: "0", transform: "scale(0.95)" },
           to: { opacity: "1", transform: "scale(1)" },
         },
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
         "pulse-glow": {
-          "0%, 100%": { boxShadow: "0 0 20px hsl(var(--electric) / 0.3)" },
-          "50%": { boxShadow: "0 0 40px hsl(var(--electric) / 0.5)" },
+          "0%, 100%": { boxShadow: "0 0 20px hsl(var(--royal) / 0.3)" },
+          "50%": { boxShadow: "0 0 40px hsl(var(--royal) / 0.5)" },
+        },
+        "bounce-subtle": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-5px)" },
         },
       },
       animation: {
@@ -123,7 +163,9 @@ export default {
         "fade-in": "fade-in 0.5s ease-out forwards",
         "fade-in-up": "fade-in-up 0.6s ease-out forwards",
         "scale-in": "scale-in 0.4s ease-out forwards",
+        float: "float 6s ease-in-out infinite",
         "pulse-glow": "pulse-glow 2s ease-in-out infinite",
+        "bounce-subtle": "bounce-subtle 2s ease-in-out infinite",
       },
     },
   },
