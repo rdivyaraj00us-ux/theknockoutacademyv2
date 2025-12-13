@@ -109,6 +109,20 @@ const Index = () => {
         <title>The Knockout Academy | Master Skills That Actually Make Money Online</title>
         <meta name="description" content="40+ Premium eBooks, Guides & 8,000+ AI Automation Templates. Join 40,000+ customers. $69 one-time, 30-day guarantee." />
         <link rel="canonical" href="https://knockoutacademy.com" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="The Knockout Academy | Master Skills That Make Money" />
+        <meta property="og:description" content="40+ Premium eBooks & 8,000+ AI Templates. From beginner to professional. $69 one-time, instant access." />
+        <meta property="og:image" content="https://knockoutacademy.com/og-image.jpg" />
+        <meta property="og:url" content="https://knockoutacademy.com" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="The Knockout Academy" />
+        
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="The Knockout Academy | Master Skills That Make Money" />
+        <meta name="twitter:description" content="40+ eBooks & 8,000+ AI Templates for $69. Join 40,000+ customers." />
+        <meta name="twitter:image" content="https://knockoutacademy.com/og-image.jpg" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
