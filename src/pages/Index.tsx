@@ -2,22 +2,29 @@ import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { AnnouncementBar } from "@/components/layout/AnnouncementBar";
 import { StickyMobileCTA } from "@/components/layout/StickyMobileCTA";
 import { HeroSection } from "@/components/sections/HeroSection";
+import { SocialProofBar } from "@/components/sections/SocialProofBar";
 import { ProblemAgitation } from "@/components/sections/ProblemAgitation";
 import { SolutionIntro } from "@/components/sections/SolutionIntro";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { MasterBundleShowcase } from "@/components/sections/MasterBundleShowcase";
 import { WhoThisIsFor } from "@/components/sections/WhoThisIsFor";
 import { SocialProof } from "@/components/sections/SocialProof";
+import { VideoTestimonials } from "@/components/sections/VideoTestimonials";
 import { LearningPathway } from "@/components/sections/LearningPathway";
 import { WhatsInsideSection } from "@/components/sections/WhatsInsideSection";
 import { WhyThisPrice } from "@/components/sections/WhyThisPrice";
 import { FinalCTA } from "@/components/sections/FinalCTA";
+import { PreFooterCTA } from "@/components/sections/PreFooterCTA";
 import { ProductCard } from "@/components/products/ProductCard";
 import { ProductGridSkeleton } from "@/components/ui/product-skeleton";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import { FloatingBestValue } from "@/components/ui/FloatingBestValue";
+import { TrustReminder } from "@/components/ui/TrustReminder";
+import { PurchaseNotification } from "@/components/ui/PurchaseNotification";
+import { ExitIntentPopup } from "@/components/ui/ExitIntentPopup";
 import { fetchProducts, ShopifyProduct } from "@/lib/shopify";
 import { Package, Zap, BookOpen, Sparkles } from "lucide-react";
 import {
@@ -86,7 +93,7 @@ const Index = () => {
     <>
       <Helmet>
         <title>The Knockout Academy | Master Skills That Actually Make Money Online</title>
-        <meta name="description" content="40+ Premium eBooks, Guides & 8,000+ AI Automation Templates. From complete beginner to confident professional. Instant digital delivery, 30-day money-back guarantee." />
+        <meta name="description" content="40+ Premium eBooks, Guides & 8,000+ AI Automation Templates. Join 40,000+ customers. $69 one-time, 30-day guarantee." />
         <link rel="canonical" href="https://knockoutacademy.com" />
         <script type="application/ld+json">
           {JSON.stringify({
@@ -122,13 +129,20 @@ const Index = () => {
       <FloatingBestValue />
 
       <div className="min-h-screen flex flex-col">
+        <AnnouncementBar />
         <Header />
         <main className="flex-1">
           <HeroSection />
+          <SocialProofBar />
+          
           <ProblemAgitation />
+          <TrustReminder variant="guarantee" />
+          
           <SolutionIntro />
           <HowItWorks />
+          
           <MasterBundleShowcase />
+          <TrustReminder variant="instant" />
 
           {/* Individual Bundles Grid */}
           <section id="products" className="py-20 md:py-28 bg-background">
@@ -177,8 +191,12 @@ const Index = () => {
           </section>
 
           <WhoThisIsFor />
-          <SocialProof />
+          <VideoTestimonials />
+          
           <WhatsInsideSection />
+          <TrustReminder variant="support" />
+          
+          <SocialProof />
 
           {/* FAQ */}
           <section id="faq" className="py-20 md:py-28 bg-background">
@@ -196,10 +214,15 @@ const Index = () => {
           </section>
 
           <WhyThisPrice />
+          <TrustReminder variant="secure" />
+          
           <FinalCTA />
+          <PreFooterCTA />
         </main>
-        <StickyMobileCTA />
         <Footer />
+        <StickyMobileCTA />
+        <PurchaseNotification />
+        <ExitIntentPopup />
       </div>
     </>
   );

@@ -452,3 +452,62 @@
   background: hsl(var(--primary) / 0.2);
   color: hsl(var(--foreground));
 }
+
+/* Marquee Animation for Social Proof Bar */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Slide In Animation for Notifications */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-in-up {
+  animation: slideInUp 0.3s ease-out forwards;
+}
+
+/* Slide Down Animation for Announcement Bar */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-down {
+  animation: slideDown 0.3s ease-out forwards;
+}
+
+/* Soft Gray Background */
+.bg-soft-gray {
+  background-color: hsl(var(--muted));
+}
+
+.from-soft-gray {
+  --tw-gradient-from: hsl(var(--muted));
+}
+
+.to-soft-gray {
+  --tw-gradient-to: hsl(var(--muted));
+}
