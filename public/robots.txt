@@ -12,7 +12,3 @@ Allow: /
 
 User-agent: *
 Allow: /
-Disallow: /api/
-Disallow: /cart
-
-Sitemap: https://knockoutacademy.com/sitemap.xml

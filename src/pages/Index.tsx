@@ -1,26 +1,23 @@
-import { useEffect, useState, lazy, Suspense } from "react";
+import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { AnnouncementBar } from "@/components/layout/AnnouncementBar";
 import { StickyMobileCTA } from "@/components/layout/StickyMobileCTA";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { SocialProofBar } from "@/components/sections/SocialProofBar";
 import { ProblemAgitation } from "@/components/sections/ProblemAgitation";
 import { SolutionIntro } from "@/components/sections/SolutionIntro";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { MasterBundleShowcase } from "@/components/sections/MasterBundleShowcase";
 import { WhoThisIsFor } from "@/components/sections/WhoThisIsFor";
 import { SocialProof } from "@/components/sections/SocialProof";
+import { LearningPathway } from "@/components/sections/LearningPathway";
+import { WhatsInsideSection } from "@/components/sections/WhatsInsideSection";
+import { WhyThisPrice } from "@/components/sections/WhyThisPrice";
 import { FinalCTA } from "@/components/sections/FinalCTA";
-import { PreFooterCTA } from "@/components/sections/PreFooterCTA";
 import { ProductCard } from "@/components/products/ProductCard";
 import { ProductGridSkeleton } from "@/components/ui/product-skeleton";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import { FloatingBestValue } from "@/components/ui/FloatingBestValue";
-import { TrustReminder } from "@/components/ui/TrustReminder";
-import { PurchaseNotification } from "@/components/ui/PurchaseNotification";
-import { ExitIntentPopup } from "@/components/ui/ExitIntentPopup";
 import { fetchProducts, ShopifyProduct } from "@/lib/shopify";
 import { Package, Zap, BookOpen, Sparkles } from "lucide-react";
 import {
@@ -29,24 +26,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-
-// Lazy load sections below the fold for mobile performance
-const VideoTestimonials = lazy(() => import("@/components/sections/VideoTestimonials").then(m => ({ default: m.VideoTestimonials })));
-const LearningPathway = lazy(() => import("@/components/sections/LearningPathway").then(m => ({ default: m.LearningPathway })));
-const WhatsInsideSection = lazy(() => import("@/components/sections/WhatsInsideSection").then(m => ({ default: m.WhatsInsideSection })));
-const WhyThisPrice = lazy(() => import("@/components/sections/WhyThisPrice").then(m => ({ default: m.WhyThisPrice })));
-
-// Simple skeleton fallback for lazy sections
-const SectionSkeleton = () => (
-  <div className="py-16 md:py-28">
-    <div className="container">
-      <div className="animate-pulse">
-        <div className="h-8 bg-muted rounded w-1/3 mx-auto mb-8"></div>
-        <div className="h-64 bg-muted rounded"></div>
-      </div>
-    </div>
-  </div>
-);
 
 const features = [
   { icon: Zap, title: "No Fluff, All Action", description: "Practical guides you can implement today" },
@@ -107,22 +86,8 @@ const Index = () => {
     <>
       <Helmet>
         <title>The Knockout Academy | Master Skills That Actually Make Money Online</title>
-        <meta name="description" content="40+ Premium eBooks, Guides & 8,000+ AI Automation Templates. Join 40,000+ customers. $69 one-time, 30-day guarantee." />
+        <meta name="description" content="40+ Premium eBooks, Guides & 8,000+ AI Automation Templates. From complete beginner to confident professional. Instant digital delivery, 30-day money-back guarantee." />
         <link rel="canonical" href="https://knockoutacademy.com" />
-        
-        {/* Open Graph */}
-        <meta property="og:title" content="The Knockout Academy | Master Skills That Make Money" />
-        <meta property="og:description" content="40+ Premium eBooks & 8,000+ AI Templates. From beginner to professional. $69 one-time, instant access." />
-        <meta property="og:image" content="https://knockoutacademy.com/og-image.jpg" />
-        <meta property="og:url" content="https://knockoutacademy.com" />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="The Knockout Academy" />
-        
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="The Knockout Academy | Master Skills That Make Money" />
-        <meta name="twitter:description" content="40+ eBooks & 8,000+ AI Templates for $69. Join 40,000+ customers." />
-        <meta name="twitter:image" content="https://knockoutacademy.com/og-image.jpg" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -157,20 +122,13 @@ const Index = () => {
       <FloatingBestValue />
 
       <div className="min-h-screen flex flex-col">
-        <AnnouncementBar />
         <Header />
         <main className="flex-1">
           <HeroSection />
-          <SocialProofBar />
-          
           <ProblemAgitation />
-          <TrustReminder variant="guarantee" />
-          
           <SolutionIntro />
           <HowItWorks />
-          
           <MasterBundleShowcase />
-          <TrustReminder variant="instant" />
 
           {/* Individual Bundles Grid */}
           <section id="products" className="py-20 md:py-28 bg-background">
@@ -198,22 +156,20 @@ const Index = () => {
             </div>
           </section>
 
-          <Suspense fallback={<SectionSkeleton />}>
-            <LearningPathway />
-          </Suspense>
+          <LearningPathway />
 
           {/* What Makes Us Different */}
-          <section className="py-16 md:py-28 bg-background">
+          <section className="py-20 md:py-28 bg-background">
             <div className="container">
-              <h2 className="text-section-title font-display text-2xl md:text-4xl text-center text-foreground mb-8 md:mb-12">What Makes Us Different</h2>
-              <div className="grid gap-4 md:gap-6 grid-cols-2 lg:grid-cols-4 max-w-5xl mx-auto">
+              <h2 className="text-section-title font-display text-3xl md:text-4xl text-center text-foreground mb-12">What Makes Us Different</h2>
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 max-w-5xl mx-auto">
                 {features.map((feature, i) => (
-                  <div key={i} className="p-4 md:p-6 bg-card rounded-xl border border-border text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-primary/30">
-                    <div className="w-12 h-12 md:w-14 md:h-14 mx-auto mb-3 md:mb-4 rounded-full bg-primary/10 flex items-center justify-center">
-                      <feature.icon className="h-6 w-6 md:h-7 md:w-7 text-primary" />
+                  <div key={i} className="p-6 bg-card rounded-xl border border-border text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-primary/30">
+                    <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
+                      <feature.icon className="h-7 w-7 text-primary" />
                     </div>
-                    <h3 className="font-heading font-bold mb-1 md:mb-2 text-foreground text-sm md:text-base">{feature.title}</h3>
-                    <p className="text-xs md:text-sm text-muted-foreground">{feature.description}</p>
+                    <h3 className="font-heading font-bold mb-2 text-foreground">{feature.title}</h3>
+                    <p className="text-sm text-muted-foreground">{feature.description}</p>
                   </div>
                 ))}
               </div>
@@ -221,45 +177,29 @@ const Index = () => {
           </section>
 
           <WhoThisIsFor />
-          
-          <Suspense fallback={<SectionSkeleton />}>
-            <VideoTestimonials />
-          </Suspense>
-          
-          <Suspense fallback={<SectionSkeleton />}>
-            <WhatsInsideSection />
-          </Suspense>
-          <TrustReminder variant="support" />
-          
           <SocialProof />
+          <WhatsInsideSection />
 
           {/* FAQ */}
-          <section id="faq" className="py-16 md:py-28 bg-background">
+          <section id="faq" className="py-20 md:py-28 bg-background">
             <div className="container max-w-3xl">
-              <h2 className="text-section-title font-display text-2xl md:text-4xl text-center text-foreground mb-8 md:mb-12">Frequently Asked Questions</h2>
-              <Accordion type="single" collapsible className="space-y-3 md:space-y-4">
+              <h2 className="text-section-title font-display text-3xl md:text-4xl text-center text-foreground mb-12">Frequently Asked Questions</h2>
+              <Accordion type="single" collapsible className="space-y-4">
                 {faqs.map((faq, i) => (
-                  <AccordionItem key={i} value={`faq-${i}`} className="bg-card rounded-xl border border-border px-4 md:px-6">
-                    <AccordionTrigger className="text-left font-heading font-semibold hover:no-underline py-4 md:py-5 text-sm md:text-base min-h-[44px]">{faq.q}</AccordionTrigger>
-                    <AccordionContent className="text-muted-foreground pb-4 md:pb-5 leading-relaxed text-sm md:text-base">{faq.a}</AccordionContent>
+                  <AccordionItem key={i} value={`faq-${i}`} className="bg-card rounded-xl border border-border px-6">
+                    <AccordionTrigger className="text-left font-heading font-semibold hover:no-underline py-5">{faq.q}</AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground pb-5 leading-relaxed">{faq.a}</AccordionContent>
                   </AccordionItem>
                 ))}
               </Accordion>
             </div>
           </section>
 
-          <Suspense fallback={<SectionSkeleton />}>
-            <WhyThisPrice />
-          </Suspense>
-          <TrustReminder variant="secure" />
-          
+          <WhyThisPrice />
           <FinalCTA />
-          <PreFooterCTA />
         </main>
-        <Footer />
         <StickyMobileCTA />
-        <PurchaseNotification />
-        <ExitIntentPopup />
+        <Footer />
       </div>
     </>
   );

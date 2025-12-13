@@ -1,24 +1,16 @@
 import { Link } from "react-router-dom";
-import { Users, Star } from "lucide-react";
+import { Users } from "lucide-react";
 
 export const Footer = () => {
   return (
     <footer className="bg-navy-dark text-secondary-foreground">
       {/* Social Proof Line */}
       <div className="border-b border-secondary-foreground/10">
-        <div className="container py-6">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
-            <p className="flex items-center gap-2 text-secondary-foreground/80 font-heading text-center">
-              <Users className="h-5 w-5 text-accent" />
-              <span>Join <strong className="text-accent">40,000+</strong> learners building real skills</span>
-            </p>
-            <div className="flex items-center gap-1">
-              {[1,2,3,4,5].map((i) => (
-                <Star key={i} className="w-4 h-4 text-gold fill-gold" />
-              ))}
-              <span className="ml-2 text-secondary-foreground/80 font-body">4.9/5 rating</span>
-            </div>
-          </div>
+        <div className="container py-6 text-center">
+          <p className="flex items-center justify-center gap-2 text-secondary-foreground/80 font-heading">
+            <Users className="h-5 w-5 text-accent" />
+            <span>Join <strong className="text-accent">40,000+</strong> learners building real skills for real opportunities</span>
+          </p>
         </div>
       </div>
 
@@ -38,13 +30,39 @@ export const Footer = () => {
             
             {/* Payment Icons */}
             <div className="flex items-center gap-3 mb-2">
-              <span className="text-xs text-secondary-foreground/50">Secure payments:</span>
+              <span className="text-xs text-secondary-foreground/50">We accept:</span>
             </div>
             <div className="flex items-center gap-2 flex-wrap">
-              <span className="text-xs font-body border border-secondary-foreground/20 px-2 py-1 rounded text-secondary-foreground/60">Visa</span>
-              <span className="text-xs font-body border border-secondary-foreground/20 px-2 py-1 rounded text-secondary-foreground/60">Mastercard</span>
-              <span className="text-xs font-body border border-secondary-foreground/20 px-2 py-1 rounded text-secondary-foreground/60">Amex</span>
-              <span className="text-xs font-body border border-secondary-foreground/20 px-2 py-1 rounded text-secondary-foreground/60">PayPal</span>
+              {/* Visa */}
+              <div className="w-10 h-6 bg-secondary-foreground/10 rounded flex items-center justify-center">
+                <svg className="h-4 w-auto" viewBox="0 0 38 24" fill="currentColor">
+                  <path d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.3 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.3-3-3-3ZM14 18l-4-10h3l2.5 7 1-7h2.5l-3 10h-2ZM22 18h-3V8h3v10Z"/>
+                </svg>
+              </div>
+              {/* Mastercard */}
+              <div className="w-10 h-6 bg-secondary-foreground/10 rounded flex items-center justify-center">
+                <svg className="h-4 w-auto" viewBox="0 0 38 24" fill="currentColor">
+                  <path d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.3 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.3-3-3-3ZM19 20c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8Z"/>
+                </svg>
+              </div>
+              {/* Amex */}
+              <div className="w-10 h-6 bg-secondary-foreground/10 rounded flex items-center justify-center">
+                <svg className="h-4 w-auto" viewBox="0 0 38 24" fill="currentColor">
+                  <path d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.3 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.3-3-3-3ZM15 18H9l3-12h6l-3 12Z"/>
+                </svg>
+              </div>
+              {/* PayPal */}
+              <div className="w-10 h-6 bg-secondary-foreground/10 rounded flex items-center justify-center text-xs font-heading font-bold text-secondary-foreground/60">
+                PP
+              </div>
+              {/* Apple Pay */}
+              <div className="w-10 h-6 bg-secondary-foreground/10 rounded flex items-center justify-center text-xs font-heading font-bold text-secondary-foreground/60">
+                AP
+              </div>
+              {/* Google Pay */}
+              <div className="w-10 h-6 bg-secondary-foreground/10 rounded flex items-center justify-center text-xs font-heading font-bold text-secondary-foreground/60">
+                GP
+              </div>
             </div>
           </div>
 

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Shield, Lock, Star } from "lucide-react";
+import { Menu, X, Shield, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useCartStore } from "@/stores/cartStore";
 import { CartDrawer } from "@/components/cart/CartDrawer";
@@ -34,11 +34,11 @@ export const Header = () => {
             </div>
           </Link>
 
-          {/* Enhanced Trust Badge with Rating */}
-          <div className="hidden lg:flex items-center gap-2 bg-gradient-to-r from-gold/20 to-gold/10 border border-gold/30 rounded-full px-4 py-1.5">
-            <Star className="h-4 w-4 text-gold fill-gold" />
-            <span className="text-sm font-heading font-semibold text-foreground">
-              4.9/5 from 40,000+ customers
+          {/* Customer Counter Badge */}
+          <div className="hidden lg:flex items-center gap-1.5 bg-accent/10 border border-accent/20 rounded-full px-3 py-1 animate-fade-in">
+            <CheckCircle2 className="h-3.5 w-3.5 text-accent" />
+            <span className="text-xs font-heading font-medium text-accent">
+              Trusted by 40,000+ Learners
             </span>
           </div>
         </div>
@@ -79,13 +79,10 @@ export const Header = () => {
           <div className="hidden items-center gap-3 text-xs text-muted-foreground xl:flex">
             <span className="flex items-center gap-1.5">
               <Shield className="h-3.5 w-3.5 text-accent" />
-              30-Day Guarantee
-            </span>
-            <span className="text-border">|</span>
-            <span className="flex items-center gap-1.5">
-              <Lock className="h-3.5 w-3.5 text-accent" />
               Secure
             </span>
+            <span className="text-border">|</span>
+            <span>30-Day Guarantee</span>
           </div>
 
           <CartDrawer />
