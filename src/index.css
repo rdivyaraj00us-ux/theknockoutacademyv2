@@ -138,11 +138,13 @@
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Source Sans 3', system-ui, sans-serif;
+    overflow-x: hidden;
   }
 }
 
