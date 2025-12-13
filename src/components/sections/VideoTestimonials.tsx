@@ -1,5 +1,7 @@
 import { useState } from "react";
-import { Play, X, Star, Quote } from "lucide-react";
+import { Play, X, Star, Quote, ChevronDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const videoTestimonials = [
   {
@@ -60,73 +62,105 @@ const videoTestimonials = [
 
 export const VideoTestimonials = () => {
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
+  const [showAll, setShowAll] = useState(false);
+  const [playingInline, setPlayingInline] = useState<number | null>(null);
+  const isMobile = useIsMobile();
+
+  // On mobile, show only 3 testimonials unless expanded
+  const displayedTestimonials = showAll || !isMobile
+    ? videoTestimonials 
+    : videoTestimonials.slice(0, 3);
+
+  const handleVideoClick = (testimonial: typeof videoTestimonials[0]) => {
+    if (isMobile) {
+      // On mobile, toggle inline playback
+      setPlayingInline(playingInline === testimonial.id ? null : testimonial.id);
+    } else {
+      // On desktop, open modal
+      setActiveVideo(testimonial.video);
+    }
+  };
 
   return (
-    <section className="py-20 md:py-28 bg-background">
+    <section className="py-16 md:py-28 bg-background">
       <div className="container">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12">
           <span className="inline-block px-4 py-1 bg-primary/10 text-primary font-heading font-semibold text-sm rounded-full mb-4">
             REAL RESULTS
           </span>
-          <h2 className="text-section-title font-display text-3xl md:text-4xl text-foreground mb-4">
+          <h2 className="text-section-title font-display text-2xl md:text-4xl text-foreground mb-3 md:mb-4">
             Don't Take Our Word For It
           </h2>
-          <p className="text-lg text-muted-foreground font-body">
-            Hear directly from customers who've transformed their skills with The Knockout Academy
+          <p className="text-base md:text-lg text-muted-foreground font-body">
+            Hear directly from customers who've transformed their skills
           </p>
         </div>
 
         {/* Video Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {videoTestimonials.map((testimonial) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+          {displayedTestimonials.map((testimonial) => (
             <div 
               key={testimonial.id}
               className="group bg-card rounded-2xl border border-border overflow-hidden shadow-premium hover:shadow-premium-hover hover:-translate-y-2 transition-all duration-300"
             >
-              {/* Video Thumbnail */}
-              <div 
-                className="relative aspect-video cursor-pointer bg-secondary"
-                onClick={() => setActiveVideo(testimonial.video)}
-              >
-                {/* Thumbnail Background with video preview */}
-                <video 
-                  className="w-full h-full object-cover"
-                  muted
-                  playsInline
-                  preload="metadata"
-                >
-                  <source src={`${testimonial.video}#t=0.5`} type="video/mp4" />
-                </video>
-                
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-secondary/60 via-navy/40 to-secondary/60 flex items-center justify-center group-hover:bg-black/50 transition-colors">
-                  <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
-                    <Play className="w-6 h-6 text-primary ml-1 fill-primary" />
-                  </div>
-                </div>
-                
-                {/* Highlight Badge */}
-                <div className="absolute top-3 left-3">
-                  <span className="px-3 py-1 bg-accent/90 text-white text-xs font-heading font-semibold rounded-full">
-                    {testimonial.highlight}
-                  </span>
-                </div>
+              {/* Video Area */}
+              <div className="relative aspect-video bg-secondary">
+                {isMobile && playingInline === testimonial.id ? (
+                  // Inline player on mobile
+                  <video 
+                    className="w-full h-full object-cover"
+                    controls
+                    autoPlay
+                    playsInline
+                  >
+                    <source src={testimonial.video} type="video/mp4" />
+                  </video>
+                ) : (
+                  // Thumbnail with play button
+                  <div 
+                    className="relative w-full h-full cursor-pointer"
+                    onClick={() => handleVideoClick(testimonial)}
+                  >
+                    <video 
+                      className="w-full h-full object-cover"
+                      muted
+                      playsInline
+                      preload="metadata"
+                    >
+                      <source src={`${testimonial.video}#t=0.5`} type="video/mp4" />
+                    </video>
+                    
+                    {/* Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-secondary/60 via-navy/40 to-secondary/60 flex items-center justify-center group-hover:bg-black/50 transition-colors">
+                      <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-white/90 flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform min-h-[44px] min-w-[44px]">
+                        <Play className="w-5 h-5 md:w-6 md:h-6 text-primary ml-1 fill-primary" />
+                      </div>
+                    </div>
+                    
+                    {/* Highlight Badge */}
+                    <div className="absolute top-2 left-2 md:top-3 md:left-3">
+                      <span className="px-2 py-1 md:px-3 bg-accent/90 text-white text-xs font-heading font-semibold rounded-full">
+                        {testimonial.highlight}
+                      </span>
+                    </div>
 
-                {/* Duration Badge */}
-                <div className="absolute bottom-3 right-3">
-                  <span className="px-2 py-1 bg-black/60 text-white text-xs font-body rounded">
-                    0:52
-                  </span>
-                </div>
+                    {/* Duration Badge */}
+                    <div className="absolute bottom-2 right-2 md:bottom-3 md:right-3">
+                      <span className="px-2 py-1 bg-black/60 text-white text-xs font-body rounded">
+                        0:52
+                      </span>
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* Content */}
-              <div className="p-5">
+              <div className="p-4 md:p-5">
                 {/* Quote */}
-                <div className="relative mb-4">
-                  <Quote className="absolute -top-1 -left-1 w-6 h-6 text-primary/20" />
-                  <p className="text-foreground font-body pl-5 leading-relaxed">
+                <div className="relative mb-3 md:mb-4">
+                  <Quote className="absolute -top-1 -left-1 w-5 h-5 md:w-6 md:h-6 text-primary/20" />
+                  <p className="text-sm md:text-base text-foreground font-body pl-4 md:pl-5 leading-relaxed">
                     "{testimonial.quote}"
                   </p>
                 </div>
@@ -134,16 +168,16 @@ export const VideoTestimonials = () => {
                 {/* Author */}
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="font-heading font-semibold text-foreground">
+                    <p className="font-heading font-semibold text-foreground text-sm md:text-base">
                       {testimonial.name}
                     </p>
-                    <p className="text-sm text-muted-foreground font-body">
+                    <p className="text-xs md:text-sm text-muted-foreground font-body">
                       {testimonial.title}, {testimonial.location}
                     </p>
                   </div>
                   <div className="flex">
                     {[1,2,3,4,5].map((i) => (
-                      <Star key={i} className="w-4 h-4 text-gold fill-gold" />
+                      <Star key={i} className="w-3 h-3 md:w-4 md:h-4 text-gold fill-gold" />
                     ))}
                   </div>
                 </div>
@@ -152,23 +186,37 @@ export const VideoTestimonials = () => {
           ))}
         </div>
 
+        {/* Mobile "See All" Button */}
+        {!showAll && isMobile && (
+          <div className="text-center mt-6">
+            <Button 
+              variant="outline" 
+              onClick={() => setShowAll(true)}
+              className="min-h-[44px] gap-2"
+            >
+              See All 6 Video Reviews
+              <ChevronDown className="w-4 h-4" />
+            </Button>
+          </div>
+        )}
+
         {/* Bottom CTA */}
-        <div className="text-center mt-12">
-          <p className="text-muted-foreground font-body mb-4">
+        <div className="text-center mt-8 md:mt-12">
+          <p className="text-sm md:text-base text-muted-foreground font-body mb-3 md:mb-4">
             Join 40,000+ customers who've already transformed their skills
           </p>
-          <div className="flex items-center justify-center gap-2">
+          <div className="flex items-center justify-center gap-1 md:gap-2">
             {[1,2,3,4,5].map((i) => (
-              <Star key={i} className="w-5 h-5 text-gold fill-gold" />
+              <Star key={i} className="w-4 h-4 md:w-5 md:h-5 text-gold fill-gold" />
             ))}
-            <span className="ml-2 font-heading font-semibold text-foreground">4.9/5</span>
-            <span className="text-muted-foreground font-body">average rating</span>
+            <span className="ml-2 font-heading font-semibold text-foreground text-sm md:text-base">4.9/5</span>
+            <span className="text-muted-foreground font-body text-sm md:text-base">average rating</span>
           </div>
         </div>
       </div>
 
-      {/* Video Modal */}
-      {activeVideo && (
+      {/* Video Modal (Desktop only) */}
+      {activeVideo && !isMobile && (
         <div 
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
           onClick={() => setActiveVideo(null)}
@@ -179,7 +227,7 @@ export const VideoTestimonials = () => {
           >
             <button
               onClick={() => setActiveVideo(null)}
-              className="absolute -top-12 right-0 text-white hover:text-white/80 transition-colors"
+              className="absolute -top-12 right-0 text-white hover:text-white/80 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
             >
               <X className="h-8 w-8" />
             </button>
