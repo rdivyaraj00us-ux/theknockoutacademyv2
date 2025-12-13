@@ -105,12 +105,12 @@ const bundleContentsDisplay = [
 ];
 
 const comparisonData = [
-  { item: "AI Mastery Essentials Bundle", individual: "$69", master: "✓ Included" },
-  { item: "E-Commerce & Dropshipping Bundle", individual: "$69", master: "✓ Included" },
-  { item: "Content Creator Accelerator Bundle", individual: "$69", master: "✓ Included" },
-  { item: "Digital Marketing & Sales Bundle", individual: "$69", master: "✓ Included" },
-  { item: "Productivity & Development Bundle", individual: "$69", master: "✓ Included" },
-  { item: "Finance & Investing Bundle", individual: "$69", master: "✓ Included" },
+  { item: "AI Mastery Essentials Bundle", individual: "$29", master: "✓ Included" },
+  { item: "E-Commerce & Dropshipping Bundle", individual: "$29", master: "✓ Included" },
+  { item: "Content Creator Accelerator Bundle", individual: "$29", master: "✓ Included" },
+  { item: "Digital Marketing & Sales Bundle", individual: "$29", master: "✓ Included" },
+  { item: "Productivity & Development Bundle", individual: "$29", master: "✓ Included" },
+  { item: "Finance & Investing Bundle", individual: "$29", master: "✓ Included" },
   { item: "8,000+ n8n Automation Templates", individual: "$297+", master: "✓ Included" },
   { item: "Beginner-to-Expert Learning Pathway", individual: "Not Available", master: "✓ Included" },
 ];
