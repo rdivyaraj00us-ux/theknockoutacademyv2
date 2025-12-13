@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { StickyMobileCTA } from "@/components/layout/StickyMobileCTA";
+import { AnnouncementBar } from "@/components/layout/AnnouncementBar";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { ProblemAgitation } from "@/components/sections/ProblemAgitation";
 import { SolutionIntro } from "@/components/sections/SolutionIntro";
@@ -10,6 +11,7 @@ import { HowItWorks } from "@/components/sections/HowItWorks";
 import { MasterBundleShowcase } from "@/components/sections/MasterBundleShowcase";
 import { WhoThisIsFor } from "@/components/sections/WhoThisIsFor";
 import { SocialProof } from "@/components/sections/SocialProof";
+import { VideoTestimonials } from "@/components/sections/VideoTestimonials";
 import { LearningPathway } from "@/components/sections/LearningPathway";
 import { WhatsInsideSection } from "@/components/sections/WhatsInsideSection";
 import { WhyThisPrice } from "@/components/sections/WhyThisPrice";
@@ -18,6 +20,8 @@ import { ProductCard } from "@/components/products/ProductCard";
 import { ProductGridSkeleton } from "@/components/ui/product-skeleton";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import { FloatingBestValue } from "@/components/ui/FloatingBestValue";
+import { ExitIntentPopup } from "@/components/ui/ExitIntentPopup";
+import { PurchaseNotification } from "@/components/ui/PurchaseNotification";
 import { fetchProducts, ShopifyProduct } from "@/lib/shopify";
 import { Package, Zap, BookOpen, Sparkles } from "lucide-react";
 import {
@@ -86,8 +90,22 @@ const Index = () => {
     <>
       <Helmet>
         <title>The Knockout Academy | Master Skills That Actually Make Money Online</title>
-        <meta name="description" content="40+ Premium eBooks, Guides & 8,000+ AI Automation Templates. From complete beginner to confident professional. Instant digital delivery, 30-day money-back guarantee." />
-        <link rel="canonical" href="https://knockoutacademy.com" />
+        <meta name="description" content="40+ Premium eBooks, Guides & 8,000+ AI Automation Templates. Join 40,000+ customers. $69 one-time, 30-day guarantee." />
+        <link rel="canonical" href="https://theknockoutacademy.com" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="The Knockout Academy | Master Skills That Make Money" />
+        <meta property="og:description" content="40+ Premium eBooks & 8,000+ AI Templates. Join 40,000+ customers. $69 one-time." />
+        <meta property="og:image" content="https://theknockoutacademy.com/og-image.jpg" />
+        <meta property="og:url" content="https://theknockoutacademy.com" />
+        <meta property="og:type" content="website" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="The Knockout Academy" />
+        <meta name="twitter:description" content="40+ eBooks & 8,000+ AI Templates for $69" />
+        <meta name="twitter:image" content="https://theknockoutacademy.com/og-image.jpg" />
+        
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -122,6 +140,7 @@ const Index = () => {
       <FloatingBestValue />
 
       <div className="min-h-screen flex flex-col">
+        <AnnouncementBar />
         <Header />
         <main className="flex-1">
           <HeroSection />
@@ -177,6 +196,7 @@ const Index = () => {
           </section>
 
           <WhoThisIsFor />
+          <VideoTestimonials />
           <SocialProof />
           <WhatsInsideSection />
 
@@ -200,6 +220,9 @@ const Index = () => {
         </main>
         <StickyMobileCTA />
         <Footer />
+        
+        <PurchaseNotification />
+        <ExitIntentPopup />
       </div>
     </>
   );

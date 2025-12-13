@@ -1,8 +1,10 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, ChevronDown, Shield, Zap, RefreshCw, CheckCircle2, Lock } from "lucide-react";
+import { ArrowRight, ChevronDown, Shield, Zap, RefreshCw, CheckCircle2, Lock, Play, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const HeroSection = () => {
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const scrollToProducts = () => {
     document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -91,50 +93,68 @@ export const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right: Value Stack Card */}
-          <div className="relative flex items-center justify-center animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
-            <div className="relative w-full max-w-md animate-float">
-              {/* Glow effect behind */}
-              <div className="absolute inset-0 bg-primary/20 rounded-3xl blur-3xl" />
-              
-              {/* Value Stack Card */}
-              <div className="relative bg-secondary-foreground/10 backdrop-blur-md rounded-2xl border border-secondary-foreground/20 p-6 md:p-8 shadow-2xl">
-                <h3 className="font-heading font-bold text-secondary-foreground text-lg mb-4">
-                  WHAT YOU GET:
-                </h3>
+          {/* RIGHT SIDE — Video + Value Stack */}
+          <div className="space-y-6 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
+            
+            {/* Founder Video Player */}
+            <div 
+              className="relative rounded-2xl overflow-hidden shadow-2xl shadow-primary/20 border border-primary/20 cursor-pointer group"
+              onClick={() => setIsVideoModalOpen(true)}
+            >
+              <div className="aspect-video bg-gradient-to-br from-secondary via-primary/20 to-secondary relative">
+                {/* Video poster/thumbnail */}
+                <video 
+                  className="w-full h-full object-cover opacity-70"
+                  muted
+                  playsInline
+                  loop
+                >
+                  <source src="/videos/The_Knockout_Academy.mp4" type="video/mp4" />
+                </video>
                 
-                <ul className="space-y-3 mb-6">
-                  {[
-                    "40+ Premium eBooks & Guides",
-                    "8,000+ AI Automation Templates",
-                    "6 Complete Skill Bundles",
-                    "Step-by-Step Learning Pathways",
-                    "Lifetime Access (No Subscriptions)",
-                  ].map((item, index) => (
-                    <li key={index} className="flex items-center gap-3 text-secondary-foreground/80">
-                      <CheckCircle2 className="h-5 w-5 text-accent flex-shrink-0" />
-                      <span className="text-sm md:text-base">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="border-t border-secondary-foreground/20 pt-4 mb-6">
-                  <div className="flex items-baseline gap-3 mb-1">
-                    <span className="text-sm text-secondary-foreground/60">Total Value:</span>
-                    <span className="text-xl text-gold line-through font-heading font-semibold">$470+</span>
-                  </div>
-                  <div className="flex items-baseline gap-3">
-                    <span className="text-sm text-secondary-foreground/60">YOUR PRICE:</span>
-                    <span className="text-4xl font-display font-bold text-accent">$69</span>
+                {/* Play Button Overlay */}
+                <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-colors">
+                  <div className="w-20 h-20 rounded-full bg-white/95 flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform animate-pulse-glow">
+                    <Play className="w-8 h-8 text-primary ml-1 fill-primary" />
                   </div>
                 </div>
+                
+                {/* Video Info */}
+                <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+                  <div>
+                    <p className="text-white font-heading font-semibold text-sm drop-shadow-lg">Meet Alex, Founder</p>
+                    <p className="text-white/80 text-xs drop-shadow-lg">Watch why I created this</p>
+                  </div>
+                  <span className="px-2 py-1 bg-black/50 text-white text-xs rounded backdrop-blur-sm">
+                    1:30
+                  </span>
+                </div>
+              </div>
+            </div>
 
-                <Button variant="accent" size="lg" asChild className="w-full group animate-pulse-emerald">
-                  <Link to="/master-bundle">
-                    GET INSTANT ACCESS
-                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                </Button>
+            {/* Condensed Value Stack */}
+            <div className="bg-secondary-foreground/10 backdrop-blur-md rounded-xl border border-secondary-foreground/20 p-5">
+              <div className="flex items-center gap-3 mb-3">
+                {[
+                  "40+ eBooks",
+                  "8,000+ Templates",
+                  "Lifetime Access",
+                ].map((item, index) => (
+                  <span key={index} className="flex items-center gap-1.5 text-secondary-foreground/80 text-xs">
+                    <CheckCircle2 className="h-3.5 w-3.5 text-accent flex-shrink-0" />
+                    {item}
+                  </span>
+                ))}
+              </div>
+              <div className="flex items-baseline justify-between">
+                <div className="flex items-baseline gap-2">
+                  <span className="text-sm text-secondary-foreground/60">Value:</span>
+                  <span className="text-lg text-gold line-through font-heading">$470+</span>
+                </div>
+                <div className="flex items-baseline gap-2">
+                  <span className="text-sm text-secondary-foreground/60">YOUR PRICE:</span>
+                  <span className="text-3xl font-display font-bold text-accent">$69</span>
+                </div>
               </div>
             </div>
           </div>
@@ -154,6 +174,33 @@ export const HeroSection = () => {
 
       {/* Bottom gradient fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
+
+      {/* Video Modal */}
+      {isVideoModalOpen && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
+          onClick={() => setIsVideoModalOpen(false)}
+        >
+          <div 
+            className="relative w-full max-w-4xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setIsVideoModalOpen(false)}
+              className="absolute -top-12 right-0 text-white hover:text-white/80 transition-colors"
+            >
+              <X className="h-8 w-8" />
+            </button>
+            <video 
+              className="w-full rounded-xl shadow-2xl"
+              controls
+              autoPlay
+            >
+              <source src="/videos/The_Knockout_Academy.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
