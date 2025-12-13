@@ -163,6 +163,20 @@ const Product = () => {
         <title>{product.node.title} | The Knockout Academy</title>
         <meta name="description" content={product.node.description?.slice(0, 160) || `Get ${product.node.title} - premium digital education resources from The Knockout Academy.`} />
         <link rel="canonical" href={`https://knockoutacademy.com/product/${handle}`} />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content={`${product.node.title} | The Knockout Academy`} />
+        <meta property="og:description" content={product.node.description?.slice(0, 160) || `Get ${product.node.title} - premium digital education for $29.`} />
+        <meta property="og:image" content={image?.url || "https://knockoutacademy.com/og-image.jpg"} />
+        <meta property="og:url" content={`https://knockoutacademy.com/product/${handle}`} />
+        <meta property="og:type" content="product" />
+        
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${product.node.title} | The Knockout Academy`} />
+        <meta name="twitter:description" content={product.node.description?.slice(0, 120) || `Premium digital education for $29.`} />
+        <meta name="twitter:image" content={image?.url || "https://knockoutacademy.com/og-image.jpg"} />
+        
         <script type="application/ld+json">
           {JSON.stringify(productSchema)}
         </script>

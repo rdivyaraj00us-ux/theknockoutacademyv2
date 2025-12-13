@@ -169,6 +169,19 @@ const MasterBundle = () => {
         <title>The Knockout Master Bundle - All 6 Bundles + 8,000+ Templates | The Knockout Academy</title>
         <meta name="description" content="Get everything: 40+ eBooks, guides & 8,000+ AI automation templates. $470+ value for just $69. 30-day money-back guarantee." />
         <link rel="canonical" href="https://knockoutacademy.com/master-bundle" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="The Knockout Master Bundle - All 6 Bundles + 8,000+ Templates" />
+        <meta property="og:description" content="Get everything: 40+ eBooks & 8,000+ AI templates. $470+ value for $69. 30-day guarantee." />
+        <meta property="og:image" content="https://knockoutacademy.com/og-image.jpg" />
+        <meta property="og:url" content="https://knockoutacademy.com/master-bundle" />
+        <meta property="og:type" content="product" />
+        
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="The Knockout Master Bundle | $470+ Value for $69" />
+        <meta name="twitter:description" content="All 6 bundles + 8,000+ AI templates. 30-day money-back guarantee." />
+        <meta name="twitter:image" content="https://knockoutacademy.com/og-image.jpg" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
