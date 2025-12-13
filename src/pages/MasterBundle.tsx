@@ -125,8 +125,8 @@ const MasterBundle = () => {
       try {
         const products = await fetchProducts(50);
         const master = products.find(p => 
-          p.node.title.toLowerCase().includes("master") || 
-          p.node.handle.toLowerCase().includes("master")
+          p.node.title.toLowerCase().includes("master bundle") || 
+          p.node.handle.toLowerCase().includes("master-bundle")
         );
         setMasterBundle(master || null);
       } catch (error) {
