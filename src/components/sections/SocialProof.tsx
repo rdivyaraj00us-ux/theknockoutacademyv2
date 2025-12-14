@@ -101,12 +101,7 @@ export const SocialProof = () => {
           </h3>
         </ScrollAnimation>
 
-        {/* Video Testimonials Placeholder Row */}
-        <ScrollAnimation animation="fade-up" delay={100}>
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-16">
-            {[1, 2, 3].map((_, index) => {})}
-          </div>
-        </ScrollAnimation>
+        {/* Video Testimonials are now in dedicated VideoTestimonials section */}
 
         {/* Text Testimonials Grid */}
         <ScrollAnimation animation="fade-up" delay={200}>
