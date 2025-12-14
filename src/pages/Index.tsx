@@ -31,7 +31,7 @@ import {
 } from "@/components/ui/accordion";
 
 // Lazy load sections below the fold for mobile performance
-const VideoTestimonials = lazy(() => import("@/components/sections/VideoTestimonials").then(m => ({ default: m.VideoTestimonials })));
+
 const LearningPathway = lazy(() => import("@/components/sections/LearningPathway").then(m => ({ default: m.LearningPathway })));
 const WhatsInsideSection = lazy(() => import("@/components/sections/WhatsInsideSection").then(m => ({ default: m.WhatsInsideSection })));
 const WhyThisPrice = lazy(() => import("@/components/sections/WhyThisPrice").then(m => ({ default: m.WhyThisPrice })));
@@ -222,9 +222,6 @@ const Index = () => {
 
           <WhoThisIsFor />
           
-          <Suspense fallback={<SectionSkeleton />}>
-            <VideoTestimonials />
-          </Suspense>
           
           <Suspense fallback={<SectionSkeleton />}>
             <WhatsInsideSection />
