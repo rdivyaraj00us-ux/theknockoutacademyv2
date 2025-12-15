@@ -24,11 +24,11 @@ export const Header = () => {
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-secondary transition-transform group-hover:scale-105">
               <span className="text-xl font-display font-bold text-secondary-foreground">K</span>
             </div>
-            <div className="hidden sm:block">
-              <span className="font-heading font-bold text-foreground block leading-tight">
+            <div>
+              <span className="font-heading font-bold text-foreground block leading-tight text-sm sm:text-base">
                 The Knockout Academy
               </span>
-              <span className="text-xs text-muted-foreground font-body">
+              <span className="hidden sm:block text-xs text-muted-foreground font-body">
                 Where Dreams Meet Discipline
               </span>
             </div>
