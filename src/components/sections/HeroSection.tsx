@@ -1,20 +1,16 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { 
-  Play, 
   CheckCircle2, 
   Zap, 
   RefreshCw, 
   Lock,
   Star,
-  ChevronDown,
-  X
+  ChevronDown
 } from "lucide-react";
 
 export const HeroSection = () => {
-  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
   const scrollToProducts = () => {
     document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' });
@@ -112,49 +108,11 @@ export const HeroSection = () => {
             </div>
           </div>
 
-          {/* RIGHT SIDE — Video + Value Stack */}
+          {/* RIGHT SIDE — Value Stack (Video hidden for payment gateway compliance) */}
           <div className="space-y-4 lg:space-y-6 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
-            
-            {/* Founder Video Player */}
-            <div className="relative rounded-xl lg:rounded-2xl overflow-hidden shadow-2xl shadow-primary/20 border border-primary/20">
-              <div 
-                className="relative cursor-pointer group"
-                onClick={() => setIsVideoModalOpen(true)}
-              >
-                {/* Video Thumbnail */}
-                <div className="aspect-video bg-gradient-to-br from-secondary via-navy to-secondary">
-                  <video 
-                    className="w-full h-full object-cover opacity-80"
-                    muted
-                    playsInline
-                    preload="metadata"
-                  >
-                    <source src="/videos/The_Knockout_Academy.mp4#t=0.5" type="video/mp4" />
-                  </video>
-                </div>
-                
-                {/* Play Button Overlay */}
-                <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-colors">
-                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white/95 flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform animate-pulse-glow">
-                    <Play className="w-6 h-6 md:w-8 md:h-8 text-primary ml-1 fill-primary" />
-                  </div>
-                </div>
-                
-                {/* Video Info */}
-                <div className="absolute bottom-3 left-3 right-3 md:bottom-4 md:left-4 md:right-4 flex justify-between items-end">
-                  <div>
-                    <p className="text-white font-heading font-semibold text-xs md:text-sm">Meet Alex, Founder</p>
-                    <p className="text-white/70 text-xs font-body hidden sm:block">Watch why he created this</p>
-                  </div>
-                  <Badge className="bg-black/50 text-white border-none text-xs">
-                    1:30
-                  </Badge>
-                </div>
-              </div>
-            </div>
 
-            {/* Value Stack Card - Hidden on mobile, shown on lg+ */}
-            <div className="hidden lg:block bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 p-6 shadow-xl">
+            {/* Value Stack Card */}
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 p-6 shadow-xl">
               <h3 className="font-heading font-bold text-secondary-foreground text-sm uppercase tracking-wide mb-4">
                 What You Get:
               </h3>
@@ -187,21 +145,6 @@ export const HeroSection = () => {
                 </div>
               </div>
             </div>
-
-            {/* Mobile-only compact value indicator */}
-            <div className="lg:hidden flex items-center justify-center gap-4 py-3 px-4 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20">
-              <div className="text-center">
-                <span className="text-secondary-foreground/50 line-through text-sm font-body">$470+</span>
-                <span className="text-secondary-foreground/50 text-xs ml-1">value</span>
-              </div>
-              <div className="h-6 w-px bg-white/20" />
-              <div className="flex items-center gap-2">
-                <span className="text-2xl font-heading font-bold text-accent">$69</span>
-                <Badge className="bg-gold/20 text-gold border-gold/30 font-heading text-xs">
-                  85% OFF
-                </Badge>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -216,32 +159,6 @@ export const HeroSection = () => {
         </div>
       </div>
 
-      {/* Video Modal */}
-      {isVideoModalOpen && (
-        <div 
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
-          onClick={() => setIsVideoModalOpen(false)}
-        >
-          <div 
-            className="relative w-full max-w-4xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              onClick={() => setIsVideoModalOpen(false)}
-              className="absolute -top-12 right-0 text-white hover:text-white/80 transition-colors"
-            >
-              <X className="h-8 w-8" />
-            </button>
-            <video 
-              className="w-full rounded-xl shadow-2xl"
-              controls
-              autoPlay
-            >
-              <source src="/videos/The_Knockout_Academy.mp4" type="video/mp4" />
-            </video>
-          </div>
-        </div>
-      )}
 
       {/* Bottom gradient fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none" />
