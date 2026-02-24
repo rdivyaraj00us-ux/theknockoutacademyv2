@@ -27,6 +27,7 @@ const RefundPolicy = () => {
               <p className="text-xl text-muted-foreground">
                 No questions asked. Your satisfaction is our priority.
               </p>
+              <p className="text-muted-foreground mt-4"><strong>Last Updated: January 2025</strong></p>
             </div>
 
             {/* Guarantee Box */}
@@ -35,66 +36,94 @@ const RefundPolicy = () => {
                 <CheckCircle2 className="w-7 h-7 text-accent" />
                 Our Promise to You
               </h2>
+              <p className="text-muted-foreground text-lg mb-4">
+                We stand behind the quality of The Knockout Academy products. If you're not completely satisfied with your purchase for any reason, simply contact us within 30 days and we'll issue a full refund.
+              </p>
+              <p className="text-muted-foreground text-lg mb-4">
+                No complicated forms. No hoops to jump through. No questions asked.
+              </p>
               <p className="text-muted-foreground text-lg">
-                If you're not completely satisfied with your purchase for any reason, simply contact us within 30 days of your purchase date and we'll issue a full refund. No complicated forms. No hoops to jump through. No questions asked.
+                We believe in the quality and value of our products. We want you to make a purchase with complete confidence, knowing that if our resources don't meet your expectations, you have nothing to lose. Our goal is to help you succeed, and that starts with trust.
               </p>
             </div>
 
             {/* Policy Details */}
             <div className="prose prose-slate dark:prose-invert">
-              <p className="text-muted-foreground mb-8">Last updated: January 2025</p>
-
               <section className="mb-8">
                 <h2 className="text-2xl font-bold text-foreground mb-4">How to Request a Refund</h2>
                 <ol className="list-decimal pl-6 text-muted-foreground space-y-3">
                   <li>
                     <strong>Send us an email</strong> at{" "}
-                    <a href="mailto:support@knockoutacademy.com" className="text-primary hover:underline">
-                      support@knockoutacademy.com
+                    <a href="mailto:theknockoutacademy@gmail.com" className="text-primary hover:underline">
+                      theknockoutacademy@gmail.com
                     </a>
                   </li>
                   <li>
                     <strong>Include your order number</strong> (found in your purchase confirmation email)
                   </li>
                   <li>
-                    <strong>That's it!</strong> We'll process your refund within 3-5 business days
+                    <strong>That's it!</strong> We'll process your refund within 3–5 business days
                   </li>
                 </ol>
               </section>
 
               <section className="mb-8">
                 <h2 className="text-2xl font-bold text-foreground mb-4">Refund Timeline</h2>
-                <ul className="list-disc pl-6 text-muted-foreground space-y-2">
-                  <li><strong>Eligibility period:</strong> 30 days from the date of purchase</li>
-                  <li><strong>Processing time:</strong> 3-5 business days after your request</li>
-                  <li><strong>Bank processing:</strong> Additional 5-10 business days depending on your payment method</li>
-                </ul>
+                <div className="overflow-x-auto mb-4">
+                  <table className="w-full text-sm text-muted-foreground border border-border rounded-lg">
+                    <thead>
+                      <tr className="bg-muted/50">
+                        <th className="text-left p-3 font-semibold text-foreground border-b border-border">Stage</th>
+                        <th className="text-left p-3 font-semibold text-foreground border-b border-border">Timeframe</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b border-border">
+                        <td className="p-3 font-medium">Eligibility Period</td>
+                        <td className="p-3">30 days from purchase</td>
+                      </tr>
+                      <tr className="border-b border-border">
+                        <td className="p-3 font-medium">Processing Time</td>
+                        <td className="p-3">3–5 business days</td>
+                      </tr>
+                      <tr>
+                        <td className="p-3 font-medium">Bank Processing</td>
+                        <td className="p-3">Additional 5–10 business days</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </section>
 
               <section className="mb-8">
-                <h2 className="text-2xl font-bold text-foreground mb-4">What Happens After a Refund</h2>
-                <p className="text-muted-foreground">
-                  Once your refund is processed, your access to the purchased digital products will be revoked. We trust our customers to honor this policy fairly. Abuse of the refund policy may result in denial of future purchases.
-                </p>
+                <h2 className="text-2xl font-bold text-foreground mb-4">Conditions</h2>
+                <ul className="list-disc pl-6 text-muted-foreground space-y-2">
+                  <li>Refund requests must be made within <strong>30 days of purchase</strong></li>
+                  <li><strong>Only one refund per customer</strong> is permitted</li>
+                  <li>Access to the product will be <strong>revoked upon refund</strong></li>
+                </ul>
               </section>
 
               <section className="mb-8">
                 <h2 className="text-2xl font-bold text-foreground mb-4">Why We Offer This Guarantee</h2>
                 <p className="text-muted-foreground">
-                  We believe in the quality and value of our products. We want you to make a purchase with complete confidence, knowing that if our resources don't meet your expectations, you have nothing to lose. Our goal is to help you succeed, and that starts with trust.
+                  We're confident in the value our products provide. Your trust matters to us.
                 </p>
               </section>
 
               <section className="mb-8">
                 <h2 className="text-2xl font-bold text-foreground mb-4">Questions?</h2>
                 <p className="text-muted-foreground">
-                  If you have any questions about our refund policy, please don't hesitate to contact us at{" "}
-                  <a href="mailto:support@knockoutacademy.com" className="text-primary hover:underline">
-                    support@knockoutacademy.com
+                  📧 <strong>Email:</strong>{" "}
+                  <a href="mailto:theknockoutacademy@gmail.com" className="text-primary hover:underline">
+                    theknockoutacademy@gmail.com
                   </a>
-                  . We're here to help!
                 </p>
               </section>
+
+              <p className="text-sm text-muted-foreground italic">
+                <strong>TKOA Private Limited</strong> | CIN: U58199GJ2025PTC169791
+              </p>
             </div>
           </div>
         </div>
