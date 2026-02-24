@@ -6,8 +6,8 @@ const TermsOfService = () => {
   return (
     <>
       <Helmet>
-        <title>Terms of Service | The Knockout Academy</title>
-        <meta name="description" content="Terms of Service for The Knockout Academy. Understand the terms governing your use of our digital education products." />
+        <title>Terms and Conditions | The Knockout Academy</title>
+        <meta name="description" content="Terms and Conditions for The Knockout Academy operated by TKOA Private Limited. Understand the terms governing your use of our website and purchases." />
       </Helmet>
       
       <Header />
@@ -15,103 +15,130 @@ const TermsOfService = () => {
       <main className="min-h-screen bg-background py-16 md:py-24">
         <div className="container">
           <div className="max-w-3xl mx-auto prose prose-slate dark:prose-invert">
-            <h1 className="text-4xl font-extrabold text-foreground mb-8">Terms of Service</h1>
-            <p className="text-muted-foreground mb-8">Last updated: January 2025</p>
+            <h1 className="text-4xl font-extrabold text-foreground mb-4">Terms and Conditions</h1>
+            <p className="text-muted-foreground mb-4"><strong>Last Updated: January 2025</strong></p>
+            <p className="text-muted-foreground mb-4">
+              Welcome to <strong>The Knockout Academy</strong>. These Terms govern your use of our website and purchases.
+            </p>
+            <p className="text-muted-foreground mb-4">
+              <strong>The Knockout Academy</strong> is operated by <strong>TKOA Private Limited</strong> (CIN: U58199GJ2025PTC169791).
+            </p>
+            <p className="text-muted-foreground mb-8">
+              By using our website, you agree to these Terms.
+            </p>
 
+            {/* Section 1 */}
             <section className="mb-8">
-              <h2 className="text-2xl font-bold text-foreground mb-4">1. Acceptance of Terms</h2>
-              <p className="text-muted-foreground">
-                By accessing or purchasing from The Knockout Academy, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services or make any purchases.
-              </p>
-            </section>
+              <h2 className="text-2xl font-bold text-foreground mb-4">1. Products and Services</h2>
 
-            <section className="mb-8">
-              <h2 className="text-2xl font-bold text-foreground mb-4">2. Products and Services</h2>
+              <h3 className="text-xl font-semibold text-foreground mb-3">1.1 What We Sell</h3>
               <p className="text-muted-foreground mb-4">
-                The Knockout Academy sells digital educational products including eBooks, guides, templates, and automation workflows. All products are delivered digitally immediately upon successful payment.
+                We sell digital products including ebooks, courses, templates, guides, and educational resources.
               </p>
-              <p className="text-muted-foreground">
-                <strong>Important:</strong> Our products are educational resources only. We do not guarantee any specific results, income, or outcomes. Your success depends entirely on your own effort, implementation, and market conditions.
-              </p>
-            </section>
 
-            <section className="mb-8">
-              <h2 className="text-2xl font-bold text-foreground mb-4">3. Intellectual Property</h2>
-              <p className="text-muted-foreground mb-4">
-                All content, products, and materials provided by The Knockout Academy are protected by copyright and intellectual property laws. When you purchase a product:
-              </p>
+              <h3 className="text-xl font-semibold text-foreground mb-3">1.2 Digital Delivery</h3>
               <ul className="list-disc pl-6 text-muted-foreground space-y-2">
-                <li>You receive a personal, non-transferable license to use the materials</li>
-                <li>You may not resell, redistribute, or share the products with others</li>
-                <li>You may not claim authorship or remove copyright notices</li>
-                <li>You may use the templates and automation workflows for your personal or business purposes</li>
+                <li>All products are delivered digitally via email/download link</li>
+                <li>Delivery is instant upon successful payment</li>
+                <li>Ensure your email address is correct</li>
               </ul>
             </section>
 
+            {/* Section 2 */}
             <section className="mb-8">
-              <h2 className="text-2xl font-bold text-foreground mb-4">4. Payment Terms</h2>
-              <p className="text-muted-foreground">
-                All prices are listed in USD unless otherwise specified. Payment is processed securely through Shopify/Stripe. By making a purchase, you authorize us to charge your payment method for the total amount of your order.
-              </p>
-            </section>
-
-            <section className="mb-8">
-              <h2 className="text-2xl font-bold text-foreground mb-4">5. Refund Policy</h2>
-              <p className="text-muted-foreground">
-                We offer a 30-day money-back guarantee on all purchases. If you're not satisfied with your purchase for any reason, contact us within 30 days of purchase for a full refund. No questions asked. See our full{" "}
-                <a href="/refund-policy" className="text-primary hover:underline">Refund Policy</a> for details.
-              </p>
-            </section>
-
-            <section className="mb-8">
-              <h2 className="text-2xl font-bold text-foreground mb-4">6. User Conduct</h2>
-              <p className="text-muted-foreground mb-4">You agree not to:</p>
+              <h2 className="text-2xl font-bold text-foreground mb-4">2. Pricing and Payment</h2>
               <ul className="list-disc pl-6 text-muted-foreground space-y-2">
-                <li>Use our products for any illegal or unauthorized purpose</li>
-                <li>Attempt to gain unauthorized access to our systems</li>
-                <li>Interfere with or disrupt the operation of our website</li>
-                <li>Share, resell, or redistribute purchased products</li>
-                <li>Use our products to create competing products or services</li>
+                <li>Prices are displayed in USD unless otherwise specified</li>
+                <li>We accept payments via Razorpay (Credit/Debit Cards, UPI, Net Banking)</li>
+                <li>All payments are processed securely</li>
+                <li>We do not store your card details</li>
               </ul>
             </section>
 
+            {/* Section 3 */}
             <section className="mb-8">
-              <h2 className="text-2xl font-bold text-foreground mb-4">7. Earnings Disclaimer</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-4">3. License and Usage</h2>
+
+              <h3 className="text-xl font-semibold text-foreground mb-3">3.1 You MAY:</h3>
+              <ul className="list-disc pl-6 text-muted-foreground space-y-2 mb-4">
+                <li>Download and use products for personal use</li>
+                <li>Access course materials for your own learning</li>
+              </ul>
+
+              <h3 className="text-xl font-semibold text-foreground mb-3">3.2 You MAY NOT:</h3>
+              <ul className="list-disc pl-6 text-muted-foreground space-y-2">
+                <li>Resell or redistribute products</li>
+                <li>Share login credentials or access</li>
+                <li>Copy or distribute content</li>
+                <li>Use for illegal purposes</li>
+              </ul>
+            </section>
+
+            {/* Section 4 */}
+            <section className="mb-8">
+              <h2 className="text-2xl font-bold text-foreground mb-4">4. 30-Day Money-Back Guarantee</h2>
+              <ul className="list-disc pl-6 text-muted-foreground space-y-2">
+                <li>Full refund within 30 days of purchase, no questions asked</li>
+                <li>Email <a href="mailto:theknockoutacademy@gmail.com" className="text-primary hover:underline">theknockoutacademy@gmail.com</a> with your order number</li>
+                <li>Refund processed within 3–5 business days</li>
+                <li>One refund per customer</li>
+                <li>Access revoked upon refund</li>
+              </ul>
+            </section>
+
+            {/* Section 5 */}
+            <section className="mb-8">
+              <h2 className="text-2xl font-bold text-foreground mb-4">5. Intellectual Property</h2>
               <p className="text-muted-foreground">
-                <strong>Results are not guaranteed.</strong> The Knockout Academy provides educational resources only. Any income examples, if mentioned, are not intended to represent or guarantee that anyone will achieve the same or similar results. Your results will vary based on many factors including but not limited to your background, experience, work ethic, and market conditions.
+                All content on our website is property of TKOA Private Limited and protected by intellectual property laws.
               </p>
             </section>
 
+            {/* Section 6 */}
             <section className="mb-8">
-              <h2 className="text-2xl font-bold text-foreground mb-4">8. Limitation of Liability</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-4">6. Disclaimer</h2>
+              <ul className="list-disc pl-6 text-muted-foreground space-y-2">
+                <li>Products provided "as is" without warranties</li>
+                <li>We do not guarantee specific results</li>
+                <li>Products are for educational purposes only</li>
+              </ul>
+            </section>
+
+            {/* Section 7 */}
+            <section className="mb-8">
+              <h2 className="text-2xl font-bold text-foreground mb-4">7. Limitation of Liability</h2>
               <p className="text-muted-foreground">
-                To the maximum extent permitted by law, The Knockout Academy shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of your use of our products or services.
+                Our total liability shall not exceed the amount you paid for the product. We are not liable for indirect or consequential damages.
               </p>
             </section>
 
+            {/* Section 8 */}
             <section className="mb-8">
-              <h2 className="text-2xl font-bold text-foreground mb-4">9. Changes to Terms</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-4">8. Governing Law</h2>
               <p className="text-muted-foreground">
-                We reserve the right to modify these Terms of Service at any time. Changes will be effective immediately upon posting to our website. Your continued use of our services after changes constitutes acceptance of the modified terms.
+                These Terms are governed by the laws of India. Disputes shall be subject to courts in Vadodara, Gujarat, India.
               </p>
             </section>
 
+            {/* Section 9 */}
             <section className="mb-8">
-              <h2 className="text-2xl font-bold text-foreground mb-4">10. Governing Law</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-4">9. Contact Us</h2>
+              <p className="text-foreground font-semibold mb-3">TKOA Private Limited</p>
+              <p className="text-muted-foreground mb-2">
+                📧 <strong>Email:</strong>{" "}
+                <a href="mailto:theknockoutacademy@gmail.com" className="text-primary hover:underline">theknockoutacademy@gmail.com</a>
+              </p>
+              <p className="text-muted-foreground mb-2">
+                📍 <strong>Address:</strong> C/o Rathod Jaydipsinh, 53/2 CHACHAK, RAJPUTWADI Rd, Bodeli, Vadodara - 391135, Gujarat, India
+              </p>
               <p className="text-muted-foreground">
-                These Terms of Service shall be governed by and construed in accordance with applicable laws, without regard to conflict of law principles.
+                <strong>CIN:</strong> U58199GJ2025PTC169791
               </p>
             </section>
 
-            <section className="mb-8">
-              <h2 className="text-2xl font-bold text-foreground mb-4">11. Contact Information</h2>
-              <p className="text-muted-foreground">
-                For questions about these Terms of Service, please contact us at:{" "}
-                <a href="mailto:support@knockoutacademy.com" className="text-primary hover:underline">
-                  support@knockoutacademy.com
-                </a>
-              </p>
-            </section>
+            <p className="text-sm text-muted-foreground italic">
+              By using our website, you agree to these Terms and Conditions.
+            </p>
           </div>
         </div>
       </main>
