@@ -109,12 +109,30 @@ export const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-secondary-foreground/10 flex flex-col sm:flex-row justify-between items-center gap-4">
+      {/* Bottom Bar */}
+        <div className="mt-12 pt-8 border-t border-secondary-foreground/10 flex flex-col items-center gap-4 text-center">
           <p className="text-xs text-secondary-foreground/40 font-body">
             © 2025 TKOA Private Limited. All rights reserved.
           </p>
-          <p className="text-xs text-secondary-foreground/40 font-body text-center sm:text-right">
+          <p className="text-xs text-secondary-foreground/40 font-body">
+            CIN: U58199GJ2025PTC169791
+          </p>
+          <p className="text-xs text-secondary-foreground/40 font-body">
+            Contact: <a href="mailto:theknockoutacademy@gmail.com" className="hover:text-secondary-foreground transition-colors underline">theknockoutacademy@gmail.com</a>
+          </p>
+          <nav className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-xs text-secondary-foreground/40 font-body">
+            <Link to="/privacy-policy" className="hover:text-secondary-foreground transition-colors">Privacy Policy</Link>
+            <span>|</span>
+            <Link to="/terms-of-service" className="hover:text-secondary-foreground transition-colors">Terms & Conditions</Link>
+            <span>|</span>
+            <Link to="/refund-policy" className="hover:text-secondary-foreground transition-colors">Refund Policy</Link>
+            <span>|</span>
+            <Link to="/contact" className="hover:text-secondary-foreground transition-colors">Contact Us</Link>
+          </nav>
+          <p className="text-xs text-secondary-foreground/50 font-body">
+            Secure Payments by Razorpay
+          </p>
+          <p className="text-xs text-secondary-foreground/40 font-body">
             Results not guaranteed. Educational products only.
           </p>
         </div>
