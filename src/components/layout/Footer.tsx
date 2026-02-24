@@ -112,7 +112,7 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-secondary-foreground/10 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-xs text-secondary-foreground/40 font-body">
-            © 2025 The Knockout Academy. All rights reserved.
+            © 2025 TKOA Private Limited. All rights reserved.
           </p>
           <p className="text-xs text-secondary-foreground/40 font-body text-center sm:text-right">
             Results not guaranteed. Educational products only.
