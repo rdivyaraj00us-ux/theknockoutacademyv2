@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { TrustBadges } from "@/components/ui/TrustBadges";
 import { useParams, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/layout/Header";
@@ -308,19 +309,8 @@ const Product = () => {
                 </Button>
 
                 {/* Trust Badges */}
-                <div className="grid grid-cols-3 gap-4 pt-6 border-t border-border">
-                  <div className="text-center">
-                    <Zap className="h-5 w-5 mx-auto mb-1 text-accent" />
-                    <span className="text-xs text-muted-foreground font-body">Instant Delivery</span>
-                  </div>
-                  <div className="text-center">
-                    <RefreshCw className="h-5 w-5 mx-auto mb-1 text-accent" />
-                    <span className="text-xs text-muted-foreground font-body">30-Day Guarantee</span>
-                  </div>
-                  <div className="text-center">
-                    <Shield className="h-5 w-5 mx-auto mb-1 text-accent" />
-                    <span className="text-xs text-muted-foreground font-body">Secure Checkout</span>
-                  </div>
+                <div className="pt-6 border-t border-border">
+                  <TrustBadges />
                 </div>
               </div>
             </div>
