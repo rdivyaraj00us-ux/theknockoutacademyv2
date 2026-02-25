@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { TrustBadges } from "@/components/ui/TrustBadges";
 import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -263,20 +264,7 @@ const MasterBundle = () => {
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Button>
 
-                <div className="flex flex-wrap gap-6">
-                  <div className="flex items-center gap-2 text-secondary-foreground/70">
-                    <Zap className="h-5 w-5 text-accent" />
-                    <span className="text-sm font-body">Instant Access</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-secondary-foreground/70">
-                    <RefreshCw className="h-5 w-5 text-accent" />
-                    <span className="text-sm font-body">30-Day Guarantee</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-secondary-foreground/70">
-                    <Shield className="h-5 w-5 text-accent" />
-                    <span className="text-sm font-body">Secure Checkout</span>
-                  </div>
-                </div>
+                <TrustBadges variant="inline" />
               </div>
 
               <div className="relative hidden lg:block">
@@ -440,9 +428,7 @@ const MasterBundle = () => {
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
 
-              <p className="mt-8 text-sm text-secondary-foreground/50 font-body">
-                Instant digital delivery • 30-day money-back guarantee • Secure checkout
-              </p>
+              <TrustBadges variant="inline" className="mt-8" />
             </div>
           </div>
         </section>
