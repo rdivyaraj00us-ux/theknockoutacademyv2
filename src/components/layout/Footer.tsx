@@ -130,7 +130,7 @@ export const Footer = () => {
             <Link to="/contact" className="hover:text-secondary-foreground transition-colors">Contact Us</Link>
           </nav>
           <p className="text-xs text-secondary-foreground/50 font-body">
-            Secure Payments by Razorpay
+            Secure Payments by Shopify
           </p>
           <p className="text-xs text-secondary-foreground/40 font-body">
             Results not guaranteed. Educational products only.
