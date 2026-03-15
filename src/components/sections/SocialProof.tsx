@@ -1,3 +1,4 @@
+// Social proof section - cleaned up
 import { Star, MapPin } from "lucide-react";
 import { ScrollAnimation } from "@/hooks/useScrollAnimation";
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
