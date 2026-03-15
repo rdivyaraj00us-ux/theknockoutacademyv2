@@ -31,7 +31,7 @@ const PrivacyPolicy = () => {
               <h3 className="text-xl font-semibold text-foreground mb-3">1.1 Personal Information You Provide</h3>
               <ul className="list-disc pl-6 text-muted-foreground space-y-2 mb-6">
                 <li><strong>Contact Information:</strong> Full name, email address, phone number</li>
-                <li><strong>Billing Information:</strong> Billing address, payment details (processed securely by Razorpay)</li>
+                <li><strong>Billing Information:</strong> Billing address, payment details (processed securely by Shopify Payments)</li>
                 <li><strong>Account Information:</strong> Username, password (encrypted)</li>
                 <li><strong>Communication Data:</strong> Messages, feedback, or support requests</li>
               </ul>
@@ -74,7 +74,7 @@ const PrivacyPolicy = () => {
                   </thead>
                   <tbody>
                     <tr className="border-b border-border">
-                      <td className="p-3 font-medium">Razorpay</td>
+                      <td className="p-3 font-medium">Shopify Payments</td>
                       <td className="p-3">Payment processing</td>
                     </tr>
                     <tr className="border-b border-border">
