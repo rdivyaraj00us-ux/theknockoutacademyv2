@@ -27,7 +27,7 @@ import {
   Package
 } from "lucide-react";
 import { useCartStore } from "@/stores/cartStore";
-import { fetchProducts, ShopifyProduct } from "@/lib/shopify";
+import { fetchProductByHandle, ShopifyProduct } from "@/lib/shopify";
 import { toast } from "sonner";
 
 const bundleContentsDisplay = [
