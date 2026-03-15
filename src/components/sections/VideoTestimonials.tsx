@@ -11,7 +11,8 @@ const videoTestimonials = [
     location: "Austin, TX",
     video: "/videos/testimonials/Marcus_T_Testimonial.mp4",
     quote: "The AI section completely changed how I work. Best $69 I ever spent.",
-    highlight: "AI skills transformed my workflow"
+    highlight: "AI skills transformed my workflow",
+    duration: "0:45"
   },
   {
     id: 2,
@@ -20,7 +21,8 @@ const videoTestimonials = [
     location: "Miami, FL",
     video: "/videos/testimonials/Jennifer_K_Testimonial.mp4",
     quote: "Went from zero to 3,000 YouTube subscribers in 6 weeks!",
-    highlight: "YouTube success story"
+    highlight: "YouTube success story",
+    duration: "0:58"
   },
   {
     id: 3,
@@ -29,7 +31,8 @@ const videoTestimonials = [
     location: "Denver, CO",
     video: "/videos/testimonials/David_R_Testimonial.mp4",
     quote: "The Google Performance Max guide made me an extra $40K this quarter.",
-    highlight: "6x ROAS improvement"
+    highlight: "6x ROAS improvement",
+    duration: "0:52"
   },
   {
     id: 4,
@@ -38,7 +41,8 @@ const videoTestimonials = [
     location: "Seattle, WA",
     video: "/videos/testimonials/Sarah_M_Testimonial.mp4",
     quote: "Finally, productivity strategies that work with my ADHD brain.",
-    highlight: "ADHD-friendly methods"
+    highlight: "ADHD-friendly methods",
+    duration: "0:47"
   },
   {
     id: 5,
@@ -47,7 +51,8 @@ const videoTestimonials = [
     location: "New York, NY",
     video: "/videos/testimonials/Michael_P_Testimonial.mp4",
     quote: "The Finance bundle finally explained crypto without the hype.",
-    highlight: "Clear crypto education"
+    highlight: "Clear crypto education",
+    duration: "0:38"
   },
   {
     id: 6,
@@ -56,7 +61,8 @@ const videoTestimonials = [
     location: "Chicago, IL",
     video: "/videos/testimonials/Lisa_W_Testimonial.mp4",
     quote: "I've paid consultants thousands for worse advice than this $69 bundle.",
-    highlight: "Better than consultants"
+    highlight: "Better than consultants",
+    duration: "0:55"
   }
 ];
 
