@@ -102,8 +102,8 @@ const EarningsDisclaimer = () => {
                 <h2 className="text-2xl font-bold text-foreground mb-4">Questions?</h2>
                 <p className="text-muted-foreground">
                   If you have any questions about this Earnings Disclaimer, please contact us at{" "}
-                  <a href="mailto:support@knockoutacademy.com" className="text-primary hover:underline">
-                    support@knockoutacademy.com
+                  <a href="mailto:theknockoutacademy@gmail.com" className="text-primary hover:underline">
+                    theknockoutacademy@gmail.com
                   </a>
                 </p>
               </section>
