@@ -96,7 +96,7 @@ const PrivacyPolicy = () => {
               <h2 className="text-2xl font-bold text-foreground mb-4">4. Data Security</h2>
               <ul className="list-disc pl-6 text-muted-foreground space-y-2">
                 <li>All data is encrypted using SSL/TLS technology</li>
-                <li>Payments processed by PCI-DSS compliant Razorpay</li>
+                <li>Payments processed by PCI-DSS compliant Shopify Payments</li>
                 <li>We do not store complete credit card details</li>
                 <li>Regular security monitoring and updates</li>
               </ul>
