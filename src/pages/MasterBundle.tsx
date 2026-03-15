@@ -124,12 +124,10 @@ const MasterBundle = () => {
   useEffect(() => {
     const loadProduct = async () => {
       try {
-        const products = await fetchProducts(50);
-        const master = products.find(p => 
-          p.node.title.toLowerCase().includes("master bundle") || 
-          p.node.handle.toLowerCase().includes("master-bundle")
-        );
-        setMasterBundle(master || null);
+        const data = await fetchProductByHandle('the-knockout-master-bundle');
+        if (data) {
+          setMasterBundle({ node: data });
+        }
       } catch (error) {
         console.error("Failed to load master bundle:", error);
       } finally {
