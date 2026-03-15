@@ -154,7 +154,7 @@ export const VideoTestimonials = () => {
                     {/* Duration Badge */}
                     <div className="absolute bottom-2 right-2 md:bottom-3 md:right-3">
                       <span className="px-2 py-1 bg-black/60 text-white text-xs font-body rounded">
-                        0:52
+                        {testimonial.duration}
                       </span>
                     </div>
                   </div>
