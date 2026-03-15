@@ -29,7 +29,7 @@ const videoTestimonials = [
     name: "David R.",
     title: "E-commerce Owner",
     location: "Denver, CO",
-    video: "/videos/testimonials/David_R_Testimonial.mp4",
+    video: "https://cdn.shopify.com/videos/c/o/v/e72c9a7f38184a2cba2df1c4f10d4784.mp4",
     quote: "The Google Performance Max guide made me an extra $40K this quarter.",
     highlight: "6x ROAS improvement",
     duration: "0:52"
