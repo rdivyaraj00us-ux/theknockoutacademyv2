@@ -1,6 +1,4 @@
-import { useState, useEffect } from "react";
-import { Star, ChevronLeft, ChevronRight, Play, MapPin } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Star, MapPin } from "lucide-react";
 import { ScrollAnimation } from "@/hooks/useScrollAnimation";
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 const trustMetrics = [{
