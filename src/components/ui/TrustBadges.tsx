@@ -2,7 +2,7 @@ import { Shield, RefreshCw, Zap, Globe } from "lucide-react";
 
 const trustBadges = [
   { icon: RefreshCw, label: "30-Day Money-Back Guarantee", emoji: "✅" },
-  { icon: Shield, label: "Secure Checkout via Razorpay", emoji: "🔒" },
+  { icon: Shield, label: "Secure Checkout via Shopify", emoji: "🔒" },
   { icon: Zap, label: "Instant Digital Delivery", emoji: "⚡" },
   { icon: Globe, label: "Available Worldwide", emoji: "🌍" },
 ];
