@@ -19,7 +19,7 @@ const videoTestimonials = [
     name: "Jennifer K.",
     title: "Content Creator",
     location: "Miami, FL",
-    video: "/videos/testimonials/Jennifer_K_Testimonial.mp4",
+    video: "https://cdn.shopify.com/videos/c/o/v/6056c9cd9f624b2ebd4d451b50a7cb2d.mp4",
     quote: "Went from zero to 3,000 YouTube subscribers in 6 weeks!",
     highlight: "YouTube success story",
     duration: "0:58"
