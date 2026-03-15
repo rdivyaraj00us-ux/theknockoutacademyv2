@@ -59,7 +59,7 @@ const videoTestimonials = [
     name: "Lisa W.",
     title: "Small Business Owner",
     location: "Chicago, IL",
-    video: "/videos/testimonials/Lisa_W_Testimonial.mp4",
+    video: "https://cdn.shopify.com/videos/c/o/v/cf4a2c732cae4ba0a60965704a5eb52d.mp4",
     quote: "I've paid consultants thousands for worse advice than this $69 bundle.",
     highlight: "Better than consultants",
     duration: "0:55"
