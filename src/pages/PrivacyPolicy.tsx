@@ -74,7 +74,7 @@ const PrivacyPolicy = () => {
                   </thead>
                   <tbody>
                     <tr className="border-b border-border">
-                      <td className="p-3 font-medium">Razorpay</td>
+                      <td className="p-3 font-medium">Shopify Payments</td>
                       <td className="p-3">Payment processing</td>
                     </tr>
                     <tr className="border-b border-border">

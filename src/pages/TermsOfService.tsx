@@ -49,7 +49,7 @@ const TermsOfService = () => {
               <h2 className="text-2xl font-bold text-foreground mb-4">2. Pricing and Payment</h2>
               <ul className="list-disc pl-6 text-muted-foreground space-y-2">
                 <li>Prices are displayed in USD unless otherwise specified</li>
-                <li>We accept payments via Razorpay (Credit/Debit Cards, UPI, Net Banking)</li>
+                <li>We accept payments via Shopify Payments (Credit/Debit Cards, PayPal)</li>
                 <li>All payments are processed securely</li>
                 <li>We do not store your card details</li>
               </ul>
