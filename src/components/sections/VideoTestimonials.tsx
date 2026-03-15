@@ -9,7 +9,7 @@ const videoTestimonials = [
     name: "Marcus T.",
     title: "Software Developer",
     location: "Austin, TX",
-    video: "/videos/testimonials/Marcus_T_Testimonial.mp4",
+    video: "https://cdn.shopify.com/videos/c/o/v/1ef85b8d02c646f1acb03d7a7c868eb6.mp4",
     quote: "The AI section completely changed how I work. Best $69 I ever spent.",
     highlight: "AI skills transformed my workflow",
     duration: "0:45"
