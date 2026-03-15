@@ -9,7 +9,7 @@ const videoTestimonials = [
     name: "Marcus T.",
     title: "Software Developer",
     location: "Austin, TX",
-    video: "/videos/testimonials/Marcus_T_Testimonial.mp4",
+    video: "https://cdn.shopify.com/videos/c/o/v/1ef85b8d02c646f1acb03d7a7c868eb6.mp4",
     quote: "The AI section completely changed how I work. Best $69 I ever spent.",
     highlight: "AI skills transformed my workflow",
     duration: "0:45"
@@ -19,7 +19,7 @@ const videoTestimonials = [
     name: "Jennifer K.",
     title: "Content Creator",
     location: "Miami, FL",
-    video: "/videos/testimonials/Jennifer_K_Testimonial.mp4",
+    video: "https://cdn.shopify.com/videos/c/o/v/6056c9cd9f624b2ebd4d451b50a7cb2d.mp4",
     quote: "Went from zero to 3,000 YouTube subscribers in 6 weeks!",
     highlight: "YouTube success story",
     duration: "0:58"
@@ -29,7 +29,7 @@ const videoTestimonials = [
     name: "David R.",
     title: "E-commerce Owner",
     location: "Denver, CO",
-    video: "/videos/testimonials/David_R_Testimonial.mp4",
+    video: "https://cdn.shopify.com/videos/c/o/v/e72c9a7f38184a2cba2df1c4f10d4784.mp4",
     quote: "The Google Performance Max guide made me an extra $40K this quarter.",
     highlight: "6x ROAS improvement",
     duration: "0:52"
@@ -39,7 +39,7 @@ const videoTestimonials = [
     name: "Sarah M.",
     title: "Marketing Manager",
     location: "Seattle, WA",
-    video: "/videos/testimonials/Sarah_M_Testimonial.mp4",
+    video: "https://cdn.shopify.com/videos/c/o/v/8e12cf2389184b008c9fdd9b2f96fd5b.mp4",
     quote: "Finally, productivity strategies that work with my ADHD brain.",
     highlight: "ADHD-friendly methods",
     duration: "0:47"
@@ -49,7 +49,7 @@ const videoTestimonials = [
     name: "Michael P.",
     title: "Software Engineer",
     location: "New York, NY",
-    video: "/videos/testimonials/Michael_P_Testimonial.mp4",
+    video: "https://cdn.shopify.com/videos/c/o/v/6170f1a86d3742c3acfa853b1737d42d.mp4",
     quote: "The Finance bundle finally explained crypto without the hype.",
     highlight: "Clear crypto education",
     duration: "0:38"
@@ -59,7 +59,7 @@ const videoTestimonials = [
     name: "Lisa W.",
     title: "Small Business Owner",
     location: "Chicago, IL",
-    video: "/videos/testimonials/Lisa_W_Testimonial.mp4",
+    video: "https://cdn.shopify.com/videos/c/o/v/cf4a2c732cae4ba0a60965704a5eb52d.mp4",
     quote: "I've paid consultants thousands for worse advice than this $69 bundle.",
     highlight: "Better than consultants",
     duration: "0:55"
