@@ -49,7 +49,7 @@ const videoTestimonials = [
     name: "Michael P.",
     title: "Software Engineer",
     location: "New York, NY",
-    video: "/videos/testimonials/Michael_P_Testimonial.mp4",
+    video: "https://cdn.shopify.com/videos/c/o/v/6170f1a86d3742c3acfa853b1737d42d.mp4",
     quote: "The Finance bundle finally explained crypto without the hype.",
     highlight: "Clear crypto education",
     duration: "0:38"
