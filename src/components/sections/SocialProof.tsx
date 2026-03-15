@@ -1,6 +1,4 @@
-import { useState, useEffect } from "react";
-import { Star, ChevronLeft, ChevronRight, Play, MapPin } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Star, MapPin } from "lucide-react";
 import { ScrollAnimation } from "@/hooks/useScrollAnimation";
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 const trustMetrics = [{
@@ -65,19 +63,6 @@ const testimonials = [{
   color: "bg-gold/20 text-gold"
 }];
 export const SocialProof = () => {
-  const [currentTestimonial, setCurrentTestimonial] = useState(0);
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentTestimonial(prev => (prev + 1) % 3);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
-  const goToPrev = () => {
-    setCurrentTestimonial(prev => (prev - 1 + 3) % 3);
-  };
-  const goToNext = () => {
-    setCurrentTestimonial(prev => (prev + 1) % 3);
-  };
   return <section className="py-20 md:py-28 bg-background">
       <div className="container">
         {/* Trust Metrics Bar */}
