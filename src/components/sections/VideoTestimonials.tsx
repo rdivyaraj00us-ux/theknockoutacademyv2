@@ -39,7 +39,7 @@ const videoTestimonials = [
     name: "Sarah M.",
     title: "Marketing Manager",
     location: "Seattle, WA",
-    video: "/videos/testimonials/Sarah_M_Testimonial.mp4",
+    video: "https://cdn.shopify.com/videos/c/o/v/8e12cf2389184b008c9fdd9b2f96fd5b.mp4",
     quote: "Finally, productivity strategies that work with my ADHD brain.",
     highlight: "ADHD-friendly methods",
     duration: "0:47"
