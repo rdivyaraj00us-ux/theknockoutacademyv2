@@ -612,12 +612,12 @@
       "retail_value": 2180,
       "book_count": 25,
       "composition": {
-        "foundations": [],
-        "ai_operator": [],
-        "skills": []
+        "foundations": ["01", "02", "03", "04", "05", "06", "07", "08"],
+        "ai_operator": ["09", "11", "12", "13", "14", "16", "17", "18", "20", "21", "22", "23"],
+        "skills": ["52", "54", "55", "59", "61"]
       },
-      "tagline": "",
-      "composition_status": "pending-review",
+      "tagline": "The complete operating system for solo founders, freelancers, and consultants.",
+      "composition_status": "locked",
       "composition_doc": "docs/profession-bundles.md"
     },
     {
@@ -628,13 +628,13 @@
       "retail_value": 520,
       "book_count": 6,
       "composition": {
-        "profession": [],
-        "foundations": [],
-        "ai_operator": [],
-        "skills": []
+        "profession": ["24"],
+        "foundations": ["04", "08"],
+        "ai_operator": ["13", "16"],
+        "skills": ["55"]
       },
-      "tagline": "",
-      "composition_status": "pending-review",
+      "tagline": "AI craft, deal-making, and operations for the modern small-firm attorney.",
+      "composition_status": "locked",
       "composition_doc": "docs/profession-bundles.md"
     },
     {
@@ -645,13 +645,13 @@
       "retail_value": 520,
       "book_count": 6,
       "composition": {
-        "profession": [],
-        "foundations": [],
-        "ai_operator": [],
-        "skills": []
+        "profession": ["25"],
+        "foundations": ["02", "06"],
+        "ai_operator": ["13", "18"],
+        "skills": ["61"]
       },
-      "tagline": "",
-      "composition_status": "pending-review",
+      "tagline": "AI workflows and patient communication for the modern medical practice.",
+      "composition_status": "locked",
       "composition_doc": "docs/profession-bundles.md"
     },
     {
@@ -662,13 +662,13 @@
       "retail_value": 520,
       "book_count": 6,
       "composition": {
-        "profession": [],
-        "foundations": [],
-        "ai_operator": [],
-        "skills": []
+        "profession": ["26"],
+        "foundations": ["06", "07"],
+        "ai_operator": ["18", "21"],
+        "skills": ["56"]
       },
-      "tagline": "",
-      "composition_status": "pending-review",
+      "tagline": "AI-augmented tax craft and firm operations for accounting professionals.",
+      "composition_status": "locked",
       "composition_doc": "docs/profession-bundles.md"
     },
     {
@@ -679,13 +679,13 @@
       "retail_value": 420,
       "book_count": 6,
       "composition": {
-        "profession": [],
-        "foundations": [],
-        "ai_operator": [],
-        "skills": []
+        "profession": ["29"],
+        "foundations": ["04", "07"],
+        "ai_operator": ["12", "22"],
+        "skills": ["52"]
       },
-      "tagline": "",
-      "composition_status": "pending-review",
+      "tagline": "Lead gen, listing presentation, and closing for top-producing agents.",
+      "composition_status": "locked",
       "composition_doc": "docs/profession-bundles.md"
     },
     {
@@ -696,13 +696,13 @@
       "retail_value": 520,
       "book_count": 6,
       "composition": {
-        "profession": [],
-        "foundations": [],
-        "ai_operator": [],
-        "skills": []
+        "profession": ["28"],
+        "foundations": ["02", "04"],
+        "ai_operator": ["21", "22"],
+        "skills": ["60"]
       },
-      "tagline": "",
-      "composition_status": "pending-review",
+      "tagline": "AI-augmented creative workflow and client-winning craft for design studios.",
+      "composition_status": "locked",
       "composition_doc": "docs/profession-bundles.md"
     },
     {
@@ -713,14 +713,14 @@
       "retail_value": 520,
       "book_count": 6,
       "composition": {
-        "profession": [],
-        "foundations": [],
-        "ai_operator": [],
-        "skills": [],
-        "wealth": []
+        "profession": ["30"],
+        "foundations": ["07"],
+        "ai_operator": ["13", "14"],
+        "skills": ["59"],
+        "wealth": ["48"]
       },
-      "tagline": "",
-      "composition_status": "pending-review",
+      "tagline": "AI research, communication, and rigor for the trusted advisory practice.",
+      "composition_status": "locked",
       "composition_doc": "docs/profession-bundles.md"
     },
     {
@@ -731,13 +731,13 @@
       "retail_value": 520,
       "book_count": 6,
       "composition": {
-        "profession": [],
-        "foundations": [],
-        "ai_operator": [],
-        "skills": []
+        "profession": ["31"],
+        "foundations": ["07", "08"],
+        "ai_operator": ["11", "16"],
+        "skills": ["60"]
       },
-      "tagline": "",
-      "composition_status": "pending-review",
+      "tagline": "Synthesis, deliverables, and judgment for the modern strategic consultant.",
+      "composition_status": "locked",
       "composition_doc": "docs/profession-bundles.md"
     },
     {
@@ -746,14 +746,14 @@
       "type": "profession",
       "price": 247,
       "retail_value": 680,
-      "book_count": 8,
+      "book_count": 9,
       "composition": {
-        "foundations": [],
-        "ai_operator": [],
-        "skills": []
+        "foundations": ["01", "02", "05", "06", "07"],
+        "ai_operator": ["11", "12", "16"],
+        "skills": ["60"]
       },
-      "tagline": "",
-      "composition_status": "pending-review",
+      "tagline": "The complete operating system for founders going from zero to traction.",
+      "composition_status": "locked",
       "composition_doc": "docs/profession-bundles.md"
     },
     {
@@ -764,13 +764,13 @@
       "retail_value": 580,
       "book_count": 7,
       "composition": {
-        "profession": [],
-        "foundations": [],
-        "ai_operator": [],
-        "skills": []
+        "profession": ["34"],
+        "foundations": ["04", "07"],
+        "ai_operator": ["11", "13", "21"],
+        "skills": ["61"]
       },
-      "tagline": "",
-      "composition_status": "pending-review",
+      "tagline": "The full marketing engine: content, copy, email, and conversion.",
+      "composition_status": "locked",
       "composition_doc": "docs/profession-bundles.md"
     },
     {
@@ -781,13 +781,13 @@
       "retail_value": 420,
       "book_count": 6,
       "composition": {
-        "profession": [],
-        "foundations": [],
-        "ai_operator": [],
-        "skills": []
+        "profession": ["32"],
+        "foundations": ["02", "05"],
+        "ai_operator": ["16", "21"],
+        "skills": ["61"]
       },
-      "tagline": "",
-      "composition_status": "pending-review",
+      "tagline": "AI workflows and operating discipline for shipping engineers.",
+      "composition_status": "locked",
       "composition_doc": "docs/profession-bundles.md"
     },
     {
@@ -798,13 +798,13 @@
       "retail_value": 320,
       "book_count": 5,
       "composition": {
-        "profession": [],
-        "foundations": [],
-        "ai_operator": [],
-        "skills": []
+        "profession": ["27"],
+        "foundations": ["05"],
+        "ai_operator": ["11", "23"],
+        "skills": ["53"]
       },
-      "tagline": "",
-      "composition_status": "pending-review",
+      "tagline": "AI lesson craft, content creation, and presence for modern educators.",
+      "composition_status": "locked",
       "composition_doc": "docs/profession-bundles.md"
     },
     {
@@ -815,13 +815,13 @@
       "retail_value": 420,
       "book_count": 5,
       "composition": {
-        "profession": [],
-        "foundations": [],
-        "ai_operator": [],
-        "skills": []
+        "profession": ["36"],
+        "foundations": ["02"],
+        "ai_operator": ["15", "18"],
+        "skills": ["61"]
       },
-      "tagline": "",
-      "composition_status": "pending-review",
+      "tagline": "Operational scaffolding for therapists and coaches running solo practices.",
+      "composition_status": "locked",
       "composition_doc": "docs/profession-bundles.md"
     },
     {
@@ -832,13 +832,13 @@
       "retail_value": 420,
       "book_count": 6,
       "composition": {
-        "profession": [],
-        "foundations": [],
-        "ai_operator": [],
-        "skills": []
+        "profession": ["35"],
+        "foundations": ["04", "06"],
+        "ai_operator": ["17", "21"],
+        "skills": ["61"]
       },
-      "tagline": "",
-      "composition_status": "pending-review",
+      "tagline": "AI sourcing, screening, and outreach for high-leverage people operations.",
+      "composition_status": "locked",
       "composition_doc": "docs/profession-bundles.md"
     },
     {
@@ -849,13 +849,13 @@
       "retail_value": 320,
       "book_count": 5,
       "composition": {
-        "profession": [],
-        "foundations": [],
-        "ai_operator": [],
-        "skills": []
+        "profession": ["37"],
+        "foundations": ["02", "07"],
+        "ai_operator": ["22"],
+        "skills": ["53"]
       },
-      "tagline": "",
-      "composition_status": "pending-review",
+      "tagline": "AI creative workflow and audience building for working creators.",
+      "composition_status": "locked",
       "composition_doc": "docs/profession-bundles.md"
     },
     {
@@ -866,13 +866,13 @@
       "retail_value": 320,
       "book_count": 5,
       "composition": {
-        "profession": [],
-        "foundations": [],
-        "ai_operator": [],
-        "skills": []
+        "profession": ["38"],
+        "foundations": ["06", "07"],
+        "ai_operator": ["22"],
+        "skills": ["58"]
       },
-      "tagline": "",
-      "composition_status": "pending-review",
+      "tagline": "Staff, marketing, and social for the modern small-restaurant operator.",
+      "composition_status": "locked",
       "composition_doc": "docs/profession-bundles.md"
     },
     {
@@ -883,13 +883,13 @@
       "retail_value": 320,
       "book_count": 5,
       "composition": {
-        "profession": [],
-        "foundations": [],
-        "ai_operator": [],
-        "skills": []
+        "profession": ["39"],
+        "foundations": ["04", "06"],
+        "ai_operator": ["12"],
+        "skills": ["55"]
       },
-      "tagline": "",
-      "composition_status": "pending-review",
+      "tagline": "Bids, crews, and negotiation for the contractor running a real business.",
+      "composition_status": "locked",
       "composition_doc": "docs/profession-bundles.md"
     },
     {
@@ -900,13 +900,13 @@
       "retail_value": 420,
       "book_count": 6,
       "composition": {
-        "profession": [],
-        "foundations": [],
-        "ai_operator": [],
-        "skills": []
+        "profession": ["40"],
+        "foundations": ["02", "05"],
+        "ai_operator": ["16", "23"],
+        "skills": ["61"]
       },
-      "tagline": "",
-      "composition_status": "pending-review",
+      "tagline": "AI dev workflows and operator discipline for engineers scaling themselves.",
+      "composition_status": "locked",
       "composition_doc": "docs/profession-bundles.md"
     },
     {
@@ -917,13 +917,13 @@
       "retail_value": 420,
       "book_count": 6,
       "composition": {
-        "profession": [],
-        "foundations": [],
-        "ai_operator": [],
-        "skills": []
+        "profession": ["41"],
+        "foundations": ["04", "07"],
+        "ai_operator": ["11", "21"],
+        "skills": ["60"]
       },
-      "tagline": "",
-      "composition_status": "pending-review",
+      "tagline": "Specs, roadmaps, and strategy for the AI-augmented modern PM.",
+      "composition_status": "locked",
       "composition_doc": "docs/profession-bundles.md"
     },
     {
@@ -934,13 +934,13 @@
       "retail_value": 320,
       "book_count": 5,
       "composition": {
-        "profession": [],
-        "foundations": [],
-        "ai_operator": [],
-        "skills": []
+        "profession": ["42"],
+        "foundations": ["05"],
+        "ai_operator": ["11", "23"],
+        "skills": ["61"]
       },
-      "tagline": "",
-      "composition_status": "pending-review",
+      "tagline": "AI writing, teaching, and publishing for the modern academic.",
+      "composition_status": "locked",
       "composition_doc": "docs/profession-bundles.md"
     },
     {
@@ -951,13 +951,13 @@
       "retail_value": 320,
       "book_count": 5,
       "composition": {
-        "profession": [],
-        "foundations": [],
-        "ai_operator": [],
-        "skills": []
+        "profession": ["43"],
+        "foundations": ["02", "07"],
+        "ai_operator": ["22"],
+        "skills": ["58"]
       },
-      "tagline": "",
-      "composition_status": "pending-review",
+      "tagline": "Audience, marketing, and small-team leadership for the working wellness pro.",
+      "composition_status": "locked",
       "composition_doc": "docs/profession-bundles.md"
     }
   ]
