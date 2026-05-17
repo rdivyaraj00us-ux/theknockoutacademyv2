@@ -1,0 +1,860 @@
+{
+  "$schema_version": 1,
+  "meta": {
+    "volume": "I",
+    "as_of": "2026-05",
+    "source": "TheKnockoutAcademy-Empire-Plan.pdf (45 pages, May 2026)"
+  },
+  "brand": {
+    "name": "TheKnockoutAcademy",
+    "palette": {
+      "navy": "#0A1E3F",
+      "gold": "#D4A017",
+      "cream": "#FDF8EF",
+      "ink": "#0F0F10",
+      "forest": "#2D5A3D",
+      "burgundy": "#8B2323"
+    }
+  },
+  "series": [
+    {
+      "id": "foundations",
+      "name": "Foundations",
+      "roman": "I",
+      "tagline": "Start from zero. Build a base.",
+      "book_count": 8,
+      "total_pages": 1940,
+      "avg_digital_price": 51,
+      "avg_hardcover_price": 91,
+      "palette": {
+        "background": "#FDF8EF",
+        "text": "#0A1E3F",
+        "accent": "#2D5A3D"
+      },
+      "books": [
+        {
+          "id": "01",
+          "slug": "first-time-founders-playbook",
+          "title": "The First-Time Founder's Playbook",
+          "subtitle": "From zero to launched — the operator's starter manual",
+          "price_digital": 47,
+          "price_hardcover": 87
+        },
+        {
+          "id": "02",
+          "slug": "solo-operators-compass",
+          "title": "The Solo Operator's Compass",
+          "subtitle": "Build, ship, and scale alone without burning out",
+          "price_digital": 47,
+          "price_hardcover": 87
+        },
+        {
+          "id": "03",
+          "slug": "money-the-beginners-system",
+          "title": "Money — The Beginner's System",
+          "subtitle": "Personal finance built for builders, not bankers",
+          "price_digital": 47,
+          "price_hardcover": 87
+        },
+        {
+          "id": "04",
+          "slug": "sales-conversation-decoded",
+          "title": "The Sales Conversation Decoded",
+          "subtitle": "Win deals through structured listening and fair persuasion",
+          "price_digital": 57,
+          "price_hardcover": 97
+        },
+        {
+          "id": "05",
+          "slug": "productivity-operating-system",
+          "title": "The Productivity Operating System",
+          "subtitle": "Systems that make 4-hour days do 12 hours of output",
+          "price_digital": 47,
+          "price_hardcover": 87
+        },
+        {
+          "id": "06",
+          "slug": "hiring-blueprint",
+          "title": "The Hiring Blueprint",
+          "subtitle": "From first contractor to first ten employees, done right",
+          "price_digital": 57,
+          "price_hardcover": 97
+        },
+        {
+          "id": "07",
+          "slug": "marketing-first-principles",
+          "title": "Marketing — First Principles",
+          "subtitle": "Why people buy, distilled for modern operators",
+          "price_digital": 57,
+          "price_hardcover": 97
+        },
+        {
+          "id": "08",
+          "slug": "negotiation-field-manual",
+          "title": "The Negotiation Field Manual",
+          "subtitle": "Win at the table — vendors, hires, clients, partners",
+          "price_digital": 47,
+          "price_hardcover": 87
+        }
+      ]
+    },
+    {
+      "id": "ai-powered-operator",
+      "name": "The AI-Powered Operator",
+      "roman": "II",
+      "tagline": "Use AI to scale yourself.",
+      "book_count": 15,
+      "total_pages": 3980,
+      "avg_digital_price": 93,
+      "avg_hardcover_price": 143,
+      "palette": {
+        "background": "#0A1E3F",
+        "text": "#FDF8EF",
+        "accent": "#D4A017"
+      },
+      "books": [
+        {
+          "id": "09",
+          "slug": "ai-powered-dropshipping",
+          "title": "AI-Powered Dropshipping",
+          "subtitle": "From product research to scaled storefront — fully automated",
+          "price_digital": 97,
+          "price_hardcover": 147
+        },
+        {
+          "id": "10",
+          "slug": "ai-powered-trading-and-investing",
+          "title": "AI-Powered Trading & Investing",
+          "subtitle": "Modern systematic strategies for retail capital",
+          "price_digital": 97,
+          "price_hardcover": 147
+        },
+        {
+          "id": "11",
+          "slug": "ai-powered-content-creation",
+          "title": "AI-Powered Content Creation",
+          "subtitle": "From idea to published — a 10x content engine",
+          "price_digital": 97,
+          "price_hardcover": 147
+        },
+        {
+          "id": "12",
+          "slug": "ai-powered-lead-generation",
+          "title": "AI-Powered Lead Generation",
+          "subtitle": "Pipeline systems that fill themselves",
+          "price_digital": 97,
+          "price_hardcover": 147
+        },
+        {
+          "id": "13",
+          "slug": "ai-powered-email-marketing",
+          "title": "AI-Powered Email Marketing",
+          "subtitle": "Sequences that sell while you sleep",
+          "price_digital": 97,
+          "price_hardcover": 147
+        },
+        {
+          "id": "14",
+          "slug": "ai-powered-sales-operations",
+          "title": "AI-Powered Sales Operations",
+          "subtitle": "Outbound, inbound, follow-up — fully automated",
+          "price_digital": 97,
+          "price_hardcover": 147
+        },
+        {
+          "id": "15",
+          "slug": "ai-powered-customer-support",
+          "title": "AI-Powered Customer Support",
+          "subtitle": "From chat to crisis — handled by your AI ops",
+          "price_digital": 87,
+          "price_hardcover": 137
+        },
+        {
+          "id": "16",
+          "slug": "ai-powered-operations-and-sops",
+          "title": "AI-Powered Operations & SOPs",
+          "subtitle": "Document, delegate, and automate every workflow",
+          "price_digital": 87,
+          "price_hardcover": 137
+        },
+        {
+          "id": "17",
+          "slug": "ai-powered-hiring-and-recruiting",
+          "title": "AI-Powered Hiring & Recruiting",
+          "subtitle": "Sourcing, screening, and offer letters — all with AI",
+          "price_digital": 87,
+          "price_hardcover": 137
+        },
+        {
+          "id": "18",
+          "slug": "ai-powered-bookkeeping-and-finance",
+          "title": "AI-Powered Bookkeeping & Finance",
+          "subtitle": "Books closed monthly without a CPA on payroll",
+          "price_digital": 87,
+          "price_hardcover": 137
+        },
+        {
+          "id": "19",
+          "slug": "ai-powered-real-estate",
+          "title": "AI-Powered Real Estate",
+          "subtitle": "Acquisitions, comps, and management — automated",
+          "price_digital": 97,
+          "price_hardcover": 147
+        },
+        {
+          "id": "20",
+          "slug": "ai-powered-ecommerce",
+          "title": "AI-Powered E-commerce",
+          "subtitle": "From listing optimization to shipping logistics",
+          "price_digital": 97,
+          "price_hardcover": 147
+        },
+        {
+          "id": "21",
+          "slug": "ai-powered-copywriting",
+          "title": "AI-Powered Copywriting",
+          "subtitle": "Sales pages, emails, ads — written at scale",
+          "price_digital": 87,
+          "price_hardcover": 137
+        },
+        {
+          "id": "22",
+          "slug": "ai-powered-video-and-social",
+          "title": "AI-Powered Video & Social",
+          "subtitle": "Production, posting, and growth — done for you",
+          "price_digital": 97,
+          "price_hardcover": 147
+        },
+        {
+          "id": "23",
+          "slug": "ai-powered-course-creation",
+          "title": "AI-Powered Course Creation",
+          "subtitle": "Build, launch, and sell courses without a film crew",
+          "price_digital": 87,
+          "price_hardcover": 137
+        }
+      ]
+    },
+    {
+      "id": "profession",
+      "name": "Profession",
+      "roman": "III",
+      "tagline": "AI built for your industry.",
+      "book_count": 20,
+      "total_pages": 5060,
+      "avg_digital_price": 114,
+      "avg_hardcover_price": 164,
+      "palette": {
+        "background": "#FDF8EF",
+        "text": "#0F0F10",
+        "accent": "#D4A017"
+      },
+      "books": [
+        {
+          "id": "24",
+          "slug": "ai-for-lawyers",
+          "title": "AI for Lawyers",
+          "subtitle": "Drafting, discovery, and research — for the modern firm",
+          "price_digital": 147,
+          "price_hardcover": 197
+        },
+        {
+          "id": "25",
+          "slug": "ai-for-doctors-and-healthcare-practitioners",
+          "title": "AI for Doctors & Healthcare Practitioners",
+          "subtitle": "Diagnostics support, documentation, and patient communication",
+          "price_digital": 147,
+          "price_hardcover": 197
+        },
+        {
+          "id": "26",
+          "slug": "ai-for-accountants-and-cpas",
+          "title": "AI for Accountants & CPAs",
+          "subtitle": "Audit prep, tax research, and client advisory at scale",
+          "price_digital": 147,
+          "price_hardcover": 197
+        },
+        {
+          "id": "27",
+          "slug": "ai-for-teachers-and-educators",
+          "title": "AI for Teachers & Educators",
+          "subtitle": "Lesson planning, grading, and personalized instruction",
+          "price_digital": 97,
+          "price_hardcover": 147
+        },
+        {
+          "id": "28",
+          "slug": "ai-for-architects-and-designers",
+          "title": "AI for Architects & Designers",
+          "subtitle": "Concept generation, drafting assistance, and client presentations",
+          "price_digital": 147,
+          "price_hardcover": 197
+        },
+        {
+          "id": "29",
+          "slug": "ai-for-real-estate-agents",
+          "title": "AI for Real Estate Agents",
+          "subtitle": "Lead capture, listing copy, and market analysis",
+          "price_digital": 97,
+          "price_hardcover": 147
+        },
+        {
+          "id": "30",
+          "slug": "ai-for-financial-advisors",
+          "title": "AI for Financial Advisors",
+          "subtitle": "Client research, portfolio commentary, and compliance",
+          "price_digital": 147,
+          "price_hardcover": 197
+        },
+        {
+          "id": "31",
+          "slug": "ai-for-consultants",
+          "title": "AI for Consultants",
+          "subtitle": "Research synthesis, deck building, and deliverables",
+          "price_digital": 147,
+          "price_hardcover": 197
+        },
+        {
+          "id": "32",
+          "slug": "ai-for-engineers",
+          "title": "AI for Engineers",
+          "subtitle": "Code review, documentation, and systems design",
+          "price_digital": 97,
+          "price_hardcover": 147
+        },
+        {
+          "id": "33",
+          "slug": "ai-for-writers-and-journalists",
+          "title": "AI for Writers & Journalists",
+          "subtitle": "Research, drafting, and editorial workflows",
+          "price_digital": 97,
+          "price_hardcover": 147
+        },
+        {
+          "id": "34",
+          "slug": "ai-for-marketers",
+          "title": "AI for Marketers",
+          "subtitle": "Campaigns, copy, and creative production",
+          "price_digital": 97,
+          "price_hardcover": 147
+        },
+        {
+          "id": "35",
+          "slug": "ai-for-recruiters-and-hr",
+          "title": "AI for Recruiters & HR",
+          "subtitle": "Sourcing, screening, and people operations",
+          "price_digital": 97,
+          "price_hardcover": 147
+        },
+        {
+          "id": "36",
+          "slug": "ai-for-therapists-and-coaches",
+          "title": "AI for Therapists & Coaches",
+          "subtitle": "Session notes, client tracking, and program development",
+          "price_digital": 147,
+          "price_hardcover": 197
+        },
+        {
+          "id": "37",
+          "slug": "ai-for-photographers-and-creators",
+          "title": "AI for Photographers & Creators",
+          "subtitle": "Workflow, editing, and creative direction",
+          "price_digital": 97,
+          "price_hardcover": 147
+        },
+        {
+          "id": "38",
+          "slug": "ai-for-restaurant-owners",
+          "title": "AI for Restaurant Owners",
+          "subtitle": "Operations, marketing, and menu development",
+          "price_digital": 97,
+          "price_hardcover": 147
+        },
+        {
+          "id": "39",
+          "slug": "ai-for-construction-and-trades",
+          "title": "AI for Construction & Trades",
+          "subtitle": "Bids, scheduling, and customer management",
+          "price_digital": 97,
+          "price_hardcover": 147
+        },
+        {
+          "id": "40",
+          "slug": "ai-for-software-developers",
+          "title": "AI for Software Developers",
+          "subtitle": "Beyond Copilot — building real systems with AI",
+          "price_digital": 97,
+          "price_hardcover": 147
+        },
+        {
+          "id": "41",
+          "slug": "ai-for-product-managers",
+          "title": "AI for Product Managers",
+          "subtitle": "Research, specs, and roadmaps — accelerated",
+          "price_digital": 97,
+          "price_hardcover": 147
+        },
+        {
+          "id": "42",
+          "slug": "ai-for-researchers-and-academics",
+          "title": "AI for Researchers & Academics",
+          "subtitle": "Literature reviews, drafting, and methodology",
+          "price_digital": 97,
+          "price_hardcover": 147
+        },
+        {
+          "id": "43",
+          "slug": "ai-for-personal-trainers-and-wellness-pros",
+          "title": "AI for Personal Trainers & Wellness Pros",
+          "subtitle": "Programs, client retention, and content",
+          "price_digital": 97,
+          "price_hardcover": 147
+        }
+      ]
+    },
+    {
+      "id": "wealth",
+      "name": "Wealth",
+      "roman": "IV",
+      "tagline": "Money, investing, and freedom.",
+      "book_count": 8,
+      "total_pages": 2300,
+      "avg_digital_price": 103,
+      "avg_hardcover_price": 153,
+      "palette": {
+        "background": "#0F0F10",
+        "text": "#D4A017",
+        "accent": "#D4A017"
+      },
+      "books": [
+        {
+          "id": "44",
+          "slug": "stock-investing-decoded",
+          "title": "Stock Investing Decoded",
+          "subtitle": "A modern fundamental framework for retail investors",
+          "price_digital": 97,
+          "price_hardcover": 147
+        },
+        {
+          "id": "45",
+          "slug": "modern-traders-edge",
+          "title": "The Modern Trader's Edge",
+          "subtitle": "Technical, momentum, and risk frameworks that hold up",
+          "price_digital": 97,
+          "price_hardcover": 147
+        },
+        {
+          "id": "46",
+          "slug": "real-estate-investing-for-operators",
+          "title": "Real Estate Investing for Operators",
+          "subtitle": "From first rental to operating portfolio",
+          "price_digital": 97,
+          "price_hardcover": 147
+        },
+        {
+          "id": "47",
+          "slug": "crypto-the-operators-guide",
+          "title": "Crypto — The Operator's Guide",
+          "subtitle": "Beyond the hype — what to hold, why, and when",
+          "price_digital": 97,
+          "price_hardcover": 147
+        },
+        {
+          "id": "48",
+          "slug": "personal-finance-the-full-system",
+          "title": "Personal Finance — The Full System",
+          "subtitle": "Income, tax, investments, insurance, retirement",
+          "price_digital": 97,
+          "price_hardcover": 147
+        },
+        {
+          "id": "49",
+          "slug": "tax-strategy-for-builders",
+          "title": "Tax Strategy for Builders",
+          "subtitle": "Legal optimization for solo founders and small businesses",
+          "price_digital": 147,
+          "price_hardcover": 197
+        },
+        {
+          "id": "50",
+          "slug": "wealth-building-roadmap",
+          "title": "The Wealth Building Roadmap",
+          "subtitle": "From first $1K to first $1M to first $10M",
+          "price_digital": 97,
+          "price_hardcover": 147
+        },
+        {
+          "id": "51",
+          "slug": "options-and-derivatives-demystified",
+          "title": "Options & Derivatives Demystified",
+          "subtitle": "Risk-managed strategies for retail traders",
+          "price_digital": 97,
+          "price_hardcover": 147
+        }
+      ]
+    },
+    {
+      "id": "skills",
+      "name": "Skills",
+      "roman": "V",
+      "tagline": "High-leverage capabilities.",
+      "book_count": 10,
+      "total_pages": 2140,
+      "avg_digital_price": 66,
+      "avg_hardcover_price": 114,
+      "palette": {
+        "background": "#8B2323",
+        "text": "#FDF8EF",
+        "accent": "#D4A017"
+      },
+      "books": [
+        {
+          "id": "52",
+          "slug": "mastering-sales-calls",
+          "title": "Mastering Sales Calls",
+          "subtitle": "Discovery, demo, and close — every conversation",
+          "price_digital": 67,
+          "price_hardcover": 117
+        },
+        {
+          "id": "53",
+          "slug": "public-speaking-and-influence",
+          "title": "Public Speaking & Influence",
+          "subtitle": "Move rooms — from one-on-ones to keynotes",
+          "price_digital": 67,
+          "price_hardcover": 117
+        },
+        {
+          "id": "54",
+          "slug": "cold-email-mastery",
+          "title": "Cold Email Mastery",
+          "subtitle": "Cold opens that get replies, not block lists",
+          "price_digital": 47,
+          "price_hardcover": 87
+        },
+        {
+          "id": "55",
+          "slug": "negotiation-advanced-tactics",
+          "title": "Negotiation — Advanced Tactics",
+          "subtitle": "Deals with stakes — beyond the field manual",
+          "price_digital": 97,
+          "price_hardcover": 147
+        },
+        {
+          "id": "56",
+          "slug": "project-management-field-guide",
+          "title": "Project Management Field Guide",
+          "subtitle": "Run projects without project management software bloat",
+          "price_digital": 67,
+          "price_hardcover": 117
+        },
+        {
+          "id": "57",
+          "slug": "time-management-for-operators",
+          "title": "Time Management for Operators",
+          "subtitle": "Calendar discipline that scales with chaos",
+          "price_digital": 47,
+          "price_hardcover": 87
+        },
+        {
+          "id": "58",
+          "slug": "leadership-for-small-teams",
+          "title": "Leadership for Small Teams",
+          "subtitle": "From 2 to 20 — the manager's playbook",
+          "price_digital": 67,
+          "price_hardcover": 117
+        },
+        {
+          "id": "59",
+          "slug": "decision-making-frameworks",
+          "title": "Decision-Making Frameworks",
+          "subtitle": "Better calls under pressure, every time",
+          "price_digital": 67,
+          "price_hardcover": 117
+        },
+        {
+          "id": "60",
+          "slug": "strategic-thinking-toolkit",
+          "title": "Strategic Thinking Toolkit",
+          "subtitle": "See three moves ahead — across business, not chess",
+          "price_digital": 67,
+          "price_hardcover": 117
+        },
+        {
+          "id": "61",
+          "slug": "communication-mastery",
+          "title": "Communication Mastery",
+          "subtitle": "Email, Slack, deck, and conversation — clearer faster",
+          "price_digital": 67,
+          "price_hardcover": 117
+        }
+      ]
+    }
+  ],
+  "bundles": [
+    {
+      "id": "grand-master",
+      "name": "The Grand Master Bundle",
+      "type": "master",
+      "price": 497,
+      "retail_value": 5620,
+      "savings_percent": 91,
+      "book_count": 61,
+      "book_ids": "all",
+      "tagline": "All 61 books — the complete library, digital edition.",
+      "composition_status": "locked"
+    },
+    {
+      "id": "operator",
+      "name": "The Operator's Master Bundle",
+      "type": "master",
+      "price": 197,
+      "retail_value": 2180,
+      "book_count": 25,
+      "book_ids": [],
+      "tagline": "",
+      "composition_status": "pending-review",
+      "composition_doc": "docs/profession-bundles.md"
+    },
+    {
+      "id": "lawyer",
+      "name": "The Lawyer's Bundle",
+      "type": "profession",
+      "price": 197,
+      "retail_value": 520,
+      "book_count": 6,
+      "book_ids": [],
+      "tagline": "",
+      "composition_status": "pending-review",
+      "composition_doc": "docs/profession-bundles.md"
+    },
+    {
+      "id": "doctor",
+      "name": "The Doctor's Bundle",
+      "type": "profession",
+      "price": 197,
+      "retail_value": 520,
+      "book_count": 6,
+      "book_ids": [],
+      "tagline": "",
+      "composition_status": "pending-review",
+      "composition_doc": "docs/profession-bundles.md"
+    },
+    {
+      "id": "cpa-accountant",
+      "name": "The CPA & Accountant Bundle",
+      "type": "profession",
+      "price": 197,
+      "retail_value": 520,
+      "book_count": 6,
+      "book_ids": [],
+      "tagline": "",
+      "composition_status": "pending-review",
+      "composition_doc": "docs/profession-bundles.md"
+    },
+    {
+      "id": "real-estate-agent",
+      "name": "The Real Estate Agent Bundle",
+      "type": "profession",
+      "price": 147,
+      "retail_value": 420,
+      "book_count": 6,
+      "book_ids": [],
+      "tagline": "",
+      "composition_status": "pending-review",
+      "composition_doc": "docs/profession-bundles.md"
+    },
+    {
+      "id": "architect-designer",
+      "name": "The Architect & Designer Bundle",
+      "type": "profession",
+      "price": 197,
+      "retail_value": 520,
+      "book_count": 6,
+      "book_ids": [],
+      "tagline": "",
+      "composition_status": "pending-review",
+      "composition_doc": "docs/profession-bundles.md"
+    },
+    {
+      "id": "financial-advisor",
+      "name": "The Financial Advisor Bundle",
+      "type": "profession",
+      "price": 197,
+      "retail_value": 520,
+      "book_count": 6,
+      "book_ids": [],
+      "tagline": "",
+      "composition_status": "pending-review",
+      "composition_doc": "docs/profession-bundles.md"
+    },
+    {
+      "id": "consultant",
+      "name": "The Consultant Bundle",
+      "type": "profession",
+      "price": 197,
+      "retail_value": 520,
+      "book_count": 6,
+      "book_ids": [],
+      "tagline": "",
+      "composition_status": "pending-review",
+      "composition_doc": "docs/profession-bundles.md"
+    },
+    {
+      "id": "founder",
+      "name": "The Founder's Bundle",
+      "type": "profession",
+      "price": 247,
+      "retail_value": 680,
+      "book_count": 8,
+      "book_ids": [],
+      "tagline": "",
+      "composition_status": "pending-review",
+      "composition_doc": "docs/profession-bundles.md"
+    },
+    {
+      "id": "marketer",
+      "name": "The Marketer's Bundle",
+      "type": "profession",
+      "price": 197,
+      "retail_value": 580,
+      "book_count": 7,
+      "book_ids": [],
+      "tagline": "",
+      "composition_status": "pending-review",
+      "composition_doc": "docs/profession-bundles.md"
+    },
+    {
+      "id": "engineer",
+      "name": "The Engineer's Bundle",
+      "type": "profession",
+      "price": 147,
+      "retail_value": 420,
+      "book_count": 6,
+      "book_ids": [],
+      "tagline": "",
+      "composition_status": "pending-review",
+      "composition_doc": "docs/profession-bundles.md"
+    },
+    {
+      "id": "teacher",
+      "name": "The Teacher's Bundle",
+      "type": "profession",
+      "price": 97,
+      "retail_value": 320,
+      "book_count": 5,
+      "book_ids": [],
+      "tagline": "",
+      "composition_status": "pending-review",
+      "composition_doc": "docs/profession-bundles.md"
+    },
+    {
+      "id": "therapist-coach",
+      "name": "The Therapist & Coach Bundle",
+      "type": "profession",
+      "price": 147,
+      "retail_value": 420,
+      "book_count": 5,
+      "book_ids": [],
+      "tagline": "",
+      "composition_status": "pending-review",
+      "composition_doc": "docs/profession-bundles.md"
+    },
+    {
+      "id": "recruiter-hr",
+      "name": "The Recruiter & HR Bundle",
+      "type": "profession",
+      "price": 147,
+      "retail_value": 420,
+      "book_count": 6,
+      "book_ids": [],
+      "tagline": "",
+      "composition_status": "pending-review",
+      "composition_doc": "docs/profession-bundles.md"
+    },
+    {
+      "id": "photographer-creator",
+      "name": "The Photographer & Creator Bundle",
+      "type": "profession",
+      "price": 97,
+      "retail_value": 320,
+      "book_count": 5,
+      "book_ids": [],
+      "tagline": "",
+      "composition_status": "pending-review",
+      "composition_doc": "docs/profession-bundles.md"
+    },
+    {
+      "id": "restaurant-owner",
+      "name": "The Restaurant Owner Bundle",
+      "type": "profession",
+      "price": 97,
+      "retail_value": 320,
+      "book_count": 5,
+      "book_ids": [],
+      "tagline": "",
+      "composition_status": "pending-review",
+      "composition_doc": "docs/profession-bundles.md"
+    },
+    {
+      "id": "construction-trades",
+      "name": "The Construction & Trades Bundle",
+      "type": "profession",
+      "price": 97,
+      "retail_value": 320,
+      "book_count": 5,
+      "book_ids": [],
+      "tagline": "",
+      "composition_status": "pending-review",
+      "composition_doc": "docs/profession-bundles.md"
+    },
+    {
+      "id": "software-developer",
+      "name": "The Software Developer Bundle",
+      "type": "profession",
+      "price": 147,
+      "retail_value": 420,
+      "book_count": 6,
+      "book_ids": [],
+      "tagline": "",
+      "composition_status": "pending-review",
+      "composition_doc": "docs/profession-bundles.md"
+    },
+    {
+      "id": "product-manager",
+      "name": "The Product Manager Bundle",
+      "type": "profession",
+      "price": 147,
+      "retail_value": 420,
+      "book_count": 6,
+      "book_ids": [],
+      "tagline": "",
+      "composition_status": "pending-review",
+      "composition_doc": "docs/profession-bundles.md"
+    },
+    {
+      "id": "researcher",
+      "name": "The Researcher's Bundle",
+      "type": "profession",
+      "price": 97,
+      "retail_value": 320,
+      "book_count": 5,
+      "book_ids": [],
+      "tagline": "",
+      "composition_status": "pending-review",
+      "composition_doc": "docs/profession-bundles.md"
+    },
+    {
+      "id": "wellness-professional",
+      "name": "The Wellness Professional Bundle",
+      "type": "profession",
+      "price": 97,
+      "retail_value": 320,
+      "book_count": 5,
+      "book_ids": [],
+      "tagline": "",
+      "composition_status": "pending-review",
+      "composition_doc": "docs/profession-bundles.md"
+    }
+  ]
+}
