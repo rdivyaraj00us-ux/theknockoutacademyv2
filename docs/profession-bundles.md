@@ -312,6 +312,19 @@ Items to refine in a future copywriting pass — not blocking Session 4 LP build
 
 ---
 
+## SEO Debt
+
+Stale or generic strings from the V1 Entrepedia build that survived into the V2 codebase. Not blocking — book/series/bundle pages set their own meta in Session 3, and the homepage gets a full SEO pass in Session 4 — but recording them so they don't slip.
+
+- **`index.html` meta description** is V1 copy: `"40+ Premium eBooks, Guides & 8,000+ AI Automation Templates. From complete beginner to confident professional. Instant digital delivery, 30-day money-back guarantee."` — references the old 40+ ebook + 8,000 n8n templates positioning. Replace with TheKnockoutAcademy framing in Session 4 (e.g., something around "61 books synthesizing the world's leading experts in business, AI, wealth, and your profession").
+- **`index.html` og:title / og:description / twitter:image / twitter:site** — all V1 copy and `@KnockoutAcademy` Twitter handle (which may not exist). Session 4 audit.
+- **`index.html` og:image** points to `https://theknockoutacademy.com/og-image.jpg` — domain is correct (Session 2 fix) but the actual image asset is the V1 design. Needs replacement when V2 design assets land.
+- **`src/pages/Index.tsx` JSON-LD** describes "Premium digital education platform offering practical skills training for entrepreneurs, freelancers, and career changers" — needs rewrite to match the Empire Plan positioning (publishing house / learning institution / Council of Experts framing).
+- **`src/pages/MasterBundle.tsx`** title/meta/schema still describe the V1 Knockout Master Bundle ("All 6 Specialty Bundles", "40+ eBooks", "$69") — that page gets a full long-form rebuild in Session 4 per the 9-block template (PDF p33).
+- **`src/pages/Product.tsx`** has hardcoded `"$29"` and `"premium digital education for $29"` strings in the meta-description fallback path — won't apply once products carry real prices via Shopify, but stale prompts to remove.
+
+---
+
 ## Future Bundles (post-launch)
 
 These do **not** exist in `catalog.json` yet — adding here so the catalog gap is on record.
