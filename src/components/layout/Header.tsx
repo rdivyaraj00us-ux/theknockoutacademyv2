@@ -29,16 +29,16 @@ export const Header = () => {
                 The Knockout Academy
               </span>
               <span className="hidden sm:block text-xs text-muted-foreground font-body">
-                Where Dreams Meet Discipline
+                The library for serious operators
               </span>
             </div>
           </Link>
 
-          {/* Enhanced Trust Badge with Rating */}
+          {/* Trust badge — empire framing, factual not aspirational */}
           <div className="hidden lg:flex items-center gap-2 bg-gradient-to-r from-gold/20 to-gold/10 border border-gold/30 rounded-full px-4 py-1.5">
             <Star className="h-4 w-4 text-gold fill-gold" />
             <span className="text-sm font-heading font-semibold text-foreground">
-              4.9/5 from 40,000+ customers
+              61 books · Council of Experts Reviewed
             </span>
           </div>
         </div>

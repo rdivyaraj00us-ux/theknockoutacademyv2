@@ -106,38 +106,32 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>The Knockout Academy | Master Skills That Actually Make Money Online</title>
-        <meta name="description" content="40+ Premium eBooks, Guides & 8,000+ AI Automation Templates. Join 40,000+ customers. $69 one-time, 30-day guarantee." />
+        <title>TheKnockoutAcademy — The library for modern operators</title>
+        <meta name="description" content="61 books synthesizing the world's leading experts in business, AI, wealth, and your profession. Council of Experts Reviewed. The Grand Master Bundle: $497 for all 61 books, $5,620 retail, 14-day money-back." />
         <link rel="canonical" href="https://theknockoutacademy.com" />
-        
+
         {/* Open Graph */}
-        <meta property="og:title" content="The Knockout Academy | Master Skills That Make Money" />
-        <meta property="og:description" content="40+ Premium eBooks & 8,000+ AI Templates. From beginner to professional. $69 one-time, instant access." />
+        <meta property="og:title" content="TheKnockoutAcademy — The library for modern operators" />
+        <meta property="og:description" content="61 books, 15,420 illustrated pages, every chapter Council-reviewed. The Grand Master Bundle: $497 for all 61." />
         <meta property="og:image" content="https://theknockoutacademy.com/og-image.jpg" />
         <meta property="og:url" content="https://theknockoutacademy.com" />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="The Knockout Academy" />
-        
+        <meta property="og:site_name" content="TheKnockoutAcademy" />
+
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="The Knockout Academy | Master Skills That Make Money" />
-        <meta name="twitter:description" content="40+ eBooks & 8,000+ AI Templates for $69. Join 40,000+ customers." />
+        <meta name="twitter:title" content="TheKnockoutAcademy — The library for modern operators" />
+        <meta name="twitter:description" content="61 books · Council of Experts Reviewed · Grand Master Bundle $497" />
         <meta name="twitter:image" content="https://theknockoutacademy.com/og-image.jpg" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
-            "name": "The Knockout Academy",
-            "description": "Premium digital education platform offering practical skills training for entrepreneurs, freelancers, and career changers.",
+            "name": "TheKnockoutAcademy",
+            "alternateName": "The Knockout Academy",
+            "description": "A publishing house and learning institution. 61 books synthesizing the world's leading experts in business, AI, wealth, and your profession — every chapter reviewed by a named Council of Experts before it ships.",
             "url": "https://theknockoutacademy.com",
             "logo": "https://theknockoutacademy.com/logo.png",
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.9",
-              "reviewCount": "40000",
-              "bestRating": "5",
-              "worstRating": "1"
-            }
           })}
         </script>
         <script type="application/ld+json">

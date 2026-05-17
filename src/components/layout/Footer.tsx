@@ -33,7 +33,7 @@ export const Footer = () => {
               <span className="font-heading font-bold text-lg">The Knockout Academy</span>
             </div>
             <p className="text-sm text-secondary-foreground/60 mb-6 font-body leading-relaxed">
-              Where Dreams Meet Discipline. Premium digital education resources for aspiring entrepreneurs and side hustlers.
+              The visual learning library for modern operators. 61 books synthesizing the world's leading experts in business, AI, wealth, and your profession. Council-reviewed.
             </p>
             
             {/* Payment Icons */}
@@ -48,30 +48,30 @@ export const Footer = () => {
             </div>
           </div>
 
-          {/* Column 2: Products */}
+          {/* Column 2: The Library */}
           <div>
-            <h4 className="font-heading font-semibold mb-4 text-secondary-foreground">Products</h4>
+            <h4 className="font-heading font-semibold mb-4 text-secondary-foreground">The Library</h4>
             <nav className="flex flex-col gap-2">
               <Link to="/master-bundle" className="text-sm text-secondary-foreground/60 hover:text-secondary-foreground transition-colors font-body">
-                Master Bundle
+                The Grand Master Bundle
               </Link>
-              <Link to="/product/ai-mastery-essentials-bundle" className="text-sm text-secondary-foreground/60 hover:text-secondary-foreground transition-colors font-body">
-                AI Mastery
+              <Link to="/bundles/operator" className="text-sm text-secondary-foreground/60 hover:text-secondary-foreground transition-colors font-body">
+                The Operator's Master Bundle
               </Link>
-              <Link to="/product/e-commerce-dropshipping-foundations-bundle" className="text-sm text-secondary-foreground/60 hover:text-secondary-foreground transition-colors font-body">
-                E-Commerce
+              <Link to="/series/foundations" className="text-sm text-secondary-foreground/60 hover:text-secondary-foreground transition-colors font-body">
+                Series I — Foundations
               </Link>
-              <Link to="/product/content-creator-accelerator-bundle" className="text-sm text-secondary-foreground/60 hover:text-secondary-foreground transition-colors font-body">
-                Content Creator
+              <Link to="/series/ai-powered-operator" className="text-sm text-secondary-foreground/60 hover:text-secondary-foreground transition-colors font-body">
+                Series II — AI-Powered Operator
               </Link>
-              <Link to="/product/digital-marketing-sales-mastery-bundle" className="text-sm text-secondary-foreground/60 hover:text-secondary-foreground transition-colors font-body">
-                Digital Marketing
+              <Link to="/series/profession" className="text-sm text-secondary-foreground/60 hover:text-secondary-foreground transition-colors font-body">
+                Series III — Profession
               </Link>
-              <Link to="/product/productivity-personal-development-bundle" className="text-sm text-secondary-foreground/60 hover:text-secondary-foreground transition-colors font-body">
-                Productivity
+              <Link to="/series/wealth" className="text-sm text-secondary-foreground/60 hover:text-secondary-foreground transition-colors font-body">
+                Series IV — Wealth
               </Link>
-              <Link to="/product/finance-investing-fundamentals-bundle" className="text-sm text-secondary-foreground/60 hover:text-secondary-foreground transition-colors font-body">
-                Finance
+              <Link to="/series/skills" className="text-sm text-secondary-foreground/60 hover:text-secondary-foreground transition-colors font-body">
+                Series V — Skills
               </Link>
             </nav>
           </div>
