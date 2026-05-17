@@ -15,4 +15,4 @@ Allow: /
 Disallow: /api/
 Disallow: /cart
 
-Sitemap: https://knockoutacademy.com/sitemap.xml
+Sitemap: https://theknockoutacademy.com/sitemap.xml
