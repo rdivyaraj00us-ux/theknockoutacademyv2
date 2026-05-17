@@ -19,7 +19,7 @@
 import { useMemo } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { Award, Shield, Star } from "lucide-react";
+import { Award, CheckCircle2, Shield, Star } from "lucide-react";
 
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -124,6 +124,41 @@ export default function BookPage() {
           property="og:url"
           content={`https://theknockoutacademy.com/book/${book.slug}`}
         />
+        <meta property="og:image" content="https://theknockoutacademy.com/og-image.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Book",
+            "name": book.title,
+            "description": book.subtitle,
+            "inLanguage": "en",
+            "isPartOf": {
+              "@type": "BookSeries",
+              "name": series.name,
+              "url": `https://theknockoutacademy.com/series/${series.id}`,
+            },
+            "brand": { "@type": "Brand", "name": "TheKnockoutAcademy" },
+            "offers": [
+              {
+                "@type": "Offer",
+                "name": "Digital edition",
+                "price": book.price_digital,
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/PreOrder",
+                "url": `https://theknockoutacademy.com/book/${book.slug}`,
+              },
+              {
+                "@type": "Offer",
+                "name": "Hardcover edition",
+                "price": book.price_hardcover,
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/PreOrder",
+                "url": `https://theknockoutacademy.com/book/${book.slug}`,
+              },
+            ],
+          })}
+        </script>
       </Helmet>
 
       <Header />
@@ -236,11 +271,46 @@ export default function BookPage() {
           note="Four named buyers: name, city, profession, outcome with specific numbers. No stock-photo testimonials labeled as real per PDF p34 compliance — real verified testimonials prioritized as they accumulate."
         />
 
-        {/* Block 4 — The Council */}
-        <PlaceholderBlock
-          block="The Council"
-          note="Named experts who reviewed this book — full bios, credentials, verifiable. Author-Track Council names appear on the cover; Reviewer Council in the front matter. PDF p13 economics."
-        />
+        {/* Block 4 — The Council (slim methodology summary; per-book Council names are pipeline output) */}
+        <section className="py-16 md:py-24 bg-background">
+          <div className="container max-w-4xl">
+            <p className="text-xs uppercase tracking-[0.3em] text-accent font-heading mb-4">
+              The Method
+            </p>
+            <h2 className="font-display text-3xl md:text-4xl font-bold mb-6">
+              Every chapter Council-reviewed before it ships
+            </h2>
+            <p className="text-lg text-muted-foreground font-body mb-8 max-w-3xl leading-relaxed">
+              We're not a personality and we're not a course. {book.title} is
+              the consensus of 3–5 named subject-matter experts in the field —
+              synthesized from 15–30 published sources, illustrated, reviewed
+              chapter-by-chapter, signed off in writing before it ships.
+            </p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
+              {[
+                "15-30 sources",
+                "3-5 named experts",
+                "Chapter-level review",
+                "Written sign-off",
+              ].map((claim) => (
+                <div
+                  key={claim}
+                  className="flex items-start gap-2 p-4 bg-card border border-border rounded-xl"
+                >
+                  <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
+                  <span className="font-heading font-medium text-foreground">
+                    {claim}
+                  </span>
+                </div>
+              ))}
+            </div>
+            <p className="mt-8 text-sm text-muted-foreground font-body italic">
+              Specific Council members for {book.title} are published in the
+              book's front matter and on the /experts page once the manuscript
+              locks.
+            </p>
+          </div>
+        </section>
 
         {/* Block 5 — Inside The Book (real, outline-only in v1) */}
         <section className="py-16 md:py-24 bg-background">
