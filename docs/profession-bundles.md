@@ -304,6 +304,14 @@ Recorded for future-Raj and future-Claude reviewing why specific calls were made
 
 ---
 
+## Copy Revisit List
+
+Items to refine in a future copywriting pass — not blocking Session 4 LP builds but worth a second look before paid traffic ramps.
+
+- **Tagline parallelism (Operator's Master + Founder's):** Both currently open with "The complete operating system for…" — fine as parallel offers for parallel audiences, but if they end up side-by-side in a shop grid view, vary one. Suggested rework when revisiting: keep Operator's as-is, reframe Founder's around the journey ("From first idea to first traction — the founder's complete operating kit.") or a stage frame ("Day-one to first-hire — the founder's playbook in one bundle.").
+
+---
+
 ## Future Bundles (post-launch)
 
 These do **not** exist in `catalog.json` yet — adding here so the catalog gap is on record.
