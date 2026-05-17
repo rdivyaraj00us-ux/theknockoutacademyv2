@@ -56,10 +56,30 @@ export interface Series {
 }
 
 /**
- * `book_ids` is `"all"` for the Grand Master Bundle (every book in the
- * catalog) and a string array of book ids otherwise. Profession + Operator
- * bundles ship with `book_ids: []` and `composition_status: "pending-review"`
- * until compositions are approved in `composition_doc`.
+ * Slot-structured bundle composition. The slot shape preserves marketing
+ * reasoning ("your profession book + 2 foundations + 2 AI tools + 1 skill")
+ * and lets page templates render section headers directly from the data.
+ *
+ * - `profession` is omitted for Operator's Master / Founder's / Grand Master
+ *   (generalist bundles); when present it holds 0 or 1 entry.
+ * - `foundations`, `ai_operator`, `skills` are required arrays (may be empty
+ *   for pending-review bundles).
+ * - `wealth` is rare — only Financial Advisor's Bundle uses it.
+ */
+export interface BundleComposition {
+  readonly profession?: readonly string[];
+  readonly foundations: readonly string[];
+  readonly ai_operator: readonly string[];
+  readonly skills: readonly string[];
+  readonly wealth?: readonly string[];
+}
+
+/**
+ * `composition` is `"all"` for the Grand Master Bundle (every book in the
+ * catalog) and a `BundleComposition` (slot-structured) otherwise. Profession
+ * + Operator bundles ship with empty slot arrays and
+ * `composition_status: "pending-review"` until compositions are approved in
+ * `composition_doc`.
  */
 export interface Bundle {
   readonly id: string;
@@ -68,7 +88,7 @@ export interface Bundle {
   readonly price: number;
   readonly retail_value: number;
   readonly book_count: number;
-  readonly book_ids: readonly string[] | "all";
+  readonly composition: BundleComposition | "all";
   readonly tagline: string;
   readonly composition_status: CompositionStatus;
   readonly composition_doc?: string;

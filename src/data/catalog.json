@@ -600,7 +600,7 @@
       "retail_value": 5620,
       "savings_percent": 91,
       "book_count": 61,
-      "book_ids": "all",
+      "composition": "all",
       "tagline": "All 61 books — the complete library, digital edition.",
       "composition_status": "locked"
     },
@@ -611,7 +611,11 @@
       "price": 197,
       "retail_value": 2180,
       "book_count": 25,
-      "book_ids": [],
+      "composition": {
+        "foundations": [],
+        "ai_operator": [],
+        "skills": []
+      },
       "tagline": "",
       "composition_status": "pending-review",
       "composition_doc": "docs/profession-bundles.md"
@@ -623,7 +627,12 @@
       "price": 197,
       "retail_value": 520,
       "book_count": 6,
-      "book_ids": [],
+      "composition": {
+        "profession": [],
+        "foundations": [],
+        "ai_operator": [],
+        "skills": []
+      },
       "tagline": "",
       "composition_status": "pending-review",
       "composition_doc": "docs/profession-bundles.md"
@@ -635,7 +644,12 @@
       "price": 197,
       "retail_value": 520,
       "book_count": 6,
-      "book_ids": [],
+      "composition": {
+        "profession": [],
+        "foundations": [],
+        "ai_operator": [],
+        "skills": []
+      },
       "tagline": "",
       "composition_status": "pending-review",
       "composition_doc": "docs/profession-bundles.md"
@@ -647,7 +661,12 @@
       "price": 197,
       "retail_value": 520,
       "book_count": 6,
-      "book_ids": [],
+      "composition": {
+        "profession": [],
+        "foundations": [],
+        "ai_operator": [],
+        "skills": []
+      },
       "tagline": "",
       "composition_status": "pending-review",
       "composition_doc": "docs/profession-bundles.md"
@@ -659,7 +678,12 @@
       "price": 147,
       "retail_value": 420,
       "book_count": 6,
-      "book_ids": [],
+      "composition": {
+        "profession": [],
+        "foundations": [],
+        "ai_operator": [],
+        "skills": []
+      },
       "tagline": "",
       "composition_status": "pending-review",
       "composition_doc": "docs/profession-bundles.md"
@@ -671,7 +695,12 @@
       "price": 197,
       "retail_value": 520,
       "book_count": 6,
-      "book_ids": [],
+      "composition": {
+        "profession": [],
+        "foundations": [],
+        "ai_operator": [],
+        "skills": []
+      },
       "tagline": "",
       "composition_status": "pending-review",
       "composition_doc": "docs/profession-bundles.md"
@@ -683,7 +712,13 @@
       "price": 197,
       "retail_value": 520,
       "book_count": 6,
-      "book_ids": [],
+      "composition": {
+        "profession": [],
+        "foundations": [],
+        "ai_operator": [],
+        "skills": [],
+        "wealth": []
+      },
       "tagline": "",
       "composition_status": "pending-review",
       "composition_doc": "docs/profession-bundles.md"
@@ -695,7 +730,12 @@
       "price": 197,
       "retail_value": 520,
       "book_count": 6,
-      "book_ids": [],
+      "composition": {
+        "profession": [],
+        "foundations": [],
+        "ai_operator": [],
+        "skills": []
+      },
       "tagline": "",
       "composition_status": "pending-review",
       "composition_doc": "docs/profession-bundles.md"
@@ -707,7 +747,11 @@
       "price": 247,
       "retail_value": 680,
       "book_count": 8,
-      "book_ids": [],
+      "composition": {
+        "foundations": [],
+        "ai_operator": [],
+        "skills": []
+      },
       "tagline": "",
       "composition_status": "pending-review",
       "composition_doc": "docs/profession-bundles.md"
@@ -719,7 +763,12 @@
       "price": 197,
       "retail_value": 580,
       "book_count": 7,
-      "book_ids": [],
+      "composition": {
+        "profession": [],
+        "foundations": [],
+        "ai_operator": [],
+        "skills": []
+      },
       "tagline": "",
       "composition_status": "pending-review",
       "composition_doc": "docs/profession-bundles.md"
@@ -731,7 +780,12 @@
       "price": 147,
       "retail_value": 420,
       "book_count": 6,
-      "book_ids": [],
+      "composition": {
+        "profession": [],
+        "foundations": [],
+        "ai_operator": [],
+        "skills": []
+      },
       "tagline": "",
       "composition_status": "pending-review",
       "composition_doc": "docs/profession-bundles.md"
@@ -743,7 +797,12 @@
       "price": 97,
       "retail_value": 320,
       "book_count": 5,
-      "book_ids": [],
+      "composition": {
+        "profession": [],
+        "foundations": [],
+        "ai_operator": [],
+        "skills": []
+      },
       "tagline": "",
       "composition_status": "pending-review",
       "composition_doc": "docs/profession-bundles.md"
@@ -755,7 +814,12 @@
       "price": 147,
       "retail_value": 420,
       "book_count": 5,
-      "book_ids": [],
+      "composition": {
+        "profession": [],
+        "foundations": [],
+        "ai_operator": [],
+        "skills": []
+      },
       "tagline": "",
       "composition_status": "pending-review",
       "composition_doc": "docs/profession-bundles.md"
@@ -767,7 +831,12 @@
       "price": 147,
       "retail_value": 420,
       "book_count": 6,
-      "book_ids": [],
+      "composition": {
+        "profession": [],
+        "foundations": [],
+        "ai_operator": [],
+        "skills": []
+      },
       "tagline": "",
       "composition_status": "pending-review",
       "composition_doc": "docs/profession-bundles.md"
@@ -779,7 +848,12 @@
       "price": 97,
       "retail_value": 320,
       "book_count": 5,
-      "book_ids": [],
+      "composition": {
+        "profession": [],
+        "foundations": [],
+        "ai_operator": [],
+        "skills": []
+      },
       "tagline": "",
       "composition_status": "pending-review",
       "composition_doc": "docs/profession-bundles.md"
@@ -791,7 +865,12 @@
       "price": 97,
       "retail_value": 320,
       "book_count": 5,
-      "book_ids": [],
+      "composition": {
+        "profession": [],
+        "foundations": [],
+        "ai_operator": [],
+        "skills": []
+      },
       "tagline": "",
       "composition_status": "pending-review",
       "composition_doc": "docs/profession-bundles.md"
@@ -803,7 +882,12 @@
       "price": 97,
       "retail_value": 320,
       "book_count": 5,
-      "book_ids": [],
+      "composition": {
+        "profession": [],
+        "foundations": [],
+        "ai_operator": [],
+        "skills": []
+      },
       "tagline": "",
       "composition_status": "pending-review",
       "composition_doc": "docs/profession-bundles.md"
@@ -815,7 +899,12 @@
       "price": 147,
       "retail_value": 420,
       "book_count": 6,
-      "book_ids": [],
+      "composition": {
+        "profession": [],
+        "foundations": [],
+        "ai_operator": [],
+        "skills": []
+      },
       "tagline": "",
       "composition_status": "pending-review",
       "composition_doc": "docs/profession-bundles.md"
@@ -827,7 +916,12 @@
       "price": 147,
       "retail_value": 420,
       "book_count": 6,
-      "book_ids": [],
+      "composition": {
+        "profession": [],
+        "foundations": [],
+        "ai_operator": [],
+        "skills": []
+      },
       "tagline": "",
       "composition_status": "pending-review",
       "composition_doc": "docs/profession-bundles.md"
@@ -839,7 +933,12 @@
       "price": 97,
       "retail_value": 320,
       "book_count": 5,
-      "book_ids": [],
+      "composition": {
+        "profession": [],
+        "foundations": [],
+        "ai_operator": [],
+        "skills": []
+      },
       "tagline": "",
       "composition_status": "pending-review",
       "composition_doc": "docs/profession-bundles.md"
@@ -851,7 +950,12 @@
       "price": 97,
       "retail_value": 320,
       "book_count": 5,
-      "book_ids": [],
+      "composition": {
+        "profession": [],
+        "foundations": [],
+        "ai_operator": [],
+        "skills": []
+      },
       "tagline": "",
       "composition_status": "pending-review",
       "composition_doc": "docs/profession-bundles.md"

@@ -23,6 +23,7 @@ export interface UseCatalogResult {
   readonly bundleById: (id: string) => Bundle | undefined;
   readonly booksInSeries: (id: SeriesId) => readonly Book[];
   readonly booksInBundle: (bundleId: string) => readonly Book[];
+  readonly flatBookIds: (bundleId: string) => readonly string[];
 }
 
 /**
@@ -33,6 +34,11 @@ export interface UseCatalogResult {
  * `booksInBundle` returns all 61 books for the Grand Master Bundle and
  * an empty array for any bundle still in `pending-review` — Sessions 3/4
  * page-generation should guard on `composition_status === "locked"`.
+ *
+ * `flatBookIds` flattens the slot-structured composition into a single id
+ * list in canonical slot order (profession → foundations → ai_operator →
+ * wealth → skills) — for cart totals, cross-sell rows, and any caller that
+ * just wants "all books in this bundle" without slot semantics.
  */
 export function useCatalog(): UseCatalogResult {
   return useMemo(() => {
@@ -53,6 +59,20 @@ export function useCatalog(): UseCatalogResult {
       catalog.bundles.map((b) => [b.id, b])
     );
 
+    const flatBookIds = (bundleId: string): readonly string[] => {
+      const bundle = bundleById.get(bundleId);
+      if (!bundle) return [];
+      if (bundle.composition === "all") return allBooks.map((b) => b.id);
+      const c = bundle.composition;
+      return [
+        ...(c.profession ?? []),
+        ...c.foundations,
+        ...c.ai_operator,
+        ...(c.wealth ?? []),
+        ...c.skills,
+      ];
+    };
+
     return {
       catalog,
       series: catalog.series,
@@ -65,16 +85,15 @@ export function useCatalog(): UseCatalogResult {
       bundleById: (id) => bundleById.get(id),
       booksInSeries: (id) => seriesById.get(id)?.books ?? [],
       booksInBundle: (bundleId) => {
-        const bundle = bundleById.get(bundleId);
-        if (!bundle) return [];
-        if (bundle.book_ids === "all") return allBooks;
+        const ids = flatBookIds(bundleId);
         const out: Book[] = [];
-        for (const id of bundle.book_ids) {
+        for (const id of ids) {
           const book = bookById.get(id);
           if (book) out.push(book);
         }
         return out;
       },
+      flatBookIds,
     };
   }, []);
 }
