@@ -131,6 +131,12 @@ const pushEcommerce = (event: string, ecommerce: object): void => {
   // so prior items don't leak into the next push.
   pushRaw({ ecommerce: null });
   pushRaw({ event, ecommerce });
+  // EDGE CASE — pushEcommerce makes paired pushes (reset + event). At buffer
+  // cap exactly, the second push evicts an older entry which may break an
+  // earlier pair's reset/event pairing. Acceptable in v1: degenerate enough
+  // (requires buffer-full state, which requires GTM never loading) that
+  // fixing it adds more complexity than the data fidelity is worth.
+  // Revisit if real-world telemetry shows it firing.
 };
 
 // ─── Public API ─────────────────────────────────────────────────────────────
